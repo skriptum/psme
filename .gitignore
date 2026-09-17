@@ -1,1 +1,4 @@
 .DS_Store
+book_*.pdf
+*.log
+metrics/tutorial/**/data/raw/*.xlsx
