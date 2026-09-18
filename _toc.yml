@@ -9,28 +9,28 @@ subtrees:
 
 
     - file: metrics/README
-      title: "Metrics"
+      title: "metrics"
       entries:
     
       - file: metrics/2026-09-15-OLS1.md
         title: OLS1 [2026/09/15] 
 
     - file: macro/README
-      title: "Macro"
+      title: "macro"
       entries:
     
       - file: macro/2026-09-16-Intro.md
         title: Intro [2026/09/16] 
 
     - file: micro/README
-      title: "Micro"
+      title: "micro"
       entries:
     
       - file: micro/2026-09-17-Intro.md
         title: Intro [2026/09/17] 
 
     - file: growth/README
-      title: "Growth"
+      title: "growth"
       entries:
     
       - file: growth/2026-09-18-Intro.md

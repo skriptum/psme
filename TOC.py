@@ -1,10 +1,10 @@
 import os
 
 dirs_sem1 = {
-    "metrics": "Metrics",
-    "macro": "Macro",
-    "micro": "Micro",
-    "growth": "Growth",
+    "metrics": "metrics",
+    "macro": "macro",
+    "micro": "micro",
+    "growth": "growth",
 }
 
 with open(".gitignore") as f:
