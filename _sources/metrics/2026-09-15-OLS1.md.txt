@@ -1,0 +1,186 @@
+
+
+# 15.09.2026 OLS
+
+## Basics
+
+Metrics: 
+
+- understand the connections between variables: e.g. determinants of house prices
+- test economic theory: e.g. wages -> employment
+- predict (macro-)variables into the future: e.g GDP, unemployment, ...
+
+
+
+Types of Data:
+
+- Observational data: Surveys, Administrative, ...
+- Experimental data: RCTs
+
+
+
+Types of Datasets:
+
+- Cross sectional: $y_i$ with $i=1,...,N$
+- Time series: $y_t$ with $t=1,...,N$
+- Panel data: $y_{it}$ with $i=1,...,N, t=1,...,N$
+
+
+
+Types of Variables
+
+- Quantitative
+  - Continuous = wage
+  - Discrete = nr of children
+- qualitative = sex, social status
+
+
+
+## Formalization
+
+To find a relationship between independent variable *x* and dependent variable *y*
+
+- given $(x_i, y_i)$
+- find $\beta_0, \beta_1$ so that
+
+$$
+\hat{y} = \beta_0 + \beta_1 x_i + \epsilon
+$$
+
+is closest to $y_i$
+
+Goal:
+
+- test relevance
+- provide estimates 
+- assess accuracy 
+
+
+
+**Definitions**:
+
+- *Population*: set of reference units
+- *Sample*: subset of the population
+  - representative: if probability of being in sample is equal for all individuals
+- *Parameter:* unknown attribute of the population (e.g smoking rate in France)
+- *Statistic*: known attribute (e.g smoking rate in sample)
+
+
+
+> **Estimator:** statistic used to estimate an unknown parameter
+>
+> $\hat{\beta}$ is 
+>
+> - unbiased, if $E(\hat{\beta}) = \beta$
+> - converging / consistent, if it gets "better" (closer to $\beta$) as sample size increases
+
+
+
+
+> **Note:** Linear Regression does not mean that the relationship has to be linear! 
+>
+> - Logs: $\ln y = \beta_0  \beta_1 x + \epsilon$
+> - Exponential: $y = \beta_0  \beta_1 x^2 + \epsilon$
+
+
+
+## OLS and Simple Linear Regression 
+
+*One method to derive estimates of our coefficients*
+
+**Idea**: Draw a line trough observations, minimize distance of dots to line
+
+**Assumptions**:
+
+- $E(\epsilon_i) = 0$: expectations of errors are zero 
+- $E(\epsilon_i | x_i)= 0$: Errors do not depend on x
+
+
+
+With our estimates, we can predict *y*
+
+$$
+\hat{y}= \hat{\beta_0}+ \hat{\beta_1} x_i
+$$
+
+### Maths
+
+Minimize the sum of squared residuals 
+
+$$
+SSR(\beta_0, \beta_1) = \sum_{i=1}^N (y_i-\beta_0-\beta_1 x_i)^2 \\
+
+SSR(\hat{\beta_0}, \hat{\beta_1}) = min \sum_{i=1}^N (y_i-\hat{\beta_0}-\hat{\beta_1} x_i)^2 \\
+
+\frac{\delta S(\beta_0, \beta_1)}{\delta \beta_0} = 0; 
+\frac{\delta S(\beta_0, \beta_1)}{\delta \beta_1} = 0;
+$$
+
+
+
+We get (after fancy maths):
+
+$$
+\hat{\beta_1} = \frac{\sum(x_i-\bar{x})(y_i-\bar{y})}{\sum(x_i-\bar{x})^2} = \frac{Covariance_{xy}}{Variance_x}
+$$
+
+$$
+\hat{\beta_0} = \bar{y}- \hat{\beta_1}\bar{x}
+$$
+
+
+Reminders:
+
+- $\bar{x} = \frac{1}{n} \sum_{i=1}^n x_i$
+- The Regression line will pass trough centroid $(\bar{x}, \bar{y})$
+- $\sum \hat{e}_i = 0$
+- Residuals: $\hat{e_i} = y_i - \hat{y_i}$
+
+
+
+Requirements:
+
+- variations of *x* in the sample
+- sample size *n* large enough
+
+
+
+## Multiple Linear Regression
+
+Setup:
+
+$$
+y = \beta_0 + \sum_{k=1}^K \beta_k x_k + \epsilon
+$$
+
+
+
+Solution:
+
+$$
+\hat{\beta} = (\hat{\beta_0}, ..., \hat{\beta_0}) = (X'X)^{-1} X' y
+$$
+
+Identification Problems
+
+**Multicollinearity**: if regressor can be written as combination of other regressors
+
+- => we can only identify a subset of variables
+- Example: Wage ~ Education & Gender
+  - All women have masters degree and earn ca 2500€
+  - all men have bachelors degree and earn ca 1500€
+  - Formal: $master_i = wom_i, bachelor_i=man_i$
+  - => cant explain anything!
+
+
+
+**Strong Collinearity**
+
+- if 2 variables are strongly correlated (e.g measure same concept)
+- => coefficients cannot be identified separately
+- Example: Wage ~ Age & Experience (probably very similar)
+
+
+
+
+

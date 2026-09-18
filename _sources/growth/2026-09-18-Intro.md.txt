@@ -1,0 +1,83 @@
+# 18.09.2026 Economic Growth
+
+Basic Intuition
+
+$$
+\frac{Y}{N} = \underbrace{\frac{Y}{L}}_{Productivity} \underbrace{\cdot \frac{L}{N}}_{Labor Force}
+$$
+
+What raises productivity?
+
+- Capital
+- Technology 
+- ...
+
+Model as Production Function:
+
+$$
+Y = F(K,L,A)
+$$
+
+## Maths Refresher
+
+Quick tips
+
+$$
+\ln a*b  = \ln a + \ln b \\
+(\ln x)'  = \frac{1}{x} \\
+\frac{d}{dt}\ln(g(t))  = [\ln g(t)] \cdot g(t)' = \frac{g(t)'}{g(t)}
+$$
+
+And a more complex one
+
+$$
+\frac{d}{dt} \big( \frac{x(t)}{y(t)} \big)  = \frac{x'(t) \cdot y(t) - x(t) \cdot y'(t)}{[y(t)]^2} \\
+ = \frac{x'}{y} \cdot \frac{y}{y} \cdot \underbrace{\frac{x}{x}}_{new} 
+- \frac{x(t)}{y(t)} \frac{y'}{y}\\
+ = \underbrace{\frac{x'}{x}}_{g_x} \cdot \frac{x}{y} - - \frac{x}{y} \underbrace{\frac{y'}{y}}_{g_y}\\
+ = \frac{x(t)}{y(t)} [g_x(t) - g_y(t)]
+$$
+
+---
+
+And another one
+
+$$
+\frac{x'}{x}  = a \\
+[\ln x(t)]  = a  \text{ | from (4)}  \\
+\int_{dt} \ln x(t)  = \int_{dt} a \\
+\ln x  = at + c \\
+e^{\ln x(t)}  = e^{(at+c)} = e^{at} \cdot e^{c} \\
+x(t)  = e^{at} \cdot \bar{c}_{constant}
+$$
+
+Useful: Assume that there is $t_0$ so that $x(t_0)$ is known (e.g GDP in 1990)
+
+$$
+x(t_0) = \bar{c}\cdot e^{at_0} \\
+\bar{c} = x(t_0) \cdot e^{-at_0}
+$$
+
+Substitute
+
+$$
+x(t) = \underbrace{[x(t_0) \cdot e^{-at_0}]}_{\bar{c}} \cdot e^{at} \\
+\underline{x(t) = x(t_0) \cdot e^{a(t-t_0)}}
+$$
+
+---
+
+$$
+\max_{K,L} p F(K,L) - rK - wL
+$$
+
+- p=1
+- r = interest rate
+- w = wage
+
+
+
+
+
+## Solow Model
+
