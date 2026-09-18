@@ -2,3 +2,6 @@
 book_*.pdf
 *.log
 metrics/tutorial/**/data/raw/*.xlsx
+.venv
+_build
+__pycache__

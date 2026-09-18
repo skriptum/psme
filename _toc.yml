@@ -1,0 +1,37 @@
+root: README
+subtrees:
+
+- caption: "Semester 1"    
+  hidden: True
+  maxdepth: 1
+  titlesonly: True
+  entries:
+
+
+    - file: metrics/README
+      title: "Metrics"
+      entries:
+    
+      - file: metrics/2026-09-15-OLS1.md
+        title: OLS1 [2026/09/15] 
+
+    - file: macro/README
+      title: "Macro"
+      entries:
+    
+      - file: macro/2026-09-16-Intro.md
+        title: Intro [2026/09/16] 
+
+    - file: micro/README
+      title: "Micro"
+      entries:
+    
+      - file: micro/2026-09-17-Intro.md
+        title: Intro [2026/09/17] 
+
+    - file: growth/README
+      title: "Growth"
+      entries:
+    
+      - file: growth/2026-09-18-Intro.md
+        title: Intro [2026/09/18] 
