@@ -11,7 +11,6 @@ from typing import Any, Dict
 #
 
 project = "PSME"
-copyright = "marten w."
 author = "marten w."
 
 # -- General configuration ---------------------------------------------------
