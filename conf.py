@@ -16,7 +16,7 @@ author = "marten w."
 
 # -- General configuration ---------------------------------------------------
 #
-# master_doc = "README.md"
+exclude_patterns = ["_build", ".DS_Store", ".venv"]
 
 extensions = [
     # Sphinx's own extensions
@@ -26,18 +26,11 @@ extensions = [
     "sphinx.ext.todo",
     "sphinx.ext.viewcode",
     "sphinx.ext.githubpages",
-    # Our custom extension, only meant for Furo's own documentation.
-    "furo.sphinxext",
     # External stuff
     "myst_parser",
-    "sphinx_copybutton",
-    "sphinx_design",
-    "sphinx_inline_tabs",
     "sphinxcontrib.mermaid",
     "sphinx_external_toc",
     'sphinx_sitemap',
-    "sphinx_reredirects",
-    # 'notfound.extension',
 ]
 
 # -- Options for extlinks ----------------------------------------------------
