@@ -5,4 +5,13 @@ capture log close
 clear
 
 cd "~/Documents/psme/metrics/tutorial/_sample/"
-log using data/log/01_sample.log, replace tex
+
+* Global Variables for STATA 
+global dirraw "./data/raw/"
+global dirdata  "./data/proc/"
+global dirlog "./data/log"
+global dirtab "./tables/"
+global dirfig "./figures/"
+
+* Set Up Logging
+log using "$dirlog/01_Intro", replace tex
