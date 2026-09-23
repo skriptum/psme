@@ -1,0 +1,534 @@
+<!doctype html>
+<html class="no-js" lang="de" data-content_root="../../">
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Stichwortverzeichnis" href="../../genindex.html"><link rel="search" title="Suche" href="../../search.html">
+        <link rel="canonical" href="https://psme.martenw.com/metrics/tutorial/Commands.html">
+
+    <!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
+        <title>Stata Cheat Sheet - PSME</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=d111a655" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=7bdb33bb" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=8dab3a3b" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f2f2f2;
+  --color-code-foreground: #1e1e1e;
+  --color-brand-primary: #993358;
+  --color-brand-content: #993358;
+  --font-stack: Garamond, Georgia, serif;
+  --font-stack--monospace: Courier, monospace;
+  --font-stack--headings: Georgia, serif;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../README.html"><div class="brand">PSME</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../README.html">
+  
+  <span class="sidebar-brand-text">PSME</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Suche" name="q" aria-label="Suche">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Semester 1</span></p>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../README.html">metrics</a><input aria-label="Toggle navigation of metrics" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../2026-09-15-OLS1.html">OLS1 [2026/09/15]</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../macro/README.html">macro</a><input aria-label="Toggle navigation of macro" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../macro/2026-09-16-Intro.html">Intro [2026/09/16]</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../micro/README.html">micro</a><input aria-label="Toggle navigation of micro" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../micro/2026-09-17-Intro.html">Intro [2026/09/17]</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../growth/README.html">growth</a><input aria-label="Toggle navigation of growth" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../growth/2026-09-18-Intro.html">Intro [2026/09/18]</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="view-this-page">
+  <a class="muted-link" href="../../_sources/metrics/tutorial/Commands.md.txt" title="View this page">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">View this page</span>
+  </a>
+</div>
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section class="tex2jax_ignore mathjax_ignore" id="stata-cheat-sheet">
+<h1>Stata Cheat Sheet<a class="headerlink" href="#stata-cheat-sheet" title="Link to this heading">¶</a></h1>
+<p>Keyboard Shortcuts</p>
+<ul class="simple">
+<li><p>Run whole file: ⇧⌘D (Shift+Command+D)</p>
+<ul>
+<li><p>also if we select multiple lines (e.g for preserve restore)</p></li>
+</ul>
+</li>
+<li><p>Run one line: ⇧⌘E (Shift+Command+E)</p></li>
+</ul>
+<section id="preamble">
+<h2>Preamble<a class="headerlink" href="#preamble" title="Link to this heading">¶</a></h2>
+<p>Clean Memory</p>
+<div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">clear mata</span> 
+<span class="k">capture log close</span>
+<span class="k">clear</span>
+</pre></div>
+</div>
+<p>Files and Folders</p>
+<div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="c1">* Change Working Directory</span>
+<span class="k">cd</span> <span class="s">"~/Documents/psme/metrics/tutorial/TD1"</span>
+
+<span class="c1">* Global Variables for STATA </span>
+<span class="k">global</span> dirraw <span class="s">"./data/raw/"</span>
+<span class="k">global</span> dirdata  <span class="s">"./data/proc/"</span>
+<span class="k">global</span> dirlog <span class="s">"./data/log"</span>
+<span class="k">global</span> dirtab <span class="s">"./tables/"</span>
+<span class="k">global</span> dirfig <span class="s">"./figures/"</span>
+
+<span class="c1">* Set Up Logging</span>
+<span class="k">log</span> using <span class="s">"</span><span class="vg">$dirlog</span><span class="s">/02_TD2"</span>,<span class="k"> replace</span> tex
+</pre></div>
+</div>
+</section>
+<section id="reading-data">
+<h2>Reading Data<a class="headerlink" href="#reading-data" title="Link to this heading">¶</a></h2>
+<p>CSV</p>
+<div class="highlight-stata notranslate"><div class="highlight"><pre><span></span>import delimited <span class="s">"</span><span class="vg">$dirraw</span><span class="s">/DP_LIVE_12092022080535603.csv"</span>,<span class="k"> clear</span>
+</pre></div>
+</div>
+<p>Excel</p>
+<div class="highlight-stata notranslate"><div class="highlight"><pre><span></span>import excel <span class="s">"</span><span class="vg">$dirraw</span><span class="s">/econ-gen-taux-inflation.xlsx"</span>, sheet(<span class="s">"Données"</span>) cellrange(A4:B39)<span class="k"> clear</span> firstrow
+</pre></div>
+</div>
+<p>DTA</p>
+<div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="s">"</span><span class="vg">$dirraw</span><span class="s">/BD.dta"</span>,<span class="k"> clear</span>
+</pre></div>
+</div>
+</section>
+<section id="describing-data">
+<h2>Describing Data<a class="headerlink" href="#describing-data" title="Link to this heading">¶</a></h2>
+<div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">codebook</span> BD01990 <span class="c1">// very detailed infos</span>
+
+<span class="k">summarize</span> BD01990 <span class="c1">// Summary statistics</span>
+
+<span class="k">describe</span> BD01990 <span class="c1">// Labels and types</span>
+</pre></div>
+</div>
+<p><strong>exisitng variables and obsvervations (list)</strong></p>
+<div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">list</span> 
+</pre></div>
+</div>
+<p><strong>Distrinct values (tabulate</strong>)</p>
+<div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">tabulate varlist</span>
+</pre></div>
+</div>
+</section>
+<section id="cleaning-data">
+<h2>Cleaning Data<a class="headerlink" href="#cleaning-data" title="Link to this heading">¶</a></h2>
+<p><strong>Filter</strong>:</p>
+<div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">keep if</span> variable<span class="o">==</span><span class="s">"FRA"</span>
+</pre></div>
+</div>
+<p><strong>Drop</strong>:</p>
+<div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">drop if</span> Tauxdinflation<span class="o">==</span>. 
+</pre></div>
+</div>
+<p><strong>Rename</strong> Column</p>
+<div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">rename</span> Année year
+renvars 
+</pre></div>
+</div>
+<p><strong>Convert</strong> year from string to numbers</p>
+<div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">destring</span> year,<span class="k"> replace</span>
+</pre></div>
+</div>
+<p><strong>Missing</strong></p>
+<div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">count if</span> missing variable
+</pre></div>
+</div>
+<p><strong>Subsets by</strong></p>
+<div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">by</span> variable
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>use a subset of a sumple,</p></li>
+</ul>
+<section id="descriptions">
+<h3>Descriptions<a class="headerlink" href="#descriptions" title="Link to this heading">¶</a></h3>
+<p><strong>Labels</strong></p>
+<div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">label</span> variable [<span class="s">"description"</span>]
+
+<span class="k">label</span> define lexp_d_lab <span class="m">1</span> <span class="s">"Young"</span> <span class="m">2</span> <span class="s">"Moderate"</span> <span class="m">3</span> <span class="s">"Old"</span>
+<span class="k">label</span> values lexp_d lexp_d_lab
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>For value labels: first define, then apply</p></li>
+<li><p>for variable description, apply directly</p></li>
+</ul>
+</section>
+</section>
+<section id="manipulation">
+<h2>Manipulation<a class="headerlink" href="#manipulation" title="Link to this heading">¶</a></h2>
+<p><strong>Ordering</strong></p>
+<div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">sort var</span>
+<span class="k">gsort var</span>
+<span class="k">bysort</span> 
+</pre></div>
+</div>
+<p><strong>Reshaping</strong></p>
+<div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">reshape</span> long coffee maize, i(country) j(year)
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Long = preferential in STATA</p></li>
+<li><p>year, coffee maize are created by the command</p>
+<ul>
+<li><p>e.g from coffee_2011, maize_2011, coffee_2012</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Checkpoints</strong></p>
+<div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">preserve</span> 
+...
+<span class="k">restore</span>
+</pre></div>
+</div>
+</section>
+<section id="transforming-data">
+<h2>Transforming Data<a class="headerlink" href="#transforming-data" title="Link to this heading">¶</a></h2>
+<p><strong>New columns (generate)</strong></p>
+<div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">generate</span> [type] newvar = []
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>can be done with functions etc</p></li>
+</ul>
+<p><strong>Replacing</strong></p>
+<div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">replace</span> variable = .<span class="k"> if</span> variable <span class="o">==</span> [missingval]
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>replace a variable with <code class="docutils literal notranslate"><span class="pre">.</span></code> if variable equals a certain value, e.g. 0</p></li>
+<li><p>similar to generate</p></li>
+</ul>
+<p><strong>new columns with transformation</strong></p>
+<div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">egen</span> [type] newvar = fcn() [if]
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>e.g average per student etc</p></li>
+</ul>
+<p>An example to create a categorical var</p>
+<div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">summarize</span> lexp
+<span class="k">gen</span> lexp_d = lexp 
+<span class="k">recode</span> lexp_d (<span class="m">50</span><span class="o">/</span><span class="m">59</span>=<span class="m">1</span>) (<span class="m">60</span><span class="o">/</span><span class="m">69</span>=<span class="m">2</span>) (<span class="m">70</span><span class="o">/</span><span class="m">79</span>=<span class="m">3</span>)
+
+<span class="k">label</span> define lexp_d_lab <span class="m">1</span> <span class="s">"Young"</span> <span class="m">2</span> <span class="s">"Moderate"</span> <span class="m">3</span> <span class="s">"Old"</span>
+<span class="k">label</span> val lexp_d lexp_d_lab
+
+<span class="k">tabulate</span> lexp_d
+</pre></div>
+</div>
+</section>
+<section id="combination-of-datasets">
+<h2>Combination of datasets<a class="headerlink" href="#combination-of-datasets" title="Link to this heading">¶</a></h2>
+<p><strong>Appending</strong></p>
+<div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">append</span> using filename
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>same variables!</p></li>
+</ul>
+<p><strong>Merging</strong></p>
+<div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">merge m</span>:n id using filename, ...
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>and a (unique) identifier</p></li>
+<li><p>merge codes (from new variable <code class="docutils literal notranslate"><span class="pre">_merge</span></code>)</p>
+<ul>
+<li><p>1 = in master</p></li>
+<li><p>2 = in second data</p></li>
+<li><p>3 = both</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="plots">
+<h2>Plots<a class="headerlink" href="#plots" title="Link to this heading">¶</a></h2>
+<p>Create a Line plot</p>
+<div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">line</span> value time, title(<span class="s">"Emission of CO2"</span>) subtitle(<span class="s">"France"</span>)
+</pre></div>
+</div>
+<p>Save it</p>
+<div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">graph</span> export <span class="s">"</span><span class="vg">$dirfig</span><span class="s">/Inflation_FRA.png"</span>,<span class="k"> replace</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          
+          
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Stata Cheat Sheet</a><ul>
+<li><a class="reference internal" href="#preamble">Preamble</a></li>
+<li><a class="reference internal" href="#reading-data">Reading Data</a></li>
+<li><a class="reference internal" href="#describing-data">Describing Data</a></li>
+<li><a class="reference internal" href="#cleaning-data">Cleaning Data</a><ul>
+<li><a class="reference internal" href="#descriptions">Descriptions</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#manipulation">Manipulation</a></li>
+<li><a class="reference internal" href="#transforming-data">Transforming Data</a></li>
+<li><a class="reference internal" href="#combination-of-datasets">Combination of datasets</a></li>
+<li><a class="reference internal" href="#plots">Plots</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../../_static/documentation_options.js?v=245627df"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/scripts/furo.js?v=46bd48cc"></script>
+    <script src="../../_static/translations.js?v=9bf55d28"></script>
+    </body>
+</html>
