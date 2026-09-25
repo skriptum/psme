@@ -8,9 +8,9 @@ Prof: Maria Del Carmen Camacho-Perez ([carmen.camacho@psemail.eu](carmen.camacho
 
 Assessment:
 
-- 25% Midterm
+- 50% Midterm (SOLOW!)
 - 25% own Project, applying Solow to a topic of our heart
-- 50% Final Exam
+- 25% Final Exam
 
 
 
