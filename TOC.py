@@ -44,16 +44,23 @@ for dir in dirs_sem1.keys():
 
         elif file not in ignores:
             if file[-3:] == ".md": # only add markdown files, not directories
-                date = file[:10]
-                date = date.replace("-", "/")
-                filename = file[11:-3]
+                # Files with a date
+                if file[:10].count("-") == 2:
+
+                    date = file[:10]
+                    date = date.replace("-", "/")
+                    date = f"[{date}]"
+                    filename = file[11:-3]
+                else:
+                    date = None
+                    filename = file[:-3]
                 filename = filename.replace("_", " ")
                 filename = filename.replace("-", " ")
 
                 # add the file to the list
 
                 result_list.append(f"      - file: {dir}/{file}")
-                result_list.append(f"        title: {filename} [{date}] ")
+                result_list.append(f"        title: {filename} {date if date else ''}")
 
 
 with open("_toc.yml", "w") as f:
