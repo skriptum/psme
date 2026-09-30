@@ -3,7 +3,7 @@
   <head><meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Stichwortverzeichnis" href="../genindex.html"><link rel="search" title="Suche" href="../search.html"><link rel="next" title="Macroeconomics" href="../macro/README.html"><link rel="prev" title="15.09.2026 OLS" href="2026-09-15-OLS1.html">
+<link rel="index" title="Stichwortverzeichnis" href="../genindex.html"><link rel="search" title="Suche" href="../search.html"><link rel="next" title="Macroeconomics" href="../macro/README.html"><link rel="prev" title="29.09.2026 OLS II" href="2026-09-29-OLS2.html">
         <link rel="canonical" href="https://psme.martenw.com/metrics/STATA_Sheet.html">
 
     <!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
@@ -200,6 +200,7 @@
 <ul class="current">
 <li class="toctree-l1 current has-children"><a class="reference internal" href="README.html">metrics</a><input aria-label="Toggle navigation of metrics" checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="2026-09-15-OLS1.html">OLS1 [2026/09/15]</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2026-09-29-OLS2.html">OLS2 [2026/09/29]</a></li>
 <li class="toctree-l2 current current-page"><a class="current reference internal" href="#">STATA Sheet</a></li>
 </ul>
 </li>
@@ -398,6 +399,8 @@ renvars
 <h2>Transforming Data<a class="headerlink" href="#transforming-data" title="Link to this heading">¶</a></h2>
 <p><strong>New columns (generate)</strong></p>
 <div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">generate</span> [type] newvar = []
+<span class="c1">// Example</span>
+<span class="k">gen</span> popgrowthnew = (popgrowth <span class="o">&gt;</span> <span class="m">1</span>)<span class="k"> if</span> popgrowth <span class="o">!=</span> .
 </pre></div>
 </div>
 <ul class="simple">
@@ -413,6 +416,8 @@ renvars
 </ul>
 <p><strong>new columns with transformation</strong></p>
 <div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">egen</span> [type] newvar = fcn() [if]
+<span class="c1">// Example</span>
+<span class="k">bysort</span> Country:<span class="k"> egen</span> mean_popgrowth =<span class="k"> mean</span>(popgrowth)
 </pre></div>
 </div>
 <ul class="simple">
@@ -464,6 +469,14 @@ renvars
 <div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">graph</span> export <span class="s">"</span><span class="vg">$dirfig</span><span class="s">/Inflation_FRA.png"</span>,<span class="k"> replace</span>
 </pre></div>
 </div>
+<p>Customisation:</p>
+<div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">twoway</span> (scatter lexp BD02000) (lfitci lexp BD02000), <span class="c1">// Creates a scatter plot and the 95% CI</span>
+title(<span class="s">"Life Expectancy vs Brain Drain"</span>) 
+xtitle(<span class="s">"Brain Drain"</span>) 
+ytitle(<span class="s">"Life Expectancy "</span>)
+</pre></div>
+</div>
+<p>…</p>
 </section>
 </section>
 
@@ -481,14 +494,14 @@ renvars
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="2026-09-15-OLS1.html">
+          <a class="prev-page" href="2026-09-29-OLS2.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">15.09.2026 OLS</div>
+                <div class="title">29.09.2026 OLS II</div>
                 
               </div>
             </a>

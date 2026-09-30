@@ -3,11 +3,11 @@
   <head><meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Stichwortverzeichnis" href="../genindex.html"><link rel="search" title="Suche" href="../search.html"><link rel="next" title="23.09.2026 Monetary and Fiscal Policies" href="2026-09-23-Policy.html"><link rel="prev" title="Macroeconomics" href="README.html">
-        <link rel="canonical" href="https://psme.martenw.com/macro/2026-09-16-Intro.html">
+<link rel="index" title="Stichwortverzeichnis" href="../genindex.html"><link rel="search" title="Suche" href="../search.html"><link rel="next" title="Stata Cheat Sheet" href="STATA_Sheet.html"><link rel="prev" title="15.09.2026 OLS" href="2026-09-15-OLS1.html">
+        <link rel="canonical" href="https://psme.martenw.com/metrics/2026-09-29-OLS2.html">
 
     <!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
-        <title>Macroeconomics: National Accounts - PSME</title>
+        <title>29.09.2026 OLS II - PSME</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d111a655" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=7bdb33bb" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=8dab3a3b" />
@@ -198,15 +198,15 @@
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <p class="caption" role="heading"><span class="caption-text">Semester 1</span></p>
 <ul class="current">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../metrics/README.html">metrics</a><input aria-label="Toggle navigation of metrics" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../metrics/2026-09-15-OLS1.html">OLS1 [2026/09/15]</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../metrics/2026-09-29-OLS2.html">OLS2 [2026/09/29]</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../metrics/STATA_Sheet.html">STATA Sheet</a></li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="README.html">metrics</a><input aria-label="Toggle navigation of metrics" checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="2026-09-15-OLS1.html">OLS1 [2026/09/15]</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">OLS2 [2026/09/29]</a></li>
+<li class="toctree-l2"><a class="reference internal" href="STATA_Sheet.html">STATA Sheet</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current has-children"><a class="reference internal" href="README.html">macro</a><input aria-label="Toggle navigation of macro" checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul class="current">
-<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Intro [2026/09/16]</a></li>
-<li class="toctree-l2"><a class="reference internal" href="2026-09-23-Policy.html">Policy [2026/09/23]</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../macro/README.html">macro</a><input aria-label="Toggle navigation of macro" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../macro/2026-09-16-Intro.html">Intro [2026/09/16]</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../macro/2026-09-23-Policy.html">Policy [2026/09/23]</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../micro/README.html">micro</a><input aria-label="Toggle navigation of micro" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
@@ -237,7 +237,7 @@
         </a>
         <div class="content-icon-container">
           <div class="view-this-page">
-  <a class="muted-link" href="../_sources/macro/2026-09-16-Intro.md.txt" title="View this page">
+  <a class="muted-link" href="../_sources/metrics/2026-09-29-OLS2.md.txt" title="View this page">
     <svg><use href="#svg-eye"></use></svg>
     <span class="visually-hidden">View this page</span>
   </a>
@@ -255,91 +255,168 @@
           </label>
         </div>
         <article role="main" id="furo-main-content">
-          <section class="tex2jax_ignore mathjax_ignore" id="macroeconomics-national-accounts">
-<h1>Macroeconomics: National Accounts<a class="headerlink" href="#macroeconomics-national-accounts" title="Link to this heading">¶</a></h1>
+          <section class="tex2jax_ignore mathjax_ignore" id="ols-ii">
+<h1>29.09.2026 OLS II<a class="headerlink" href="#ols-ii" title="Link to this heading">¶</a></h1>
+<section id="variance">
+<h2>Variance<a class="headerlink" href="#variance" title="Link to this heading">¶</a></h2>
+<p>Empirical Variance of <span class="math notranslate nohighlight">\(y_i\)</span></p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[
+Var_N(y_i) = Var_N(\hat{y}_i+ \hat{u}_i) + \overbrace{Cov_N(\hat{y}_i+ \hat{u}_i)}^{=0}
+\]</div>
+</div>
 <blockquote>
-<div><dl class="simple myst">
-<dt>The System of National Accounts (SNA) is the internationally agreed standard set of recommendations on how to compile measures of economic activity</dt><dd><p><a class="reference external" href="https://unstats.un.org/unsd/nationalaccount/sna.asp">UN</a></p>
-</dd>
-</dl>
+<div><p><strong>ANOVA</strong> Total Variance = variance explained + unexplained</p>
 </div></blockquote>
-<p>=&gt; oftentimes central indicator of SNA: GDP</p>
-<section id="gdp">
-<h2>GDP<a class="headerlink" href="#gdp" title="Link to this heading">¶</a></h2>
-<p>Calculating GDP:</p>
 <ul class="simple">
-<li><p><strong>Expenditure</strong> Approach (C+I+G+(X-M))</p></li>
-<li><p><strong>Income</strong> Approach</p></li>
-<li><p><strong>Value-added</strong> approach</p></li>
+<li><p><strong>Total</strong> Sum of Squares (TSS): <span class="math notranslate nohighlight">\(Var(y_i) = \sum(y_i - \bar{y})^2\)</span></p></li>
+<li><p><strong>Explained</strong> Sum of Squares (ESS): <span class="math notranslate nohighlight">\(Var(y_i) = \sum(\hat{y}_i - \bar{y})^2\)</span></p></li>
+<li><p><strong>Residual</strong> Sum of Squares (SSR): <span class="math notranslate nohighlight">\(Var(y_i) = \sum(\hat{u_i})^2\)</span></p></li>
 </ul>
-<p>measured in:</p>
+<p>TSS = ESS + SSR</p>
+<section id="r-squared">
+<h3>R-squared<a class="headerlink" href="#r-squared" title="Link to this heading">¶</a></h3>
+<p><span class="math notranslate nohighlight">\(R^2\)</span> = Explained / Total = determines the model fit</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}
+R^2 = \frac{ESS}{TSS} = 1 - \frac{SSR}{TSS} \\
+= \frac{\frac{1}{n}\sum (X_i \beta_i-\bar{y})^2}{Var(y)} \\
+R^2 \in [0,1]
+\end{split}\]</div>
+</div>
+<p><strong>adjusted</strong> <span class="math notranslate nohighlight">\(R^2\)</span></p>
 <ul class="simple">
-<li><p><em>constant</em> (real) | <em>current</em> (nominal)</p></li>
-<li><p>$Dollars | LCU (Local Currency Unites)</p></li>
+<li><p>in a multiple regression, more coefficients = automatic increase in R^2</p></li>
+<li><p>adj. adjusts for that and calculates a more realisitc model fit</p></li>
 </ul>
-<p>Problems with GDP:</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[
+adj. \ R^2 = 1- \frac{SSR / (n-K-1)}{TSS/(n-1)}
+\]</div>
+</div>
+</section>
+</section>
+<section id="interpretation">
+<h2>Interpretation<a class="headerlink" href="#interpretation" title="Link to this heading">¶</a></h2>
 <ul class="simple">
-<li><p>distributional implications</p></li>
-<li><p>informal markets</p></li>
-<li><p>environmental pollution</p></li>
-<li><p>improvements in non-marketable goods</p></li>
-<li><p>domestic labour</p></li>
-<li><p>distinction between merit / no-merit goods</p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{\beta_1} = \Delta \hat{y} / \Delta x\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\Delta \hat{y} = \hat{\beta_1} * \Delta x\)</span></p></li>
+<li><p>ceteribus paribus (other factors fixed)</p></li>
 </ul>
-<p>Alternatives:</p>
+<p><em>„if you increase x by one unit, what happens to y?“</em></p>
+<section id="dummy-variables">
+<h3>Dummy Variables<a class="headerlink" href="#dummy-variables" title="Link to this heading">¶</a></h3>
 <ul class="simple">
-<li><p>GNI = market value of goods produced by factors of production of country residents</p></li>
-<li><p>HDI = Human Development Index</p></li>
-<li><p>MPI = Multidimensional Poverty Index</p></li>
-<li><p>…</p></li>
+<li><p>for discrete values (e.g sex)</p></li>
+<li><p>takes value 0 or 1</p></li>
+</ul>
+<p>changes the intercept, not the slope!</p>
+<p><img alt="img" src="../_images/2026-09-29_09-40-41.png" /></p>
+</section>
+<section id="transformations">
+<h3>Transformations<a class="headerlink" href="#transformations" title="Link to this heading">¶</a></h3>
+<section id="measurment-units-x">
+<h4>measurment units (x)<a class="headerlink" href="#measurment-units-x" title="Link to this heading">¶</a></h4>
+<p><span class="math notranslate nohighlight">\(y = \beta_0 + \beta_1 x_1 + \epsilon\)</span></p>
+<p>Now: <span class="math notranslate nohighlight">\(x_1^* = c x_1\)</span></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(y = \beta_0 + \beta_1 \bold{c} \ x_1 + \epsilon\)</span></p></li>
+<li><p>all coefficients stay the same</p></li>
+<li><p>EX.: Dollar to cents etc.</p></li>
 </ul>
 </section>
-<section id="unemployment">
-<h2>Unemployment<a class="headerlink" href="#unemployment" title="Link to this heading">¶</a></h2>
-<p>Unemployment Rate: Unemployed workers / labour fource</p>
-<blockquote>
-<div><p><strong>Unemployed</strong>: working age, ready and willing to work, actively searching for a job, <em>unable to find one</em></p>
-</div></blockquote>
-<p>but: its a social construct! (decision on who to include in different categories)</p>
-<p>Problems of unemployment:</p>
+<section id="measurment-units-y">
+<h4>measurment units (y)<a class="headerlink" href="#measurment-units-y" title="Link to this heading">¶</a></h4>
+<p>New: <span class="math notranslate nohighlight">\(y^* = c \cdot y\)</span></p>
 <ul class="simple">
-<li><p>idle resources</p></li>
-<li><p>deteriation of skills</p></li>
-<li><p>social stress!</p></li>
+<li><p><span class="math notranslate nohighlight">\(c \cdot y = c \cdot \beta_0 + c \cdot \beta_1 x_1 +c \cdot  \epsilon\)</span></p></li>
+<li><p>Multiply all coefficients: <span class="math notranslate nohighlight">\(\beta_1^* = c \cdot \beta_1\)</span></p></li>
 </ul>
 </section>
-<section id="balance-of-payments">
-<h2>Balance of Payments<a class="headerlink" href="#balance-of-payments" title="Link to this heading">¶</a></h2>
-<p><strong>Current Account</strong></p>
-<p>= marketed and non-financial</p>
+<section id="logarithms">
+<h4>Logarithms<a class="headerlink" href="#logarithms" title="Link to this heading">¶</a></h4>
+<p>Reminder: <span class="math notranslate nohighlight">\(10^3=1000 \implies log_{10}(1000) = 3\)</span></p>
 <ul class="simple">
-<li><p>Goods and services</p></li>
-<li><p>International Income (Wages, Dividends)</p></li>
-<li><p>Current Transfers („money for nothing“, e.g Remittances)</p></li>
+<li><p>asymptotic: never reaches zero</p></li>
+<li><p><span class="math notranslate nohighlight">\(log(a*b) = log(a) + log(b)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(log(a/b) = log(a) - log(b)\)</span></p></li>
 </ul>
-<p><strong>Capital Account + Financial Account</strong></p>
+<p>Small changes:</p>
 <ul class="simple">
-<li><p>Capital account (intangibles)</p></li>
-<li><p>Financial Account</p>
-<ul>
-<li><p>Direct investment</p>
-<ul>
-<li><p>Business Investment &gt; 10% size of business</p></li>
-<li><p>Real Estate</p></li>
-<li><p>reinvested profits</p></li>
+<li><p><span class="math notranslate nohighlight">\(\Delta log(x) = log(x_1) - log(x_0) \approx \Delta x / x_0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(100 \Delta log(x) = \Delta % x\)</span></p></li>
 </ul>
-</li>
-<li><p>Portfolio investment (&lt; 10%)</p></li>
-<li><p>Other Investment</p></li>
-<li><p>Reserve assets (SDR, CB Gold, …)</p></li>
+<p>Interpretations:</p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Model</p></th>
+<th class="head"><p>Formula</p></th>
+<th class="head"><p>Interpretation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Linear</p></td>
+<td><p><span class="math notranslate nohighlight">\(y = ... + \beta x\)</span></p></td>
+<td><p>1 unit of x -&gt; <span class="math notranslate nohighlight">\(\beta\)</span> unit change in y</p></td>
+</tr>
+<tr class="row-odd"><td><p>Log-Linear</p></td>
+<td><p><span class="math notranslate nohighlight">\(log (y) = ... + \beta x\)</span></p></td>
+<td><p>1 unit of x -&gt; <span class="math notranslate nohighlight">\(100\cdot \beta\)</span> % change in y</p></td>
+</tr>
+<tr class="row-even"><td><p>Linear-Log</p></td>
+<td><p><span class="math notranslate nohighlight">\(y = \beta log(x)\)</span></p></td>
+<td><p>1 % change in x -&gt; <span class="math notranslate nohighlight">\(\beta/100\)</span> change in y</p></td>
+</tr>
+<tr class="row-odd"><td><p>Log-Log</p></td>
+<td><p><span class="math notranslate nohighlight">\(log (y) = ... + \beta log(x)\)</span></p></td>
+<td><p>1% change in x -&gt; <span class="math notranslate nohighlight">\(\beta\)</span> % change in y</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Why Log?</p>
+<ul class="simple">
+<li><p>more variance in lower / middle part of the distribution (e.g wages)</p></li>
+<li><p>extreme values dont influence as much</p></li>
+<li><p>independent of units</p></li>
 </ul>
-</li>
-<li><p>Errors</p></li>
+</section>
+</section>
+</section>
+<section id="non-linearities">
+<h2>Non-Linearities<a class="headerlink" href="#non-linearities" title="Link to this heading">¶</a></h2>
+<p>Modelling a non-linear model, e.g wage and age</p>
+<ul class="simple">
+<li><p>higher age = more wage</p></li>
+<li><p>but decreasing</p></li>
 </ul>
-<p><strong>Current Account + Capital Account + Financial Account = 0</strong></p>
-<p>Net international investment position = <em>External Assets - External Debts</em></p>
-<p><img alt="2026-09-16_19-42-43" src="../_images/2026-09-16_19-42-43.png" /></p>
-<p>US = needs a negative position to pay for its consumption</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[
+y = a + b_1 x  + b_2 x^2
+\]</div>
+</div>
+</section>
+<section id="interactions">
+<h2>Interactions<a class="headerlink" href="#interactions" title="Link to this heading">¶</a></h2>
+<p>Sometimes, two variables may be related and interact
+$<span class="math notranslate nohighlight">\(
+y = a + b_1 x  + b_2 x \cdot y
+\)</span><span class="math notranslate nohighlight">\(
+E.g Returns to Education (split by sex)
+\)</span><span class="math notranslate nohighlight">\(
+\ln wage = \beta_0 + \beta_1 educ + \beta_2 sex + \beta_3 educ*sex
+\)</span>$</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\beta_1\)</span> = average returns to education for men (reference group)</p></li>
+<li><p><span class="math notranslate nohighlight">\(\beta_1 + \beta_3\)</span> = average returns to education for women</p></li>
+<li><p><span class="math notranslate nohighlight">\(\beta_3\)</span> = absolute differences in returns (<em>without any control variables</em>)</p></li>
+<li><p><span class="math notranslate nohighlight">\(\beta_2\)</span> = average wage difference <em>with no education</em></p></li>
+</ul>
 </section>
 </section>
 
@@ -348,23 +425,23 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="2026-09-23-Policy.html">
+          <a class="next-page" href="STATA_Sheet.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">23.09.2026 Monetary and Fiscal Policies</div>
+                <div class="title">Stata Cheat Sheet</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="README.html">
+          <a class="prev-page" href="2026-09-15-OLS1.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Macroeconomics</div>
+                <div class="title">15.09.2026 OLS</div>
                 
               </div>
             </a>
@@ -398,10 +475,23 @@
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">Macroeconomics: National Accounts</a><ul>
-<li><a class="reference internal" href="#gdp">GDP</a></li>
-<li><a class="reference internal" href="#unemployment">Unemployment</a></li>
-<li><a class="reference internal" href="#balance-of-payments">Balance of Payments</a></li>
+<li><a class="reference internal" href="#">29.09.2026 OLS II</a><ul>
+<li><a class="reference internal" href="#variance">Variance</a><ul>
+<li><a class="reference internal" href="#r-squared">R-squared</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#interpretation">Interpretation</a><ul>
+<li><a class="reference internal" href="#dummy-variables">Dummy Variables</a></li>
+<li><a class="reference internal" href="#transformations">Transformations</a><ul>
+<li><a class="reference internal" href="#measurment-units-x">measurment units (x)</a></li>
+<li><a class="reference internal" href="#measurment-units-y">measurment units (y)</a></li>
+<li><a class="reference internal" href="#logarithms">Logarithms</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#non-linearities">Non-Linearities</a></li>
+<li><a class="reference internal" href="#interactions">Interactions</a></li>
 </ul>
 </li>
 </ul>
@@ -418,5 +508,7 @@
     <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../_static/scripts/furo.js?v=46bd48cc"></script>
     <script src="../_static/translations.js?v=9bf55d28"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
     </body>
 </html>

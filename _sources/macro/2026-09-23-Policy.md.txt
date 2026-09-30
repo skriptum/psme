@@ -126,3 +126,29 @@ if we use $\pi = \mu - g$ (inflation = money growth - growth),
 $$
 \frac{T-G}{Y} = (r-g) \frac{B}{Y}  - (\pi+g)\frac{M0}{PY}
 $$
+
+
+### Fiscal Default 
+
+Why do countries (not) default on their debt?
+
+- reputation
+- negative trade effects
+- impact on domestic financial system
+
+practice: more often than not
+
+
+
+---
+
+
+
+## Policy Comparison
+
+| Policy     | Advantages                                   | Disadvantages                 |
+| ---------- | -------------------------------------------- | ----------------------------- |
+| *Monetary* | no fiscal burden, flexibility, reversibility | zero lower bound, credibility |
+| *Fiscal*   | effectiveness during recession, equity,      | costs, time lags, politics    |
+
+Conflict of Objectives: INFLATION <--> GROWTH
