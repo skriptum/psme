@@ -26,7 +26,12 @@ NOTE: Read papers / book chapters each week!
 
 
 
+Group Projects:
 
+- Fill out form (before Oct 23)
+  - Names + Members + Dataset
+- Deadline: 4 January 
+- Note: be able to understand figure without text (and vice versa)
 
 
 

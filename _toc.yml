@@ -14,6 +14,8 @@ subtrees:
     
       - file: metrics/2026-09-15-OLS1.md
         title: OLS1 [2026/09/15]
+      - file: metrics/2026-09-29-OLS2.md
+        title: OLS2 [2026/09/29]
       - file: metrics/STATA_Sheet.md
         title: STATA Sheet 
 

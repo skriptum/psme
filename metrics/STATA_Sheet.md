@@ -180,6 +180,8 @@ restore
 
 ```stata
 generate [type] newvar = []
+// Example
+gen popgrowthnew = (popgrowth > 1) if popgrowth != .
 ```
 
 - can be done with functions etc
@@ -199,6 +201,8 @@ replace variable = . if variable == [missingval]
 
 ```stata
 egen [type] newvar = fcn() [if]
+// Example
+bysort Country: egen mean_popgrowth = mean(popgrowth)
 ```
 
 - e.g average per student etc
@@ -260,3 +264,15 @@ Save it
 graph export "$dirfig/Inflation_FRA.png", replace
 ```
 
+
+
+Customisation: 
+
+```stata
+twoway (scatter lexp BD02000) (lfitci lexp BD02000), // Creates a scatter plot and the 95% CI
+title("Life Expectancy vs Brain Drain") 
+xtitle("Brain Drain") 
+ytitle("Life Expectancy ")
+```
+
+...
