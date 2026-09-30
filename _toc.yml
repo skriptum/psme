@@ -27,6 +27,8 @@ subtrees:
         title: Intro [2026/09/16]
       - file: macro/2026-09-23-Policy.md
         title: Policy [2026/09/23]
+      - file: macro/2026-09-30-IS-TR.md
+        title: IS TR [2026/09/30]
 
     - file: micro/README
       title: "micro"
