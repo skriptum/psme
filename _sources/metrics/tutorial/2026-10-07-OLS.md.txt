@@ -1,0 +1,80 @@
+
+
+
+
+
+
+
+
+# OLS
+
+Characteristics of Estimators:
+
+- **unbiased**: $E(\hat{b}_1) = b_1$
+  - expected value = true parameters
+- **consistency**: $Pr(\hat{b}_1 \neq b_1)=0$
+  - variance goes to 0 if sample size to infinity
+- **efficient**: lowest variance
+
+
+
+Concepts
+
+- **Central limit theorem**: residuals and estimators = normal distributed 
+- **R-squared:** percentage of variability that explains the model
+- **F-statistic:** better than using a constant at explaining variation? 
+
+
+
+### Alternatives to R2
+
+Akaike Information Criteria (AIC)
+$$
+AIC = ln(\frac{SSR}{n}) + (k+1) \frac{2}{n}
+$$
+Bayes Information Criteria (BIC)
+$$
+AIC = ln(\frac{SSR}{n}) + (k+1) \frac{\ln n}{n}
+$$
+= punishes larger models harder
+
+Code: `estat ic`
+
+
+
+### Reminder Distributions
+
+- Normal
+- Chi-squared distributions
+- T-student distribution (changes with t)
+- Fisher distribution 
+
+
+
+when $N \to \infin$: estimators are normally distributed
+
+=> only with big sample p values / t tests can be trusted
+
+
+
+### Wald Test
+
+=> tests the null hypothesis that a set of parameters = some value
+
+test significance of multiple parameters simultaneously
+
+Code: `test exper exper2`
+
+
+
+### Outliers
+
+= extreme observations deviating significantly 
+
+- find intuitively (plots etc)
+- then understand (take a look at the data)
+- and remove / weigh them
+- or lust **log**
+
+
+

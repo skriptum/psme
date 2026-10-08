@@ -1,0 +1,95 @@
+# 07.10.2026 IS-TR with Balance of Payments
+
+until now: Primary Current A
+
+
+
+2 separate cases:
+
+- **fixed regime**: CB fixes exchange rate to other currency (dollar)
+  - changes in rates = corrected by CB
+  - => no monetary policy autonomy (i dictated by FX market)
+- **floating regime:** market based free floating 
+
+here: *small economy case* (no impact on ROW)
+
+
+
+
+
+
+
+Empirical: Types of MP
+
+- Dollar-fixed = 38
+- Euro-backed = 25
+- Monetary Aggregate Target = 26
+- Inflation Targeting Framework = 45
+
+
+
+> **Triffins Dilemma**: 
+>
+> - US needs to run BOP deficits to assure liquidity in the world economy
+> - but too many deficits = eroding value / confidence in reserve status
+>
+> Note: in a time of gold backed dollar...
+
+Triffins Solution: reduce deficits, raise interest rates
+
+
+
+> **Mundell Fleming Trilemma**: can never have all 3 of
+>
+> 1. monetary autonomy
+> 2. fixed regime
+> 3. free capital mobility
+
+Ex: 1+3 (Europe); 1+2 (China), (2+3) Bosnia
+
+
+
+## Modeling
+
+Assumption: no capital controls
+
+- $i > i^*$: capital inflows
+- $i^* > i$: capital outflows
+
+=> International Financial Market = horizontal line on $(Y,i)$ plane
+
+Long-Term Parity: 
+$$
+(1+i_x)  = \frac{F_{x/y}}{S_{x/y}}(1+i_y)
+$$
+
+- $i_x; i_y$ = interest rate in country x ; y
+- $F_{x/y}$ = Forward exchange rate (in a year)
+- $S_{x/y}$ = Spot exchange rate 
+
+> LHS: I invest in domestic markets
+>
+> RHS: I invest in foreign markets today and convert back in 1 year from now.
+
+
+
+CB Policy
+
+- CB can conduct independent MP: lower rates
+- more demand from domestic actors: IS => right
+- but exchange rate = market based: appreciation of currency
+- lower foreign demand due to higher cost: IS => left
+
+=> no Fiscal Policy is possible anymore! (CB will always counteract)
+
+
+
+## Limitations
+
+- Perfect Capital Mobility Assumption
+- short-term focus
+- very simple financial markets
+- supply side missing
+
+
+
