@@ -62,6 +62,7 @@ for dir in dirs_sem1.keys():
                 result_list.append(f"      - file: {dir}/{file}")
                 result_list.append(f"        title: {filename} {date if date else ''}")
 
+        
 
 with open("_toc.yml", "w") as f:
     f.writelines(line + '\n' for line in result_list)

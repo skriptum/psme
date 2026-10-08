@@ -5,3 +5,4 @@ metrics/tutorial/**/data/raw/*.xlsx
 .venv
 _build
 __pycache__
+thesis/
