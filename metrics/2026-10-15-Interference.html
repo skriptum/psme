@@ -1,0 +1,595 @@
+<!doctype html>
+<html class="no-js" lang="de" data-content_root="../">
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Stichwortverzeichnis" href="../genindex.html"><link rel="search" title="Suche" href="../search.html"><link rel="next" title="Stata Cheat Sheet" href="STATA_Sheet.html"><link rel="prev" title="29.09.2026 OLS II" href="2026-09-29-OLS2.html">
+        <link rel="canonical" href="https://psme.martenw.com/metrics/2026-10-15-Interference.html">
+
+    <!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
+        <title>15.10.2026 Inference - PSME</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d111a655" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=7bdb33bb" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=8dab3a3b" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f2f2f2;
+  --color-code-foreground: #1e1e1e;
+  --color-brand-primary: #993358;
+  --color-brand-content: #993358;
+  --font-stack: Garamond, Georgia, serif;
+  --font-stack--monospace: Courier, monospace;
+  --font-stack--headings: Georgia, serif;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../README.html"><div class="brand">PSME</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../README.html">
+  
+  <span class="sidebar-brand-text">PSME</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder="Suche" name="q" aria-label="Suche">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Semester 1</span></p>
+<ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="README.html">metrics</a><input aria-label="Toggle navigation of metrics" checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="2026-09-15-OLS1.html">OLS1 [2026/09/15]</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2026-09-29-OLS2.html">OLS2 [2026/09/29]</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Interference [2026/10/15]</a></li>
+<li class="toctree-l2"><a class="reference internal" href="STATA_Sheet.html">STATA Sheet</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../macro/README.html">macro</a><input aria-label="Toggle navigation of macro" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../macro/2026-09-16-Intro.html">Intro [2026/09/16]</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../macro/2026-09-23-Policy.html">Policy [2026/09/23]</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../macro/2026-09-30-IS-TR.html">IS TR [2026/09/30]</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../macro/2026-10-07-IS-TR-BOP.html">IS TR BOP [2026/10/07]</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../macro/2026-10-14-Medium-run.html">Medium run [2026/10/14]</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../micro/README.html">micro</a><input aria-label="Toggle navigation of micro" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../micro/2026-09-17-Intro.html">Intro [2026/09/17]</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../growth/README.html">growth</a><input aria-label="Toggle navigation of growth" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../growth/2026-09-18-Intro.html">Intro [2026/09/18]</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="view-this-page">
+  <a class="muted-link" href="../_sources/metrics/2026-10-15-Interference.md.txt" title="View this page">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">View this page</span>
+  </a>
+</div>
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section class="tex2jax_ignore mathjax_ignore" id="inference">
+<h1>15.10.2026 Inference<a class="headerlink" href="#inference" title="Link to this heading">¶</a></h1>
+<blockquote>
+<div><p><strong>Statistical inference:</strong> <span class="math notranslate nohighlight">\(\hat{\beta}_0 \sim \beta_0\)</span>?</p>
+<p>are coeffients accurate representations of reality? (and to what extent)</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>True population: <span class="math notranslate nohighlight">\(y_i = X_i \beta + \epsilon_i\)</span></p></li>
+<li><p>Random Sample: <span class="math notranslate nohighlight">\(\hat{y} = X_i \hat{\beta} + \hat{\epsilon_i}\)</span></p></li>
+</ul>
+<p>Assumptions:</p>
+<ul class="simple">
+<li><p><strong>Linear in Parameters (not coefficients!)</strong>: expressable by combining betas</p></li>
+<li><p><strong>Random Sampling</strong>: from true pop</p></li>
+<li><p><strong>No perfect multicollinearity:</strong>  no regressor is combination of others</p></li>
+<li><p><strong>Zero Conditional Mean:</strong> <span class="math notranslate nohighlight">\(E(\epsilon_i | X_i) = 0\)</span></p>
+<ul>
+<li><p>Errors dont depend on any regressors</p></li>
+<li><p>Implies: <span class="math notranslate nohighlight">\(E(\epsilon) = 0\)</span> (Errors are random and zero)</p></li>
+</ul>
+</li>
+<li><p><strong>homoskedasticity</strong>: <span class="math notranslate nohighlight">\(Var(\epsilon_i | X_i) = \sigma^2\)</span></p>
+<ul>
+<li><p>Variance of Error is constant across observations</p></li>
+<li><p>„typical error is same for all individuals“</p></li>
+<li><p>e.g. wage ~ income learned:</p>
+<ul>
+<li><p>for poor and rich people, average error is 5%</p></li>
+</ul>
+</li>
+<li><p>often unrealistic</p></li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<div><p><strong>Gauss-Markov-Theorem</strong>: under these assumptions, OLS is BLUE (<em>Best linear unbiased estimator</em>)</p>
+</div></blockquote>
+<section id="standard-errors">
+<h2>Standard Errors<a class="headerlink" href="#standard-errors" title="Link to this heading">¶</a></h2>
+<p>= Precision of estimator</p>
+<ul class="simple">
+<li><p>Standard Deviation = depends on true error</p></li>
+<li><p>Standard Error = computed version from our estimates</p></li>
+</ul>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[
+SE(\hat{\beta}) = \sqrt{Var(\hat{\beta})}
+\]</div>
+</div>
+<p>Which is:</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\sqrt{Var(\hat{\beta})} = \sigma^2 (X'X)^{-1} \\
+\hat{\sigma}^2 = \frac{1}{n-K-1}\sum \hat{\epsilon}^2_i
+\end{split}\]</div>
+</div>
+<blockquote>
+<div><p><strong>Whats <span class="math notranslate nohighlight">\((X'X)^{-1}\)</span>?</strong> = inverse matrix of regressors. basically a condensed version of the whole data table</p>
+</div></blockquote>
+<p>For simple Regressions:</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[
+Var(\hat{\beta_1} | X) = \frac{\sigma^2}{\sum_i^n (x_i-\bar{x})^2}
+\]</div>
+</div>
+<p>Better (lower) when:</p>
+<ul class="simple">
+<li><p>higher n (larger sample with more information)</p></li>
+<li><p>more variation in x</p></li>
+<li><p>lower unexplained variation <span class="math notranslate nohighlight">\(\sigma^2\)</span></p></li>
+</ul>
+</section>
+<section id="t-statistic">
+<h2>t-statistic<a class="headerlink" href="#t-statistic" title="Link to this heading">¶</a></h2>
+<p>„Is my sample and coefficient just luck?“</p>
+<p>Test <span class="math notranslate nohighlight">\(H_0: \beta_k = \beta_{k,0}\)</span> (Null Hypothesis that beta = 0)</p>
+<p>Then:</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[
+t = \frac{\hat{\beta_k}- \beta_{k,0}}{SE(\hat{\beta_k})}
+\]</div>
+</div>
+<ul class="simple">
+<li><p>Numerator: Distance between estimate and null value</p></li>
+<li><p>Denominator: Sampling uncertainty</p></li>
+</ul>
+<p>t = how many SD is my estimate away from 0? (more = better)</p>
+<section id="students-t-test">
+<h3>Students t test<a class="headerlink" href="#students-t-test" title="Link to this heading">¶</a></h3>
+<p>Usual test = <span class="math notranslate nohighlight">\(H_0: \beta_k = 0\)</span></p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[
+\hat{t}_k = \frac{\hat{\beta_k}}{SE(\hat{\beta_k})}
+\]</div>
+</div>
+<ul class="simple">
+<li><p>with <span class="math notranslate nohighlight">\(\hat{t}_k = t_{n-K-1}\)</span></p></li>
+<li><p>Student distribution of number of degrees of freedom (n-K-1)</p></li>
+</ul>
+<p>Compare with t-table</p>
+<p><img alt="img" src="../_images/2026-10-15_15-58-51.png" /></p>
+<p><img alt="2026-10-15_15-57-05" src="../_images/2026-10-15_15-57-05.png" /></p>
+<p>Recipe: Test <span class="math notranslate nohighlight">\(H_0: H_0: \beta_k = 0\)</span> against <span class="math notranslate nohighlight">\(H_a: \beta_k \neq 0\)</span></p>
+<ol class="arabic simple">
+<li><p>Choose significance level alpha (often 5%)</p></li>
+<li><p>Compute df = n-K-1</p></li>
+<li><p>Read the two-sided critical value: <span class="math notranslate nohighlight">\(t_{1-a/2,df}\)</span></p></li>
+<li><p>Compare with observed / calculation</p></li>
+</ol>
+<p><span class="math notranslate nohighlight">\(|t_{obs}| &gt; t_{1-a/2,df} \implies\)</span> reject <span class="math notranslate nohighlight">\(H_0\)</span> (yayyy)</p>
+<p>Note: One sided tests are seldomly used (Two side = default)</p>
+</section>
+<section id="standard-values">
+<h3>Standard values<a class="headerlink" href="#standard-values" title="Link to this heading">¶</a></h3>
+<p>for large samples| many degrees of freedom</p>
+<ul class="simple">
+<li><p>1% confidence: 2.576</p></li>
+<li><p>5% confidence: 1.96</p></li>
+<li><p>10% confidence: 1.645</p></li>
+</ul>
+</section>
+</section>
+<section id="p-value">
+<h2>P-value<a class="headerlink" href="#p-value" title="Link to this heading">¶</a></h2>
+<p>smallest significance value at which <span class="math notranslate nohighlight">\(H_0\)</span> would be rejected</p>
+<ul class="simple">
+<li><p>e.g p-value = 0.65</p></li>
+<li><p>level below 0.65 = fail to reject <span class="math notranslate nohighlight">\(H_0\)</span></p></li>
+<li><p>above: easy rejection</p></li>
+</ul>
+<p>„how low can we go?“</p>
+</section>
+<section id="confidence-intervals">
+<h2>Confidence Intervals<a class="headerlink" href="#confidence-intervals" title="Link to this heading">¶</a></h2>
+<p>Confidence Intervals for the parameter</p>
+<blockquote>
+<div><p>**Explanation:**for 5%:</p>
+<p>if we repeat the sample 100 times, 95 times it would include the true <span class="math notranslate nohighlight">\(\beta\)</span></p>
+</div></blockquote>
+<p>Formula: <span class="math notranslate nohighlight">\(\hat{\beta} \pm critival\ value \times SE\)</span></p>
+<p>If 0 not in the bound = significant</p>
+</section>
+<section id="regression-table">
+<h2>Regression Table<a class="headerlink" href="#regression-table" title="Link to this heading">¶</a></h2>
+<p>In R, or somewhere else:</p>
+<p><img alt="img" src="../_images/2026-10-15_16-02-04.png" /></p>
+<ul class="simple">
+<li><p>Coef: Estimate for <span class="math notranslate nohighlight">\(\beta_0\)</span></p></li>
+<li><p>SE = Standard Error</p></li>
+<li><p>t = Coef / SE</p></li>
+<li><p>p value = lowest possible confidence</p></li>
+<li><p>CI = confidence intervalle (excludes 0)</p></li>
+</ul>
+<p><strong>for 5%: all state the same!</strong></p>
+</section>
+<section id="f-test">
+<h2>F-test<a class="headerlink" href="#f-test" title="Link to this heading">¶</a></h2>
+<p>Test whether all variables (except <span class="math notranslate nohighlight">\(\beta_0\)</span>) together = explain variation</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(H_0\)</span>: all slopes are null: <span class="math notranslate nohighlight">\(\beta_1 = \beta_2 = ... = 0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(H_1\)</span>: at least one <span class="math notranslate nohighlight">\(b_k \neq 0\)</span></p></li>
+</ul>
+<p>Idea: if H0 holds, dropping betas doesnt change R2</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[
+F = \frac{R^2_{ur}-R^2_r / q}{(1-R^2_ur)/(n-K-1)}
+\]</div>
+</div>
+<ul class="simple">
+<li><p>ur = unrestricted (with additional vars)</p></li>
+<li><p>r = restricted</p></li>
+<li><p>q = number of restrictions (different from n, as we can also test a subset of vars)</p></li>
+</ul>
+<p>Intuition</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[
+\frac{\text{improvement in fit per restriction}}{\text{unexplained variation per residual df}}
+\]</div>
+</div>
+<p>larger = better =&gt; reject <span class="math notranslate nohighlight">\(H_0\)</span></p>
+</section>
+<section id="heteroskedasticity">
+<h2>Heteroskedasticity<a class="headerlink" href="#heteroskedasticity" title="Link to this heading">¶</a></h2>
+<p>Graphic example: Errors depend on regressor</p>
+<p>Example: Variation in wages across education</p>
+<ul class="simple">
+<li><p>lower educated = probably earn more in one income band</p></li>
+<li><p>probbably errors are larger for higher educated</p></li>
+<li><p>e.g bankers and social workers (both highly educated)</p></li>
+</ul>
+<p><img alt="img" src="../_images/2026-10-15_16-55-55.png" /></p>
+<section id="breusch-pagan-test">
+<h3>Breusch-Pagan Test<a class="headerlink" href="#breusch-pagan-test" title="Link to this heading">¶</a></h3>
+<p>with the Breusch-Pagan Test</p>
+<ol class="arabic simple">
+<li><p>Estimate original OLS =&gt; <span class="math notranslate nohighlight">\(\hat{e_i}\)</span></p></li>
+<li><p>Square them =&gt; <span class="math notranslate nohighlight">\(\hat{e}_i^2\)</span></p></li>
+<li><p>Regress on x =&gt; <span class="math notranslate nohighlight">\(X \sim \hat{e}^2_i\)</span></p></li>
+<li><p>Test whether slope coefficients are jointly zero  =&gt; <span class="math notranslate nohighlight">\(\delta_1 = \delta_2 = ...=0\)</span> (-&gt; F-test)</p></li>
+</ol>
+<p>If H0 holds = no relations = homoskedastic</p>
+</section>
+<section id="white-test">
+<h3>White Test<a class="headerlink" href="#white-test" title="Link to this heading">¶</a></h3>
+<p>fancy BP Test</p>
+<ul class="simple">
+<li><p>include other functional forms of x (squared)</p></li>
+<li><p>and interact with other explanatory vars</p></li>
+</ul>
+<p><img alt="img" src="../_images/2026-10-15_17-03-05.png" /></p>
+<p>BP = White test with <span class="math notranslate nohighlight">\(\gamma_k = 0; \lambda_j = 0\)</span></p>
+</section>
+<section id="correcting-hsk-with-robust-se">
+<h3>Correcting HSK with Robust SE<a class="headerlink" href="#correcting-hsk-with-robust-se" title="Link to this heading">¶</a></h3>
+<p>2 options:</p>
+<ul class="simple">
+<li><p>OLS + robust standard errors (white matrix)</p></li>
+<li><p>corrected estimator: Generalized Least Squares (GLS)</p></li>
+</ul>
+<p>Focus on Robust SE</p>
+<ul class="simple">
+<li><p>Robust SE = very fancy maths with matrix and sandwich</p></li>
+<li><p>use these in all other calculations (except F!)</p></li>
+</ul>
+<p>STATA:</p>
+<div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">reg</span> y x1 x2 x3,<span class="k"> vce</span>(robust) <span class="c1">// Robust SE</span>
+<span class="k">estat hettest</span> <span class="c1">// BP Test</span>
+<span class="k">estat imtest</span>, white <span class="c1">// White Test</span>
+</pre></div>
+</div>
+<p><strong>Note</strong>: Coefficients are identical! only significance will change</p>
+</section>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="STATA_Sheet.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Stata Cheat Sheet</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="2026-09-29-OLS2.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">29.09.2026 OLS II</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">15.10.2026 Inference</a><ul>
+<li><a class="reference internal" href="#standard-errors">Standard Errors</a></li>
+<li><a class="reference internal" href="#t-statistic">t-statistic</a><ul>
+<li><a class="reference internal" href="#students-t-test">Students t test</a></li>
+<li><a class="reference internal" href="#standard-values">Standard values</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#p-value">P-value</a></li>
+<li><a class="reference internal" href="#confidence-intervals">Confidence Intervals</a></li>
+<li><a class="reference internal" href="#regression-table">Regression Table</a></li>
+<li><a class="reference internal" href="#f-test">F-test</a></li>
+<li><a class="reference internal" href="#heteroskedasticity">Heteroskedasticity</a><ul>
+<li><a class="reference internal" href="#breusch-pagan-test">Breusch-Pagan Test</a></li>
+<li><a class="reference internal" href="#white-test">White Test</a></li>
+<li><a class="reference internal" href="#correcting-hsk-with-robust-se">Correcting HSK with Robust SE</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../_static/documentation_options.js?v=245627df"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/scripts/furo.js?v=46bd48cc"></script>
+    <script src="../_static/translations.js?v=9bf55d28"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    </body>
+</html>
