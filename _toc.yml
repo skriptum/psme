@@ -16,8 +16,8 @@ subtrees:
         title: OLS1 [2026/09/15]
       - file: metrics/2026-09-29-OLS2.md
         title: OLS2 [2026/09/29]
-      - file: metrics/2026-10-14-Heteroskadisticity.md
-        title: Heteroskadisticity [2026/10/14]
+      - file: metrics/2026-10-15-Interference.md
+        title: Interference [2026/10/15]
       - file: metrics/STATA_Sheet.md
         title: STATA Sheet 
 
