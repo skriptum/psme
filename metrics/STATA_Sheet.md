@@ -276,3 +276,28 @@ ytitle("Life Expectancy ")
 ```
 
 ...
+
+
+
+## Conditionals (Ifs, Loops)
+
+**Loop**
+
+For vars
+
+```stata
+global X "labor capital wage output"
+foreach var in $X {
+	gen log`var' = log(`var')
+}
+
+```
+
+Along a line ...
+
+```stata
+forvalues i = start (step) end {
+  display "i"
+}
+```
+

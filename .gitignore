@@ -6,3 +6,5 @@ metrics/tutorial/**/data/raw/*.xlsx
 _build
 __pycache__
 thesis/
+
+*.dta
