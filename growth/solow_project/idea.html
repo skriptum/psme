@@ -7,7 +7,7 @@
         <link rel="canonical" href="https://psme.martenw.com/growth/solow_project/idea.html">
 
     <!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
-        <title>Solow Extension - PSME</title>
+        <title>Tanks or Teachers - PSME</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=d111a655" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=7bdb33bb" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=8dab3a3b" />
@@ -202,6 +202,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../metrics/2026-09-15-OLS1.html">OLS1 [2026/09/15]</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../metrics/2026-09-29-OLS2.html">OLS2 [2026/09/29]</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../metrics/2026-10-15-Interference.html">Interference [2026/10/15]</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../metrics/PROJECT.html">PROJECT</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../metrics/STATA_Sheet.html">STATA Sheet</a></li>
 </ul>
 </li>
@@ -259,34 +260,196 @@
           </label>
         </div>
         <article role="main" id="furo-main-content">
-          <section class="tex2jax_ignore mathjax_ignore" id="solow-extension">
-<h1>Solow Extension<a class="headerlink" href="#solow-extension" title="Link to this heading">¶</a></h1>
-<p>Idea:</p>
+          <section class="tex2jax_ignore mathjax_ignore" id="tanks-or-teachers">
+<h1>Tanks or Teachers<a class="headerlink" href="#tanks-or-teachers" title="Link to this heading">¶</a></h1>
+<p>Extension Solow Model</p>
 <ul class="simple">
-<li><p>include a military sector (stylised similar to a Government sector)</p>
+<li><p>idea: why do countries spend on military</p>
 <ul>
-<li><p>wasteful spending</p></li>
-<li><p>investment spending</p></li>
+<li><p>current NATO Expansion</p></li>
 </ul>
 </li>
-<li><p>as a % of GDP (NATO target etc)</p></li>
-<li><p>and a protection of capital stock with chance x of war</p></li>
+<li><p>there is a opportunity cost for it</p>
+<ul>
+<li><p>swords to ploughshares</p></li>
+<li><p>guns and butter</p></li>
+<li><p>today: Tanks or Teachers</p></li>
 </ul>
-<p>Process:</p>
+</li>
+</ul>
+<p>model the decision making process</p>
 <ul class="simple">
-<li><p>Develop Model: which risk of war makes it optimal?</p></li>
+<li><p>between military spending</p></li>
+<li><p>and human capital</p></li>
+</ul>
+<p>=&gt; military spending = protection</p>
+<ul class="simple">
+<li><p>protects the physical capital stock (Destruction)</p></li>
+<li><p>and human capital (loss of lifes)</p></li>
+</ul>
+<p>Simple Model</p>
+<ul class="simple">
+<li><p>following MRW</p></li>
+<li><p>with fixed tax amount, either going to military spending or education</p>
+<ul>
+<li><p>empirical: rising military atm lower education spending</p></li>
+</ul>
+</li>
+<li><p>function modelling the risk of war</p></li>
 </ul>
 <div class="math-wrapper docutils container">
 <div class="math notranslate nohighlight">
-\[
-\dot{k} = s\overbrace{(1-m)}^{\text{taxes}} k^a + \overbrace{\phi mk^a}^{\text{mil. inv.}} - (n+g+d)k - \overbrace{(\lambda (m) \cdot \mu)k}^{\text{war damage}}
-\]</div>
+\[\begin{split}
+D = (n+d) + z(m) \\
+z(m) =z_0e^{-\sigma m}
+\end{split}\]</div>
 </div>
 <ul class="simple">
-<li><p>m = military share of GDP</p></li>
-<li><p><span class="math notranslate nohighlight">\(\lambda(m)\)</span> = probability of war, depends on military share</p></li>
-<li><p><span class="math notranslate nohighlight">\(\mu\)</span> = fraction of capital destroyed in a war</p></li>
-<li><p><span class="math notranslate nohighlight">\(\phi\)</span> = share of Military budget into Producitve investments (dual use, infrastructure)</p></li>
+<li><p>n+d = normal depreciation</p></li>
+<li><p><span class="math notranslate nohighlight">\(z(m) = z_0 e^{-km}\)</span> = expected war loss</p>
+<ul>
+<li><p>chance of war</p></li>
+<li><p>and destruction in case of war</p></li>
+<li><p>Z0 = chance of war without military</p></li>
+<li><p><span class="math notranslate nohighlight">\(e^{-\sigma m}\)</span> = decreasing war loss due to military</p>
+<ul>
+<li><p>deterrence effect</p></li>
+<li><p>or better protection (e.g air defence)</p></li>
+</ul>
+</li>
+<li><p>sigma = factor defining it. in simple case: k=1</p></li>
+</ul>
+</li>
+<li><p>D = Deprecetion / Damage Factor</p></li>
+</ul>
+<p>Laws of Motion
+$<span class="math notranslate nohighlight">\(
+\dot{k} = s(1-t)y - (n+d)k - z(m)k \\= s(1-t)y - D(m) \cdot k \\
+\dot{h} = (t-m)y - D(m) \cdot h \\
+\)</span>$</p>
+<ul class="simple">
+<li><p>both stocsk are impacted by deprecation + destruction</p></li>
+<li><p>factor into equation as in normal version</p></li>
+</ul>
+<p>Steady State
+$<span class="math notranslate nohighlight">\(
+\dot{k} = 0 \implies k^* = \frac{s(1-t)}{D(m)}y \\
+h^* = \frac{(t-m)}{D(m)}y \\
+\)</span><span class="math notranslate nohighlight">\(
+Subst in \)</span>y = k^{\alpha} h^\beta<span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(
+y = [\frac{s(1-t)}{D(m)}y]^\alpha [\frac{(t-m)}{D(m)}y]^\beta \\
+  = y^{\alpha+\beta}[s(1-t)]^\alpha [t-m]^\beta D(m)^{-(\alpha+\beta)} \\
+  y^* = \{[s(1-t)]^\alpha [t-m]^\beta D(m)^{-(\alpha+\beta)} \}^{1/1-\alpha-\beta}
+\)</span>$</p>
+<ul class="simple">
+<li><p>investment into physical capital</p></li>
+<li><p>investment into human capital</p></li>
+<li><p>damage term, applying to both of them</p></li>
+</ul>
+<p>Maximize:</p>
+<ul class="simple">
+<li><p>we want to maximize y over military consumption</p>
+<ul>
+<li><p>bracket factor doesnt matter (no m)</p></li>
+<li><p>physical capital factor doesnt matter</p></li>
+</ul>
+</li>
+</ul>
+<p>Derivative of <span class="math notranslate nohighlight">\(D: D' = - \sigma z_0\)</span></p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}\begin{split}
+= \overbrace{[t-m]^\beta}^f \overbrace{D(m)^{-(a+b)}}^g\\\end{split}\\\begin{split}\overbrace{-\beta[t-m]^{\beta-1}}^{f'} \cdot \overbrace{D(m)^{-(a+b)}}^{g} +
+\overbrace{[t-m]^{\beta}}^{f} \cdot \overbrace{-(\alpha+\beta) D(m)^{-(a+b)-1}D'}^{g'} \\
+\end{split}\end{aligned}\end{align} \]</div>
+</div>
+<p>Factor out positive things
+$<span class="math notranslate nohighlight">\(
+[-\beta D - (\alpha+\beta)(t-m) D'] \cdot (t-m)^{\beta-1} D(m)^{-(a+b)-1}
+\)</span>$</p>
+<ul class="simple">
+<li><p>on both sides similar terms</p></li>
+<li><p>both negative exponents, aka both negative, combined both positive</p></li>
+<li><p>inside the bracket, the relevant things are left</p></li>
+</ul>
+<p>Extract and insert: <span class="math notranslate nohighlight">\(D = n+d+z(m)\)</span>, <span class="math notranslate nohighlight">\(D' = -\sigma z(m)\)</span>
+$<span class="math notranslate nohighlight">\(
+N(m) = [-\beta D - (\alpha+\beta)(t-m) D'] \\
+= - \beta[n+d+z(m)] 
+-(\alpha+\beta)(t-m) [-\sigma z(m)]
+\)</span><span class="math notranslate nohighlight">\(
+Optimum: N(m) = 0
+\)</span><span class="math notranslate nohighlight">\(
+(\alpha+\beta)(t-m) \sigma z(m) = \beta[n+d+z(m)] \\
+\frac{(\alpha+\beta)\sigma z(m)}{n+d+z(m)} = \frac{\beta}{(t-m)}
+\)</span>$
+Intuitive explanation</p>
+<ul class="simple">
+<li><p>right = cost of tanks</p>
+<ul>
+<li><p>dependent on improtance of human capital</p></li>
+<li><p>and share of taxes spent on military</p></li>
+</ul>
+</li>
+<li><p>left = benefit of tanks</p>
+<ul>
+<li><p>Denom: higher m = lower z = lower destruction</p></li>
+<li><p>Nom: higher chance of war = higher benefit</p>
+<ul>
+<li><p>(a+b) = both stocks combined, protection</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>military spending: <span class="math notranslate nohighlight">\(m^* &gt; 0\)</span> IF N(m) &gt; 0</p>
+<ul class="simple">
+<li><p>aka MB &gt; MC of tanks</p></li>
+</ul>
+<p>rearrange
+$<span class="math notranslate nohighlight">\(
+N(0) = -\beta[n+d+z(0)]-(\alpha+\beta)t[-\sigma z(0)] \\
+= z_0 [-\beta + (\alpha+\beta)t \sigma ] - \beta(n+d) &gt; 0 \\
+z_0 &gt; \frac{-\beta(n+d)}{(\alpha+\beta)\sigma t-\beta}
+\)</span>$
+= Critical Value for Military</p>
+<p>Numerical Solving</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\alpha = \beta = 1/3\)</span></p></li>
+<li><p>(n+d) = 0.05</p></li>
+<li><p>sigma = 1</p></li>
+<li><p>t = total taxes</p></li>
+</ul>
+<p>first of all: RHS only positive if
+$<span class="math notranslate nohighlight">\(
+(\alpha+\beta) \sigma t - \beta &gt; 0 \\
+(\alpha+\beta) \sigma t &gt; \beta \\ 
+\implies t &gt; 0.5
+\)</span>$
+Only if tax rate in economy is &gt; 50%, military spending is worth it</p>
+<ul class="simple">
+<li><p>Otherwise: not really</p></li>
+<li><p>Take a numerical example with a higher sigma</p>
+<ul>
+<li><p>to illustrate these examples</p></li>
+<li></li>
+</ul>
+</li>
+</ul>
+<p>Policymakers:</p>
+<ul class="simple">
+<li><p>in this example: build assumptions about z_0 and sigma</p>
+<ul>
+<li><p>Sigma = deterrence effect</p>
+<ul>
+<li><p>nuclear bombs: infinity</p></li>
+</ul>
+</li>
+<li><p>z_0: how realistic is a war risk at this moment</p></li>
+</ul>
+</li>
+<li></li>
 </ul>
 </section>
 
