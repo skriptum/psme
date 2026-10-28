@@ -18,6 +18,10 @@ subtrees:
         title: OLS2 [2026/09/29]
       - file: metrics/2026-10-15-Interference.md
         title: Interference [2026/10/15]
+      - file: metrics/2026-10-21-Functional-Form.md
+        title: Functional Form [2026/10/21]
+      - file: metrics/PROJECT.md
+        title: PROJECT 
       - file: metrics/STATA_Sheet.md
         title: STATA Sheet 
 

@@ -1,0 +1,32 @@
+---
+title: "Tanks or Textbooks?"
+subtitle: "Introducing Military spending into the Solow"
+institute: "Panthéon-Sorbonne"
+author: "Marten WALK"
+format: 
+  beamer:
+    theme: Boadilla
+    colortheme: beaver
+---
+
+
+
+
+
+# Motivation
+
+
+
+NATO
+
+
+
+Historic: Guns or Butter
+
+
+
+Religious: Swords into ploughshares
+
+
+
+# Model
