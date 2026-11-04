@@ -1,0 +1,67 @@
+---
+title: "Macroeconomic commentary on the chinese trade surplus"
+author: "Marten WALK"
+papersize: a4
+subtitle: "Université Panthéon-Sorbonne"
+abstract: |
+  article: [https://www.reuters.com/world/asia-pacific/chinas-exports-surge-363-yy-september-imports-up-31-2026-10-14/](https://www.reuters.com/world/asia-pacific/chinas-exports-surge-363-yy-september-imports-up-31-2026-10-14/")
+  
+  published: 14/10/2026
+  
+  accessed: 01/11/2026
+  
+  word count: 931 words
+bibliography: macro.bib
+link-citations: true
+format: pdf
+---
+
+{{< pagebreak >}}
+
+{{< include article.md >}}
+
+{{< pagebreak >}}
+
+# Commentary
+
+The chinese trade balance is on track for a record surplus this year. As @zhangChinasSeptemberExports2026 report, it is expected to exceed $1 trillion in 2026, surpassing last years record surplus. Driven by global demand for green technology and semiconductors, these exports are set to play a significant role in achieving the annual growth target of 4.5% to 5%.  
+
+But how does the transition from higher exports to growth work? To answer this question, I will apply the IS-LM model, first setting out its predictions for an export boom and then asking whether China’s experience matches them. 
+
+## A trade shock in the Textbook model
+
+The IS-TR-Mundell-Fleming model (compare [@burdaMacroeconomicsEuropeanText2022], ch. 11) extends the standard IS-LM model of a closed economy to include the international financial market (IFM). 
+
+In the model with a floating exchange rate, such as in China [^1], an increase in exports has the following effects (see @FigA): 
+
+[^1]: The IMF refers to the chinese monetary regime as "managed floating exchange rate" [@dasChinasEvolvingExchange2019]
+
+First, it shifts the IS curve to the right ($IS_1 \to IS_2$), as exports form part of the Primary Current Account ($PCA = X-M$). The resulting increase in output widens the output gap, generating inflationary pressures as producers respond to stronger demand by raising prices. A central bank following the Taylor Rule (TR) would then react by increasing interest rates. In Figure A, this adjustment is represented by the movement from point A to point B along the upward-sloping TR curve.
+
+At point B, the domestic interest rate is above the IFM Line ($i_1>i_0$). The interest rate differential attracts foreign investment seeking higher returns. To invest in domestic assets, foreign investors must acquire the domestic currency, the renminbi in China's case. The resulting capital inflows put upward pressure on the currency, and cause it to appreciate. This in turn reduces external competitiveness of chinese exports and increase competitiveness of imports. Consequently, the PCA and desired demand decline, shifting the IS curve back to the left. This adjustment continues until the economy returns to its initial equilibrium at point A (see @FigB).
+
+To conclude: an increase in the PCA has no lasting effect on output. In the equilibrium, output is only determined by the intersection of the TR and IFM curves. Trade surpluses will ultimately be neutralised by the central banks monetary policy response.
+
+Why, then, does the predicted adjustment not occur in China, which has recorded persistent trade surpluses for more than a decade [^2]?
+
+[^2]: as deomonstrated by @lavenantHowBigChinas2026
+
+## Adapting the model to China
+
+The textbook model rests on several assumptions, two of which are particularly difficult to reconcile with China's economic environment.
+
+First, the model assumes perfect capital mobility and interest rate parity, which are reflected in the horizontal IFM curve. In China, however, capital controls restrict the free movement of capital across borders (@**XX**). Furthermore, China's managed exchange-rate regime allows the authorities to influence the renminbi's value, potentially preventing the appreciation (the article refers to the concerns about competitive currency devaluations). Consequently, the IFM relationship would be less restrictive in practice than the textbook model suggests.
+
+Second, the model assumes that the central bank follows a Taylor Rule. This implies that an increasing output gap generates inflationary pressure, prompting the central bank to raise interest rates. However, this relationship appears weaker in China. The article mentions rising factory-gate prices, but that consumer inflation has remained relatively subdued, suggesting a limited pass-through of production costs to consumer prices. Moreover, the benchmark Loan Prime Rate of the Peoples Bank of China has remained unchanged for more than 17 months (@ChinaSetLeave2026). This may indicate that the central Bank does not respond to inflationary pressures with a conventional Taylor Rule. 
+
+Together, this could be illustrated by slightly adjusting the diagram in @Fig2. The TR curve is drawn flatter, almost horizontally, to reflect the weaker response of monetary policy to the output gap. The IFM line is represented as a dashed line to indicate that the relationship between domestic and international interest rates is less strict due to capital controls.
+
+In this model, following an increase in foreign demand for exports, the IS curve shifts to the right. Since the central bank does not significantly increase interest rates ($i_0 \approx i_1$) and the managed exchange rate limits the usual currency appreciation, the adjustment predicted by the textbook model is weakened. The economy can therefore reach the new point B, where output is higher than at the initial equilibrium A ($Y_B > Y_A$).
+
+However, this figure is purely illustrative. The weakened relationship underlying the IFM line can hardly be represented in the graphic, and the functional form of the Central Bank response might not be linear. Other monetary policy objectives, which are not included in the Taylor Rule, can aslo not be represented in this model. The actual shape of both relationships is therefore more complex than the diagram suggests.
+
+## Conclusion
+
+In conclusion, the IS-LM-Mundell Fleming model predicts that an increase in exports will eventually be offset by currency appreciation, bringing output back to its initial level. However, China's capital controls and distinct monetary policy framework weaken the adjustment mechanisms assumed by the model. This helps explain how China has maintained substantial trade surpluses over recent years, which may persist as foreign demand for Chinese goods remains strong (as analysts cited in @zhangChinasSeptemberExports2026 suggest). Consequently, policymakers in Brussels and Washington cannot expect a natural adjustment to solve their problems with the chinese trade surplus.
+
+{{< pagebreak >}}
