@@ -202,6 +202,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../../metrics/2026-09-15-OLS1.html">OLS1 [2026/09/15]</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../metrics/2026-09-29-OLS2.html">OLS2 [2026/09/29]</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../metrics/2026-10-15-Interference.html">Interference [2026/10/15]</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../metrics/2026-10-29-Endogeneity.html">Endogeneity [2026/10/29]</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../metrics/2026-11-04-Panel.html">Panel [2026/11/04]</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../metrics/PROJECT.html">PROJECT</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../metrics/STATA_Sheet.html">STATA Sheet</a></li>
 </ul>
@@ -356,7 +358,7 @@ y = [\frac{s(1-t)}{D(m)}y]^\alpha [\frac{(t-m)}{D(m)}y]^\beta \\
 </ul>
 </li>
 </ul>
-<p>Derivative of <span class="math notranslate nohighlight">\(D: D' = - \sigma z_0\)</span></p>
+<p>Derivative of <span class="math notranslate nohighlight">\(D: D' = - \sigma z(m)\)</span></p>
 <div class="math-wrapper docutils container">
 <div class="math notranslate nohighlight">
 \[ \begin{align}\begin{aligned}\begin{split}
@@ -386,7 +388,7 @@ Optimum: N(m) = 0
 \)</span>$
 Intuitive explanation</p>
 <ul class="simple">
-<li><p>right = cost of tanks</p>
+<li><p>right = cost of tanks / benefit of teachers</p>
 <ul>
 <li><p>dependent on improtance of human capital</p></li>
 <li><p>and share of taxes spent on military</p></li>
@@ -430,13 +432,35 @@ $<span class="math notranslate nohighlight">\(
 Only if tax rate in economy is &gt; 50%, military spending is worth it</p>
 <ul class="simple">
 <li><p>Otherwise: not really</p></li>
-<li><p>Take a numerical example with a higher sigma</p>
+</ul>
+<p>Example with a bit more useful rate:</p>
+<ul class="simple">
+<li><p>t = 13.9</p>
 <ul>
-<li><p>to illustrate these examples</p></li>
-<li></li>
+<li><p>average eduaction as % of GDP in OECD: 4.7%</p></li>
+<li><p>envisioned miliatry as % of GDP = 5%</p></li>
 </ul>
 </li>
+<li><p>sigma = 10</p>
+<ul>
+<li><p>one percent more military = reduce risk by 10%</p></li>
 </ul>
+</li>
+<li><p>everything as before</p></li>
+</ul>
+<p><img alt="screenshot 2026-10-28 at 18.18.26" src="../../_images/2026-10-28_18-18-54.png" /></p>
+<p>Plot:</p>
+<ul class="simple">
+<li><p>x = war risk</p></li>
+<li><p>y = m*</p></li>
+<li><p>different curves for sigma= 1,10,20</p></li>
+<li><p>with t = 0.139</p></li>
+</ul>
+<p>Plot 2</p>
+<ul class="simple">
+<li><p>Solow model with one example, and long term optimum</p></li>
+</ul>
+<p><img alt="steady_state" src="growth/solow_project/steady_state.png" /></p>
 <p>Policymakers:</p>
 <ul class="simple">
 <li><p>in this example: build assumptions about z_0 and sigma</p>

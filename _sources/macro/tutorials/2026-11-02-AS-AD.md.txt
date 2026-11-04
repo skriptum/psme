@@ -1,0 +1,27 @@
+# 02.11.2026 AS-AD
+
+Numerical Example: derive IS, TR, AD
+
+- DD = C+I+G
+  -  $100+0.2(Y-200)+200-1000i$
+- IS = Equilbrium of DD and Y
+- Y = DD 
+  - $Y = 637.5-1250i$
+  - $i = 0.51 - 0.0008Y$
+- TR: $i = \bar{i}+ a(i-\bar{i}) + b(\frac{Y-\bar{Y}}{Y})$
+  - $= 2+1.5(\pi-2)+0.5(\frac{Y-10000}{10000})$
+  - $= 2-3-0.5*(1) + 1.5 \pi + \frac{0.5}{10000}Y$
+  - $= -1.5+1.5\pi+\frac{0.5}{10000}Y$
+- AD: IS = TR
+  - $-1.5+1.5\pi+\frac{0.5}{10000}Y = i = 0.51 - 0.0008Y$
+  - $\pi =1.34-0.0056Y$
+- AS Curve: 
+  - PC: $\bar{\pi} -10(U-\bar{U})+s$
+  - U = $U-\bar{U} = -0.5(\frac{Y-\bar{Y}}{Y})$
+  - $2-10(-0.5(\frac{Y-10000}{10000}))$
+- Equilibirum: AS = AD
+  - $1.34-0.0056Y = 2+ \frac{5Y}{10000}-5$
+  - $Y = 3150.94$
+- Plug Y into either AS / AD
+  - AS: $\pi =1.34-0.0056 * 3150.94$
+  - $\pi =3,142-0.42$

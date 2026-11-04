@@ -84,7 +84,7 @@ Maximize:
   - bracket factor doesnt matter (no m)
   - physical capital factor doesnt matter
 
-Derivative of $D: D' = - \sigma z_0$
+Derivative of $D: D' = - \sigma z(m)$
 
 
 $$
@@ -115,7 +115,7 @@ $$
 $$
 Intuitive explanation
 
-- right = cost of tanks
+- right = cost of tanks / benefit of teachers
   - dependent on improtance of human capital 
   - and share of taxes spent on military
 - left = benefit of tanks
@@ -160,13 +160,35 @@ Only if tax rate in economy is > 50%, military spending is worth it
 
 
 
-- Take a numerical example with a higher sigma
-  - to illustrate these examples
-  - 
+Example with a bit more useful rate: 
+
+- t = 13.9
+  - average eduaction as % of GDP in OECD: 4.7%
+  - envisioned miliatry as % of GDP = 5%
+- sigma = 10
+  - one percent more military = reduce risk by 10%
+- everything as before
 
 
 
+![screenshot 2026-10-28 at 18.18.26](../../_images/2026-10-28_18-18-54.png)
 
+
+
+Plot: 
+
+- x = war risk
+- y = m*
+- different curves for sigma= 1,10,20
+- with t = 0.139
+
+
+
+Plot 2
+
+- Solow model with one example, and long term optimum
+
+![steady_state](./steady_state.png)
 
 Policymakers:
 
