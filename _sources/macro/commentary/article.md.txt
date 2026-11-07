@@ -1,6 +1,6 @@
-# China's September exports soar, putting $1 trillion trade surplus in sight
+{{< pagebreak >}}
 
-[https://www.reuters.com/world/asia-pacific/chinas-exports-surge-363-yy-september-imports-up-31-2026-10-14/](https://www.reuters.com/world/asia-pacific/chinas-exports-surge-363-yy-september-imports-up-31-2026-10-14/)
+# China's September exports soar, putting $1 trillion trade surplus in sight
 
 *by Yukun Zhang, Ellen Zhang and Liz Lee*
 

@@ -7,7 +7,7 @@
         <link rel="canonical" href="https://psme.martenw.com/growth/solow_project/text.html">
 
     <!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
-        <title>&lt;no title&gt; - PSME</title>
+        <title>Theoretical Framework - PSME</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=d111a655" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=7bdb33bb" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=8dab3a3b" />
@@ -262,7 +262,544 @@
           </label>
         </div>
         <article role="main" id="furo-main-content">
-          
+          <blockquote>
+<div><dl class="simple myst">
+<dt>The cost of one modern heavy bomber is this: a modern brick school in more than 30 cities. It is two electric power plants, each serving a town of 60,000 population. It is two fine, fully equipped hospitals. It is some fifty miles of concrete pavement.</dt><dd><p><strong>Dwight Eisenhower:</strong> „Chance for Peace“ 1953</p>
+</dd>
+</dl>
+</div></blockquote>
+<ul class="simple">
+<li><p>Military spending involves tradeoffs</p>
+<ul>
+<li><p>there is no such thing as free lunch</p></li>
+<li><p>opportunity cost</p></li>
+</ul>
+</li>
+<li><p>be it the „guns or butter“ debate</p>
+<ul>
+<li><p>&#64;XX</p></li>
+</ul>
+</li>
+<li><p>or even earlier: swords to ploughshares bible</p></li>
+<li><p>notion of peace dividend</p>
+<ul>
+<li><p>supplanted by: NATO new 5% target</p></li>
+<li><p>in time of limited fiscal budget = repriorities</p></li>
+</ul>
+</li>
+</ul>
+<p>=&gt; tradeoff between military spending and other budget factors</p>
+<ul class="simple">
+<li><p>Dwith D. Eisenhower in famous Chance for Peace speech</p>
+<ul>
+<li><p>one modern heavy bomber = 30 schools, electric power plants, pavement</p></li>
+</ul>
+</li>
+<li><p>often times: productive investments into education</p>
+<ul>
+<li><p>while in the long-term: human capital beneficial for social welfare</p></li>
+<li><p>in the shrot term military logic:</p>
+<ul>
+<li><p>no benefit</p></li>
+<li><p>physical capital and military capital = priority</p>
+<ul>
+<li><p>protection</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>some Lit (<strong>XX</strong>)</p>
+<ul>
+<li><p>miliatry resources</p></li>
+<li><p>deterrence</p></li>
+<li><p>taxation budget</p></li>
+</ul>
+</li>
+</ul>
+<p>This paper</p>
+<ul class="simple">
+<li><p>model the decision making process</p>
+<ul>
+<li><p>between military spending and HC</p></li>
+</ul>
+</li>
+<li><p>in a Solow model</p></li>
+<li><p>answer to the question: why do policymakers invest in the military?</p></li>
+</ul>
+<section id="theoretical-framework">
+<h1>Theoretical Framework<a class="headerlink" href="#theoretical-framework" title="Link to this heading">¶</a></h1>
+<p>Basic MRW</p>
+<ul class="simple">
+<li><p>Physical Capital</p></li>
+<li><p>Human Capital</p></li>
+<li><p>Labor</p></li>
+<li><p>Technology left outof it, for simplification</p></li>
+</ul>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[
+Y = K^\alpha H^\beta L^{1-\alpha-\beta}
+\]</div>
+</div>
+<p>Government Sector</p>
+<ul class="simple">
+<li><p>takes in fixed tax amount t from economy <span class="math notranslate nohighlight">\(tY =&gt; (1-t)s\)</span> etc</p></li>
+<li><p>either spent on military or education <span class="math notranslate nohighlight">\(t = m + e\)</span>, and <span class="math notranslate nohighlight">\(e,m &lt; t\)</span></p></li>
+</ul>
+<p>Spending on military</p>
+<ul class="simple">
+<li><p>protection role:</p>
+<ul>
+<li><p>physical capital (destruction in case of war)</p></li>
+<li><p>human capital (conscription = not going to school)</p></li>
+</ul>
+</li>
+<li><p>with no military, with a war, there would be higher loss, with a higher military share =&gt; lower</p></li>
+<li><p>takes away real resources from the economy</p></li>
+</ul>
+<p>We add the term to the laws of motion for per capita physical
+$<span class="math notranslate nohighlight">\(
+\dot{k} = \overbrace{s(1-t)y}^{\text{investment}} - \overbrace{(n+d)k}^{\text{depreciation}} - \overbrace{z(m)k}^{\text{war risk}}
+\)</span><span class="math notranslate nohighlight">\(
+equivalent for human capital
+\)</span><span class="math notranslate nohighlight">\(
+\dot{h} = \overbrace{(t-m)y}^{\text{education spending}} - (n+d)h-z(m)h
+\)</span>$
+both now feature a function that models the war risk</p>
+<ul class="simple">
+<li><p>negatively impacts the buildup of both capital stocks</p></li>
+<li><p>requirments for the function</p>
+<ul>
+<li><p>higher m =&gt; lower value of war risk <span class="math notranslate nohighlight">\(z'(m) &lt; 0\)</span></p></li>
+<li><p>but with diminishing returns of miliatry spending</p>
+<ul>
+<li><p>intuition: the marginal value of 1000th tank is lower than of the first</p></li>
+<li><p><span class="math notranslate nohighlight">\(z''(m) &gt; 0\)</span></p></li>
+</ul>
+</li>
+<li><p><span class="math notranslate nohighlight">\(z(0)\)</span> = should be the losses due to war in case of no military spending</p>
+<ul>
+<li><p>represent the baseline scenario of what would happen</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>functional form: very simple e function that fulfills the requirments
+$<span class="math notranslate nohighlight">\(
+z(m) = z_0 e^{-\sigma m}
+\)</span>$</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(z_0\)</span> = war loss without any military</p>
+<ul>
+<li><p>factors influecing this:</p>
+<ul>
+<li><p>perceived chance of war (<span class="math notranslate nohighlight">\(\lambda\)</span>)</p></li>
+<li><p>expected destruction in case of war (<span class="math notranslate nohighlight">\(u\)</span>)</p></li>
+<li><p>example: 25% chance of war, 40% destruction</p>
+<ul>
+<li><p>=&gt; z0 = 10%</p></li>
+</ul>
+</li>
+<li><p>not analyzed deeper, subsumed under this</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><span class="math notranslate nohighlight">\(e^{-\sigma m}\)</span> = decreasing effect of higher m</p>
+<ul>
+<li><p>can be interpreted in two different ways, either</p>
+<ul>
+<li><p>deterrence effect = bigger military = lower risk of being attacked</p></li>
+<li><p>protection effect = bigger military = can be better protect if war happens (e.g air defense systems)</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>sigma = efficiency of military spending</p>
+<ul>
+<li><p>how does increase in military spending reduce risk</p></li>
+<li><p>e.g a nuclear weapon probably has a high deterrence factor</p></li>
+<li><p>or a very patriot missile air defense system (PATRIOT) = very good protection</p></li>
+<li><p>or in more current terms: highly efficient drones might increase sigma</p>
+<ul>
+<li><p>very money efficient way</p></li>
+<li><p>while other types might be more wasteful</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>only one possible functional form</p>
+<ul>
+<li><p>but for this modelling exercise = one of the simple versions</p></li>
+<li><p>models policy choices and expectations</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="equilibrium">
+<h1>Equilibrium<a class="headerlink" href="#equilibrium" title="Link to this heading">¶</a></h1>
+<p>Where does the equilibrium of this model land? What are the steady state values k* and h*</p>
+<ul class="simple">
+<li><p>set both equal to zero</p></li>
+<li><p>in following math for simplification: D(m) = <span class="math notranslate nohighlight">\((n+d)+z(m)\)</span></p>
+<ul>
+<li><p>all factors negatively imacting the capital stocks</p></li>
+</ul>
+</li>
+</ul>
+<p>Solving physical capital
+$<span class="math notranslate nohighlight">\(
+\dot{k} = s(1-t)y - D(m)k \\
+k^* = \frac{s(1-t)}{D(m)}y
+\)</span><span class="math notranslate nohighlight">\(
+identical approach for human capital
+\)</span><span class="math notranslate nohighlight">\(
+h^* = \frac{(t-m)}{D(m)}y
+\)</span><span class="math notranslate nohighlight">\(
+now: the per-capita function
+\)</span><span class="math notranslate nohighlight">\(
+y = \frac{Y}{L} = \frac{K^\alpha H^\beta L^{1-\alpha-\beta}}{L^\alpha L^\beta L^{1-\alpha-\beta}} = k^\alpha h^\beta \\
+\)</span><span class="math notranslate nohighlight">\(
+Substituting eq 5 and 6
+\)</span><span class="math notranslate nohighlight">\(
+y^* = \bigg[\frac{s(1-t)}{D(m)}y^* \bigg]^\alpha \bigg[\frac{(t-m)}{D(m)}y^* \bigg]^\beta \\
+\)</span><span class="math notranslate nohighlight">\(
+simplifies to 
+\)</span><span class="math notranslate nohighlight">\(
+y^* = \{[s(1-t)]^\alpha [t-m]^\beta D(m)^{-(\alpha+\beta)} \}^{1/1-\alpha-\beta}
+\)</span>$</p>
+<p>Now: maximize this over the variable m we can influence <span class="math notranslate nohighlight">\(\frac{dy^*}{dm}\)</span></p>
+<ul class="simple">
+<li><p>what is the maximum y we can reach</p></li>
+<li><p>maximize per capital consumption <span class="math notranslate nohighlight">\(c = (1-t)(1-s)y\)</span></p>
+<ul>
+<li><p>t and s are fixed, not relevant for the maximization</p></li>
+</ul>
+</li>
+</ul>
+<p>in the function: only take the parts of the bracket dependent on m</p>
+<ul class="simple">
+<li><p>other parts = strictly positive, do not influence the maximum</p></li>
+</ul>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[
+f(m) \equiv \overbrace{[t-m]^\beta}^f \overbrace{D(m)^{-(a+b)}}^g
+\]</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="maximum-f-m-with-product-rule-overbrace-beta-t-m-beta-1-f-cdot-overbrace-d-m-a-b-g-overbrace-t-m-beta-f-cdot-overbrace-alpha-beta-d-m-a-b-1-d-g-set-f-m-0-alpha-beta-d-m-alpha-beta-1-d-m-t-m-beta-beta-t-m-beta-1-d-m-alpha-b-divide-by-t-m-beta-1-d-alpha-beta-1-alpha-beta-t-m-d-m-beta-d-m-rearrange-frac-alpha-beta-d-m-d-m-frac-beta-t-m-and-then-substituting-d-m-sigma-z-m-and-d-m-gives-the-final-overbrace-frac-alpha-beta-sigma-z-m-n-d-z-m-text-marginal-benefit">
+<h1>Maximum <span class="math notranslate nohighlight">\(f'(m)\)</span>, with product rule
+$<span class="math notranslate nohighlight">\(
+\overbrace{-\beta[t-m]^{\beta-1}}^{f'} \cdot \overbrace{D(m)^{-(a+b)}}^{g} +
+\overbrace{[t-m]^{\beta}}^{f} \cdot \overbrace{-(\alpha+\beta) D(m)^{-(a+b)-1}D'}^{g'} \\
+\)</span><span class="math notranslate nohighlight">\(
+Set \)</span>f‘(m) = 0<span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(
+-(\alpha+\beta)D(m)^{-(\alpha+\beta)-1}D'(m)(t-m)^{\beta} = \beta[t-m]^{\beta-1}D(m)^{-(\alpha+b)}
+\)</span><span class="math notranslate nohighlight">\(
+Divide by \)</span>(t-m)^{\beta-1} D^{-(\alpha+\beta)-1}<span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(
+-(\alpha+\beta)(t-m)D'(m)= \beta D(m)
+\)</span><span class="math notranslate nohighlight">\(
+Rearrange
+\)</span><span class="math notranslate nohighlight">\(
+\frac{-(\alpha+\beta)D'(m)}{D(m)} = \frac{\beta}{(t-m)}
+\)</span><span class="math notranslate nohighlight">\(
+And then substituting \)</span>D‘(m) = -\sigma z(m)<span class="math notranslate nohighlight">\( and \)</span>D(m)<span class="math notranslate nohighlight">\(, gives the final
+\)</span>$
+\overbrace{
+\frac{(\alpha+\beta)\sigma z(m)}{n+d+z(m)}
+}^{\text{Marginal Benefit}}<a class="headerlink" href="#maximum-f-m-with-product-rule-overbrace-beta-t-m-beta-1-f-cdot-overbrace-d-m-a-b-g-overbrace-t-m-beta-f-cdot-overbrace-alpha-beta-d-m-a-b-1-d-g-set-f-m-0-alpha-beta-d-m-alpha-beta-1-d-m-t-m-beta-beta-t-m-beta-1-d-m-alpha-b-divide-by-t-m-beta-1-d-alpha-beta-1-alpha-beta-t-m-d-m-beta-d-m-rearrange-frac-alpha-beta-d-m-d-m-frac-beta-t-m-and-then-substituting-d-m-sigma-z-m-and-d-m-gives-the-final-overbrace-frac-alpha-beta-sigma-z-m-n-d-z-m-text-marginal-benefit" title="Link to this heading">¶</a></h1>
+<p>\overbrace{\frac{\beta}{(t-m)}}^{\text{Marginal Cost}}
+$$
+with a very intuitive explanation</p>
+<ul class="simple">
+<li><p>LHS = Marginal Benefit of higher military spending</p>
+<ul>
+<li><p>both capital stocks are protected</p>
+<ul>
+<li><p>dependent on deterrence factor sigma</p></li>
+</ul>
+</li>
+<li><p>higher depreciation and war losses reduce the benefit</p></li>
+</ul>
+</li>
+<li><p>RHS = Marginal cost of higher miliatry spending</p>
+<ul>
+<li><p>human capital bears the brunt of this</p></li>
+<li><p>higher importance of human capital in economy</p>
+<ul>
+<li><p>higher MC</p></li>
+</ul>
+</li>
+<li><p>and the share spent on education</p>
+<ul>
+<li><p>if low, spending on teachers is very useful</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Military spending is rational if MB &gt; MC</p>
+<ul class="simple">
+<li><p>condition for interior optimoum: MB(0) &gt; MC(0)</p></li>
+<li><p>evalute, treshold value z_0</p></li>
+</ul>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="with-z-0-z-0-in-eq-15-frac-alpha-beta-sigma-z-0-n-d-z-0">
+<h1>with <span class="math notranslate nohighlight">\(z(0) = z_0\)</span>, in eq 15
+$$
+\frac{(\alpha+\beta)\sigma z_0}{n+d+z_0}<a class="headerlink" href="#with-z-0-z-0-in-eq-15-frac-alpha-beta-sigma-z-0-n-d-z-0" title="Link to this heading">¶</a></h1>
+<p>\frac{\beta}{t}
+$<span class="math notranslate nohighlight">\(
+Rearringing
+\)</span><span class="math notranslate nohighlight">\(
+(\alpha+\beta)\,\sigma\, t\, z_0 &gt; \beta\,(n+d) + \beta\, z_0 \\
+z_0\,\bigl[(\alpha+\beta)\,\sigma\, t - \beta\bigr] &gt; \beta\,(n+d)
+\)</span><span class="math notranslate nohighlight">\(
+Then:
+\)</span><span class="math notranslate nohighlight">\(
+z_0^{crit} = \frac{\beta\,(n+d)}{(\alpha+\beta)\,\sigma\, t - \beta}
+\)</span>$
+War risk has to be above a certain treshold of war risk to be worth it</p>
+<ul class="simple">
+<li><p>below: military spending is always detrimental</p></li>
+</ul>
+<section id="a-numerical-example">
+<h2>A Numerical Example<a class="headerlink" href="#a-numerical-example" title="Link to this heading">¶</a></h2>
+<p>To illustrate the model, I now continue with a numerical example</p>
+<p>add common factors</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\alpha = \beta = 1/3\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(n+d = 0.05\)</span></p></li>
+<li><p>a value for fixed tax amount t = 0.146</p>
+<ul>
+<li><p>world average tax revenue (&#64;<strong>XX</strong>) World Bank</p></li>
+<li><p>crude simplification, assumption that it is only spent on m and e</p></li>
+</ul>
+</li>
+</ul>
+<section id="setting-a-sigma">
+<h3>Setting a sigma<a class="headerlink" href="#setting-a-sigma" title="Link to this heading">¶</a></h3>
+<p>18: for z_0 to be between 0 and 1, we need a treshold sigma <span class="math notranslate nohighlight">\(\sigma &gt; 3.42\)</span>.</p>
+<ul class="simple">
+<li><p>simple version: would be to take sigma = 1: will always give a z_0 that is not feasible</p></li>
+<li><p>already one interpretation: simple model never gives any justification for military spending</p></li>
+<li><p>for simplicity, I assume sigma = 10, illustrate the workings of the model</p></li>
+<li><p>One % increase in m = lowers war risk by about 10% (quite high assumption)</p></li>
+</ul>
+<p>Footnote</p>
+<p>Elasticity of z to m
+$<span class="math notranslate nohighlight">\(
+\frac{z(m+\Delta m)}{z(m)} = \frac{z_0\,e^{-\sigma (m+\Delta m)}}{z_0\,e^{-\sigma m}} = e^{-\sigma\,\Delta m} \\
+1 - \frac{z(m+\Delta m)}{z(m)} = 1 - e^{-\sigma\,\Delta m}
+\)</span><span class="math notranslate nohighlight">\(
+with sigma=10 and \)</span>\Delta m = 0.01 \approx 9.5%$</p>
+</section>
+<section id="solving-numerically">
+<h3>Solving numerically<a class="headerlink" href="#solving-numerically" title="Link to this heading">¶</a></h3>
+<p>Solving with these values (Appendix Python Script) yields these values for different z0</p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-right"><p>War risk z0 (%)</p></th>
+<th class="head text-right"><p>Optimal military share m* (% GDP)</p></th>
+<th class="head text-right"><p>Education spending (% GDP)</p></th>
+<th class="head text-right"><p>Income gain vs m = 0 (%)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-right"><p>0.0</p></td>
+<td class="text-right"><p>0.00</p></td>
+<td class="text-right"><p>14.68</p></td>
+<td class="text-right"><p>0.0</p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>5.0</p></td>
+<td class="text-right"><p>2.96</p></td>
+<td class="text-right"><p>11.72</p></td>
+<td class="text-right"><p>5.0</p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>10.0</p></td>
+<td class="text-right"><p>5.39</p></td>
+<td class="text-right"><p>9.29</p></td>
+<td class="text-right"><p>21.3</p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>20.0</p></td>
+<td class="text-right"><p>7.13</p></td>
+<td class="text-right"><p>7.55</p></td>
+<td class="text-right"><p>46.7</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>As expected:</p>
+<ul class="simple">
+<li><p>higher war risk = shifting resources from education to military</p></li>
+<li><p>income gain over zero military spending rises</p></li>
+</ul>
+<p>5.3% = similar to NATO target of 5% military spending</p>
+<p>driven by a very high z0</p>
+<ul class="simple">
+<li><p>10% war risk</p>
+<ul>
+<li><p>25% chance of war in year, 40% destruction</p></li>
+<li><p>for comparison: World Bank estimate of ukraine destruction of physicalcapital (Link)</p>
+<ul>
+<li><p>Fall 2022, 6 months after invasion</p></li>
+<li><p>estimate 10% of capital stock to possible already have been destroyed</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>frontline states, but even then quite high</p></li>
+<li></li>
+</ul>
+</section>
+<section id="a-graphic-example">
+<h3>A graphic example<a class="headerlink" href="#a-graphic-example" title="Link to this heading">¶</a></h3>
+<p>plot this situation (Code in Appendix):</p>
+<ul class="simple">
+<li><p>military share as dependent variable</p></li>
+<li><p>steady state given this m</p></li>
+</ul>
+<p>At toptimum 5,3%:</p>
+<ul class="simple">
+<li><p>the 21.3% income gain over m=0</p></li>
+<li><p>human capital = already declining</p>
+<ul>
+<li><p>as military spending recudes education spending</p></li>
+<li><p>the protection effort is there for lower ms, maximum reached earlier</p></li>
+</ul>
+</li>
+<li><p>differnt for physical capital</p>
+<ul>
+<li><p>maximum at much higher m</p></li>
+<li><p>not impacted as much by higher military spending, only declines later</p>
+<ul>
+<li><p>crowding out effect = much later</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><img alt="" src="../../_images/steady_state_outputs.png" /></p>
+</section>
+</section>
+<section id="discussion">
+<h2>Discussion<a class="headerlink" href="#discussion" title="Link to this heading">¶</a></h2>
+<section id="limitations">
+<h3>Limitations<a class="headerlink" href="#limitations" title="Link to this heading">¶</a></h3>
+<p>Only flow variable m</p>
+<ul class="simple">
+<li><p>military spending = could be thought of as building up a stock</p></li>
+<li><p>just including the flow variable = transitions are not modellable</p></li>
+</ul>
+<p>=&gt; does not matter for the steady state analysis</p>
+<ul class="simple">
+<li><p>as stock will be proportional to the flow</p></li>
+<li><p>and complicates the model, new law of motion</p></li>
+</ul>
+<p>Disappearance of military spending</p>
+<ul class="simple">
+<li><p>spillover effects of military spending</p></li>
+<li><p>and income back to population, eg in the form of soldier pay</p></li>
+<li><p>National accounts:</p>
+<ul>
+<li><p>government consumption</p></li>
+<li><p>pay makes up only small share of military expenditure</p></li>
+<li><p>most into gear and machines</p>
+<ul>
+<li><p>without any productive use in the real economy</p></li>
+<li><p>tanks cant make your field</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>model could be extended</p>
+<ul class="simple">
+<li><p>a factor of military spending flowing back into consumption</p></li>
+<li><p>e.g with w = share of spending that flows back</p></li>
+<li><p>would change the magnitude of the equations, but not the direction</p></li>
+</ul>
+<p>And as any neoclassical model</p>
+<ul class="simple">
+<li><p>Assumptions of Rationality</p>
+<ul>
+<li><p>that m is a function of measurable inputs</p></li>
+<li><p>and does not follow any other considerations (military industrial complex)</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="politics">
+<h3>Politics<a class="headerlink" href="#politics" title="Link to this heading">¶</a></h3>
+<p>This model: can explain why there are political differences about military spending</p>
+<ul class="simple">
+<li><p>factions opposed to higher military spending = perceive war risk to be lower</p></li>
+<li><p>others = in favor of higher military spending</p></li>
+</ul>
+<p>the years of the peace dividend after Cold war</p>
+<ul class="simple">
+<li><p>common politial understanding that risk is quite low</p></li>
+<li><p>allows lower military spending m</p></li>
+</ul>
+<p>Investments into modern war equipment</p>
+<ul class="simple">
+<li><p>raise deterrence factor sigma = raises z</p></li>
+<li><p>nuclear bomb = <span class="math notranslate nohighlight">\(\sigma \to \infin\)</span></p>
+<ul>
+<li><p>deterrence of it is very high, as no one would ever dare to attack</p></li>
+</ul>
+</li>
+</ul>
+<p>INterest groups that rely on physical capital</p>
+<ul class="simple">
+<li><p>greater incentive to lobby for higher military spending</p></li>
+<li><p>as their optimal m is higher than whole society</p></li>
+</ul>
+</section>
+</section>
+<section id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>This approach: looked at how to model a trade off with education spending</p>
+<ul>
+<li><p>in a SOlow MRW model</p></li>
+</ul>
+</li>
+<li><p>dependent on war risk, deterrence factor, and tax base variables</p></li>
+<li><p>something we see in the current debate in european countries around the NATO target of 5% of GDP spent on military</p></li>
+</ul>
+<p>Optimal militry spending:</p>
+<ul class="simple">
+<li><p>balances marginal cost in form of reduced human capital investment</p></li>
+<li><p>with marginal benefit of the protection of both stocks of capital</p></li>
+</ul>
+<p>Numverical Results show that a value of military target of 5.3%, close to NATO target</p>
+<ul class="simple">
+<li><p>depends on a high risk of war</p></li>
+<li><p>and a high deterrence factor of the militrary</p></li>
+<li><p>at least in this simplified model</p></li>
+</ul>
+<p>The model</p>
+<ul class="simple">
+<li><p>can explain why different countries invest a different share of their GDP in military</p></li>
+<li><p>also the  investment in different types of weaponry</p></li>
+<li><p>elaborate reasons for different political opinions on military spending</p></li>
+</ul>
+<p>Always shows: tradeoffs are real. As demonstrated by a second fragment from the speech quoted above:</p>
+<blockquote>
+<div><p>Every gun that is made, every warship launched, every rocket fired signifies, in the final sense, a theft from those who hunger and are not fed, those who are cold and are not clothed.</p>
+<p><strong>~ Dwight Eisenhower</strong>: „Chance for Peace“ 1953</p>
+</div></blockquote>
+</section>
+</section>
+
         </article>
       </div>
       <footer>
@@ -299,5 +836,7 @@
     <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../../_static/scripts/furo.js?v=46bd48cc"></script>
     <script src="../../_static/translations.js?v=9bf55d28"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
     </body>
 </html>
