@@ -5,7 +5,7 @@ capture log close
 clear
 
 *MARTENs path
-cd "~/blablabla/"
+cd "~/Documents/psme/metrics/tutorial/TD6//"
 
 * Global Variables for STATA 
 global dirraw "./data/raw/"

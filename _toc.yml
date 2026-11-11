@@ -22,6 +22,8 @@ subtrees:
         title: Endogeneity [2026/10/29]
       - file: metrics/2026-11-04-Panel.md
         title: Panel [2026/11/04]
+      - file: metrics/2026-11-11-Panel2.md
+        title: Panel2 [2026/11/11]
       - file: metrics/PROJECT.md
         title: PROJECT 
       - file: metrics/STATA_Sheet.md

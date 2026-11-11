@@ -22,7 +22,6 @@ log using "$dirlog/01_Intro", replace tex
 
 use "$dirraw/psid.dta", clear
 
-for id year
 list id year if _n < 20
 
 * reshape to wide
@@ -61,12 +60,7 @@ xtline lwage, overlay
 
 xtline lwage if id <= 10, overlay
 
-* quietly lwage if id <= 10, overlay legend(off saving) 
-
-
-sort id year
-
-gen laglwage = L.lwage
+* quietly lwage if id <= 10, overlay legend(off saving)
 
 
 
