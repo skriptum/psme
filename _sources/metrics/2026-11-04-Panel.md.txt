@@ -78,7 +78,7 @@ if $E(\Delta e | \Delta X) = 0$ => $\beta$ is unbiased
 
 
 
-### Individual Dummy Variables
+### Individual Dummy Variables (LSDV)
 
 Example: Beertax with 3 states (TX, CA, MA)
 $$
