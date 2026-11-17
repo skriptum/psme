@@ -29,13 +29,17 @@ Concepts
 ### Alternatives to R2
 
 Akaike Information Criteria (AIC)
+
 $$
 AIC = ln(\frac{SSR}{n}) + (k+1) \frac{2}{n}
 $$
+
 Bayes Information Criteria (BIC)
+
 $$
 AIC = ln(\frac{SSR}{n}) + (k+1) \frac{\ln n}{n}
 $$
+
 = punishes larger models harder
 
 Code: `estat ic`
@@ -51,7 +55,7 @@ Code: `estat ic`
 
 
 
-when $N \to \infin$: estimators are normally distributed
+when $N \to \infty$: estimators are normally distributed
 
 => only with big sample p values / t tests can be trusted
 

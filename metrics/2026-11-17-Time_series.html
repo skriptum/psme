@@ -346,14 +346,80 @@
 </ul>
 </li>
 </ul>
+<section id="with-additional-predictors">
+<h3>with Additional Predictors<a class="headerlink" href="#with-additional-predictors" title="Link to this heading">¶</a></h3>
+<p>sometimes: you want to add other predictors and their lags</p>
+<p>=&gt; Autoregressive distributed lag model</p>
+<ul class="simple">
+<li><p>with p lags of Y</p></li>
+<li><p>and r lags of X</p></li>
+</ul>
+<p>=&gt; <span class="math notranslate nohighlight">\(ADL(p,r)\)</span></p>
+<p>Example: Inflation and Unemployment (macro: <a class="reference internal" href="../macro/2026-10-14-Medium-run.html#philipps-curve"><span class="std std-ref">Philipps Curve</span></a>)</p>
+<hr class="docutils" />
 <p>How many lags to use?</p>
 <ul class="simple">
 <li><p>use F-test to check whether added help</p></li>
-<li><p>optimal p = information criterion</p></li>
+<li><p>optimal p = information criterion</p>
+<ul>
+<li><p>trade off between <strong>bias</strong> (too few lags)</p></li>
+<li><p>and <strong>variance</strong> (too many lags)</p></li>
 </ul>
-<section id="with-additional-predictors">
-<h3>with Additional Predictors<a class="headerlink" href="#with-additional-predictors" title="Link to this heading">¶</a></h3>
+</li>
+</ul>
+<p>=&gt; BIC and AIC</p>
+<p>Akaike Information Criteria (AIC)</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[
+AIC = ln(\frac{SSR}{n}) + (k+1) \frac{2}{n}
+\]</div>
+</div>
+<p>Bayes Information Criteria (BIC)</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[
+AIC = ln(\frac{SSR}{n}) + (k+1) \frac{\ln n}{n}
+\]</div>
+</div>
+<p>= punishes larger models harder</p>
 </section>
+</section>
+<section id="non-stationarity">
+<h2>Non-stationarity<a class="headerlink" href="#non-stationarity" title="Link to this heading">¶</a></h2>
+<p>Types of non-stationarity</p>
+<ul class="simple">
+<li><p><strong>Deterministic trend</strong>: non-random function of time</p></li>
+<li><p><strong>stochastic trend:</strong> random, varies over time</p></li>
+</ul>
+<p>Example: random walk with drift:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(Y_t = b_0 + Y_{t-1} + u_t\)</span></p></li>
+<li><p>u = serially uncorrelated</p></li>
+<li><p>Oftentimes closest to economic data series</p></li>
+</ul>
+<p>to clean =&gt; Autoregression</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(AR(1): Y_t = b_0 + b_1Y_{t-1}+u_t\)</span></p></li>
+<li><p>becomes: <span class="math notranslate nohighlight">\(\Delta Y_t = Y_t - Y_{t-1} = b_0+u_t\)</span></p></li>
+</ul>
+<p>Detecting with <strong>Dickey Fuller</strong> (for a unit root)</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[
+\Delta Y_t = b_0 + \delta Y_{t-1}+ u_t
+\]</div>
+</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(H_0: \delta = 0\)</span>: presence of unit root = non-stationary process</p></li>
+<li><p><span class="math notranslate nohighlight">\(H_1: \delta &lt; 0\)</span>: no unit root = stationary process</p></li>
+<li><p>reject if t statistic &lt; critical value</p></li>
+<li><p>two versions: intercept / intercept + trend</p></li>
+</ul>
+<p>If unit root =&gt; use stationary transformation</p>
+<ul class="simple">
+<li><p>FD, logs, Hodrick-Prescott Filter, …</p></li>
+</ul>
 </section>
 </section>
 
@@ -418,6 +484,7 @@
 <li><a class="reference internal" href="#with-additional-predictors">with Additional Predictors</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#non-stationarity">Non-stationarity</a></li>
 </ul>
 </li>
 </ul>

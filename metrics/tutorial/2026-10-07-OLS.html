@@ -289,15 +289,21 @@
 </ul>
 <section id="alternatives-to-r2">
 <h2>Alternatives to R2<a class="headerlink" href="#alternatives-to-r2" title="Link to this heading">¶</a></h2>
-<p>Akaike Information Criteria (AIC)
-$<span class="math notranslate nohighlight">\(
+<p>Akaike Information Criteria (AIC)</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[
 AIC = ln(\frac{SSR}{n}) + (k+1) \frac{2}{n}
-\)</span><span class="math notranslate nohighlight">\(
-Bayes Information Criteria (BIC)
-\)</span><span class="math notranslate nohighlight">\(
+\]</div>
+</div>
+<p>Bayes Information Criteria (BIC)</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[
 AIC = ln(\frac{SSR}{n}) + (k+1) \frac{\ln n}{n}
-\)</span>$
-= punishes larger models harder</p>
+\]</div>
+</div>
+<p>= punishes larger models harder</p>
 <p>Code: <code class="docutils literal notranslate"><span class="pre">estat</span> <span class="pre">ic</span></code></p>
 </section>
 <section id="reminder-distributions">
@@ -308,7 +314,7 @@ AIC = ln(\frac{SSR}{n}) + (k+1) \frac{\ln n}{n}
 <li><p>T-student distribution (changes with t)</p></li>
 <li><p>Fisher distribution</p></li>
 </ul>
-<p>when <span class="math notranslate nohighlight">\(N \to \infin\)</span>: estimators are normally distributed</p>
+<p>when <span class="math notranslate nohighlight">\(N \to \infty\)</span>: estimators are normally distributed</p>
 <p>=&gt; only with big sample p values / t tests can be trusted</p>
 </section>
 <section id="wald-test">
