@@ -90,14 +90,88 @@ Example: Inflation Rate
 
 
 
-How many lags to use?
-
-- use F-test to check whether added help
-- optimal p = information criterion
-
 
 
 ### with Additional Predictors
 
+sometimes: you want to add other predictors and their lags
+
+=> Autoregressive distributed lag model 
+
+- with p lags of Y
+- and r lags of X
+
+=> $ADL(p,r)$
+
+Example: Inflation and Unemployment (macro: [Philipps Curve](../macro/2026-10-14-Medium-run.md#philipps-curve))
 
 
+
+---
+
+How many lags to use?
+
+- use F-test to check whether added help
+- optimal p = information criterion
+  - trade off between **bias** (too few lags)
+  - and **variance** (too many lags)
+
+=> BIC and AIC
+
+Akaike Information Criteria (AIC)
+
+$$
+AIC = ln(\frac{SSR}{n}) + (k+1) \frac{2}{n}
+$$
+
+Bayes Information Criteria (BIC)
+
+$$
+AIC = ln(\frac{SSR}{n}) + (k+1) \frac{\ln n}{n}
+$$
+
+= punishes larger models harder
+
+
+
+## Non-stationarity
+
+Types of non-stationarity
+
+- **Deterministic trend**: non-random function of time
+- **stochastic trend:** random, varies over time
+
+
+
+Example: random walk with drift: 
+
+- $Y_t = b_0 + Y_{t-1} + u_t$
+- u = serially uncorrelated
+- Oftentimes closest to economic data series
+
+
+
+to clean => Autoregression
+
+- $AR(1): Y_t = b_0 + b_1Y_{t-1}+u_t$
+- becomes: $\Delta Y_t = Y_t - Y_{t-1} = b_0+u_t$
+
+
+
+Detecting with **Dickey Fuller** (for a unit root)
+
+$$
+\Delta Y_t = b_0 + \delta Y_{t-1}+ u_t
+$$
+
+
+- $H_0: \delta = 0$: presence of unit root = non-stationary process
+- $H_1: \delta < 0$: no unit root = stationary process
+- reject if t statistic < critical value
+- two versions: intercept / intercept + trend
+
+
+
+If unit root => use stationary transformation
+
+- FD, logs, Hodrick-Prescott Filter, ...
