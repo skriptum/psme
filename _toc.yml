@@ -24,8 +24,8 @@ subtrees:
         title: Panel [2026/11/04]
       - file: metrics/2026-11-11-Panel2.md
         title: Panel2 [2026/11/11]
-      - file: metrics/PROJECT.md
-        title: PROJECT 
+      - file: metrics/2026-11-17-Time_series.md
+        title: Time series [2026/11/17]
       - file: metrics/STATA_Sheet.md
         title: STATA Sheet 
 
@@ -43,6 +43,10 @@ subtrees:
         title: IS TR BOP [2026/10/07]
       - file: macro/2026-10-14-Medium-run.md
         title: Medium run [2026/10/14]
+      - file: macro/2026-10-21-AS.md
+        title: AS [2026/10/21]
+      - file: macro/2026-11-04-RBC.md
+        title: RBC [2026/11/04]
 
     - file: micro/README
       title: "micro"

@@ -301,3 +301,43 @@ forvalues i = start (step) end {
 }
 ```
 
+
+
+## Panel data
+
+Prelimiary Commands
+
+```stata
+xtset id year // set dimensions
+xtdescribe // describe panel, balanced / unbalanced etc
+xtsum wage // calculate overall, withib between for a variety 
+xttab wage // frequency table
+```
+
+- xtsum: helps explain where your variation comes from
+
+
+
+Regressions
+
+```stata
+// Fixed Effects
+xtreg y x1 x2, fe
+
+// Random Effects
+xtreg y x1 x2, re
+
+// Between Effects
+xtreg y x1 x2 x3, be
+
+// Clustererd SE
+xtreg y x1 x2 x3, fe vce(worker_id)
+```
+
+Plots with `xtline`:
+
+```stata
+xtline wage, overlay // plot every unit
+xtline lwage if id <= 10, overlay // only a subset
+```
+

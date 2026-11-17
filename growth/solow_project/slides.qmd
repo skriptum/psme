@@ -22,11 +22,11 @@ format:
 
 ---
 
-\
+\ 
 
-> **The cost of one modern heavy bomber is this: a modern brick school in more than 30 cities**. It is two electric power plants, each serving a town of 60,000 population. It is two fine, fully equipped hospitals. It is some fifty miles of concrete pavement.
+> The cost of one modern heavy bomber is this: a modern brick school in more than 30 cities. It is two electric power plants, each serving a town of 60,000 population. It is two fine, fully equipped hospitals. It is some fifty miles of concrete pavement.
 >
-> ~ **Dwight Eisenhower:** "Chance for Peace" 1953
+> **~ Dwight D. Eisenhower:** "Chance for Peace" 1953
 
 :::: {.columns}
 
@@ -115,9 +115,46 @@ $$
 y^* = \{[s(1-t)]^\alpha [t-m]^\beta D(m)^{-(\alpha+\beta)} \}^{1/1-\alpha-\beta}
 $$
 
-# Solve
+# Math $\delta y^* / \delta m$
 
-Optimum
+Only parts that are relevant:
+
+$$
+f(m) \equiv \overbrace{[t-m]^\beta}^f \overbrace{D(m)^{-(a+b)}}^g
+$$
+
+Product Rule
+
+$$
+\overbrace{-\beta[t-m]^{\beta-1}}^{f'} \cdot \overbrace{D(m)^{-(a+b)}}^{g} + \overbrace{[t-m]^{\beta}}^{f} \cdot \overbrace{-(\alpha+\beta) D(m)^{-(a+b)-1}D'}^{g'} 
+$$
+
+Set $f'(m) = 0$
+
+$$
+-(\alpha+\beta)D(m)^{-(\alpha+\beta)-1}D'(m)(t-m)^{\beta} = \beta[t-m]^{\beta-1}D(m)^{-(\alpha+b)}
+$$
+
+---
+
+Divide by $(t-m)^{\beta-1} D^{-(\alpha+\beta)-1}$
+
+$$
+-(\alpha+\beta)(t-m)D'(m)= \beta D(m)
+$$
+
+Rearrange
+
+$$
+\frac{-(\alpha+\beta)D'(m)}{D(m)} = \frac{\beta}{(t-m)}
+$$
+
+And then substituting $D'(m) = -\sigma z(m)$ and $D(m)$, gives the final
+
+
+
+# Optimum
+
 $$
 \overbrace{
 \frac{(\alpha+\beta)\sigma z(m)}{n+d+z(m)}
@@ -182,5 +219,5 @@ Why do countries spend different amounts on military?
 
 > Every gun that is made, every warship launched, every rocket fired signifies, in the final sense, a theft from those who hunger and are not fed, those who are cold and are not clothed.
 >
-> **~ Dwight Eisenhower**: "Chance for Peace" 1953 
+> **~ Dwight D. Eisenhower**: "Chance for Peace" 1953 
 
