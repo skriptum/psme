@@ -2,6 +2,10 @@
 
 
 
+[TOC]
+
+## Motivation
+
 
 
 > The cost of one modern heavy bomber is this: a modern brick school in more than 30 cities. It is two electric power plants, each serving a town of 60,000 population. It is two fine, fully equipped hospitals. It is some fifty miles of concrete pavement.
@@ -37,10 +41,14 @@
     - no benefit
     - physical capital and military capital = priority
       - protection
-- some Lit (**XX**)
-  - miliatry resources
-  - deterrence
-  - taxation budget
+
+in economic Literature: the question. of optimal taxation and miliatry spending has been
+
+- theoretical model: @thompsonTaxationNationalDefense1974
+  - protection of other goods due to military 
+
+- deterrence
+- taxation budget
 
 
 
@@ -138,7 +146,7 @@ $$
 
 
 
-## Equilibrium 
+## Finding an equilibrium 
 
 Where does the equilibrium of this model land? What are the steady state values k* and h*
 
@@ -319,7 +327,7 @@ driven by a very high z0
 
 
 
-### A graphic example
+### Graphic representation 
 
 plot this situation (Code in Appendix): 
 

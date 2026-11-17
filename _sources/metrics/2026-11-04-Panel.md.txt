@@ -41,9 +41,11 @@ Sources of Variation
 Control for unobserved unit characteristics in panels
 
 Example: Beer Tax and Traffic fatalities in US States
+
 $$
 FatalityRate_{it} = a + b \ BeerTax_{it} + z_i+e_{it}
 $$
+
 $z_i$ = persistent state characteristics (road infrastructure)
 
 if $Cov(BeerTax_{it}, z_i) \ne 0$ 
@@ -81,6 +83,7 @@ if $E(\Delta e | \Delta X) = 0$ => $\beta$ is unbiased
 ### Individual Dummy Variables (LSDV)
 
 Example: Beertax with 3 states (TX, CA, MA)
+
 $$
 y_{it} = a + b X_{it} + c_{CA} D_{CA,i} + c_{TX} D_{TX,i}+e_{it}
 $$
@@ -92,6 +95,7 @@ $$
 
 
 Formal:
+
 $$
 y_{it} = \sum_j^N a_j d_{j,i} + X_{it}b+e_{it}
 $$

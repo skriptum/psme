@@ -3,7 +3,7 @@
   <head><meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Stichwortverzeichnis" href="../genindex.html"><link rel="search" title="Suche" href="../search.html"><link rel="next" title="Macroeconomics" href="../macro/README.html"><link rel="prev" title="Metrics Project: IMF and X" href="PROJECT.html">
+<link rel="index" title="Stichwortverzeichnis" href="../genindex.html"><link rel="search" title="Suche" href="../search.html"><link rel="next" title="Macroeconomics" href="../macro/README.html"><link rel="prev" title="17.11.2026 Time Series" href="2026-11-17-Time_series.html">
         <link rel="canonical" href="https://psme.martenw.com/metrics/STATA_Sheet.html">
 
     <!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
@@ -205,7 +205,7 @@
 <li class="toctree-l2"><a class="reference internal" href="2026-10-29-Endogeneity.html">Endogeneity [2026/10/29]</a></li>
 <li class="toctree-l2"><a class="reference internal" href="2026-11-04-Panel.html">Panel [2026/11/04]</a></li>
 <li class="toctree-l2"><a class="reference internal" href="2026-11-11-Panel2.html">Panel2 [2026/11/11]</a></li>
-<li class="toctree-l2"><a class="reference internal" href="PROJECT.html">PROJECT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2026-11-17-Time_series.html">Time series [2026/11/17]</a></li>
 <li class="toctree-l2 current current-page"><a class="current reference internal" href="#">STATA Sheet</a></li>
 </ul>
 </li>
@@ -215,6 +215,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../macro/2026-09-30-IS-TR.html">IS TR [2026/09/30]</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../macro/2026-10-07-IS-TR-BOP.html">IS TR BOP [2026/10/07]</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../macro/2026-10-14-Medium-run.html">Medium run [2026/10/14]</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../macro/2026-10-21-AS.html">AS [2026/10/21]</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../macro/2026-11-04-RBC.html">RBC [2026/11/04]</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../micro/README.html">micro</a><input aria-label="Toggle navigation of micro" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
@@ -503,6 +505,38 @@ ytitle(<span class="s">"Life Expectancy "</span>)
 </pre></div>
 </div>
 </section>
+<section id="panel-data">
+<h2>Panel data<a class="headerlink" href="#panel-data" title="Link to this heading">¶</a></h2>
+<p>Prelimiary Commands</p>
+<div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">xtset</span> id year <span class="c1">// set dimensions</span>
+xtdescribe <span class="c1">// describe panel, balanced / unbalanced etc</span>
+<span class="k">xtsum</span> wage <span class="c1">// calculate overall, withib between for a variety </span>
+<span class="k">xttab</span> wage <span class="c1">// frequency table</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>xtsum: helps explain where your variation comes from</p></li>
+</ul>
+<p>Regressions</p>
+<div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="c1">// Fixed Effects</span>
+<span class="k">xtreg</span> y x1 x2, fe
+
+<span class="c1">// Random Effects</span>
+<span class="k">xtreg</span> y x1 x2, re
+
+<span class="c1">// Between Effects</span>
+<span class="k">xtreg</span> y x1 x2 x3, be
+
+<span class="c1">// Clustererd SE</span>
+<span class="k">xtreg</span> y x1 x2 x3, fe<span class="k"> vce</span>(worker_id)
+</pre></div>
+</div>
+<p>Plots with <code class="docutils literal notranslate"><span class="pre">xtline</span></code>:</p>
+<div class="highlight-stata notranslate"><div class="highlight"><pre><span></span><span class="k">xtline</span> wage, overlay <span class="c1">// plot every unit</span>
+<span class="k">xtline</span> lwage<span class="k"> if</span> id <span class="o">&lt;=</span> <span class="m">10</span>, overlay <span class="c1">// only a subset</span>
+</pre></div>
+</div>
+</section>
 </section>
 
         </article>
@@ -519,14 +553,14 @@ ytitle(<span class="s">"Life Expectancy "</span>)
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="PROJECT.html">
+          <a class="prev-page" href="2026-11-17-Time_series.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Metrics Project: IMF and X</div>
+                <div class="title">17.11.2026 Time Series</div>
                 
               </div>
             </a>
@@ -573,6 +607,7 @@ ytitle(<span class="s">"Life Expectancy "</span>)
 <li><a class="reference internal" href="#combination-of-datasets">Combination of datasets</a></li>
 <li><a class="reference internal" href="#plots">Plots</a></li>
 <li><a class="reference internal" href="#conditionals-ifs-loops">Conditionals (Ifs, Loops)</a></li>
+<li><a class="reference internal" href="#panel-data">Panel data</a></li>
 </ul>
 </li>
 </ul>

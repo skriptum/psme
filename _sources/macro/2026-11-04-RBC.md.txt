@@ -1,0 +1,169 @@
+# 11.11.2026 Real Business Cycle
+
+Bob Lucas in 70s: 
+
+- Rational Critique of Keynesian Models
+- after "failure" of 70s style
+
+=> how we ended up with the mess of neoclassical RBC :/ 
+
+REH: Rational Expectations Hypothesis
+
+## Basic RBC
+
+- **Consumers**: 
+  - representative agent
+  - preferences (by utility function)
+- **Firms**: production technology
+- **Markets**: Good, Labour, Capital
+- Uncertainty
+
+in a Walrasian Model: 
+
+- No taxes, externalities, imperfections, frictions 
+- perfect competition 
+- = unrealistic shit
+
+
+
+## Consumer
+
+- continuum of [0,1] identical consumers
+- infinitely lived
+- Assets: capital
+- unvertainty about future (t>0)
+  - but REH: consumers understand stochastic process guiding future
+  - are on average correct 
+- Discount factor $\beta \in (0,1)$
+  - future assets = worth less
+
+
+
+### Consumer Utility: 2dimensional
+
+- **Intratemporal**: in time t
+  - consumption $c_t$
+  - or leisure: $1-n_t$ (normalized to 1 = fraction)
+  - MRS: $u(c_t, 1-n_t)$
+- **Intertemporal**: today vs tmrw
+  - consumption in each period: $c_0, c_1,...$
+  - defined by savings
+
+=> Lifetime expected utility with discount and expectation operator E
+
+$$
+E_0 \sum_t^\infin \beta^t u(c_t, 1-n_t)
+$$
+
+### Flow Budget Constraint
+
+$$
+c_t + k_{t+1} = w_t n_t + r_t k_t +(1-\delta)k_t+ \Pi_t
+$$
+
+Expenditure (Consumption and savings):
+
+- Laobur Income $w_t n_t$
+- Capital Income $r_t k_t$
+- depreciated capital stock $(1-\delta)k_t$
+- Firms Profits (lump sum to owners) $\Pi_t$
+
+### Maximization
+
+Consumers
+
+- maximize Utility function
+- subject to sequence of Flow Budget Constraints
+- options: consumption c, leisure n, saving k
+
+Lagrangian
+$$
+L = E_0 \sum \beta^t \bigg[ u(c_t,1-n_t)- \lambda_t (c_t + k_{t+1} - w_t n_t -...) \bigg]
+$$
+FOC in period t
+
+1. $\delta L / \delta c_t: u'_c() - \lambda_t = 0$
+2. $\delta L / \delta n_t: - u'_n() + \lambda_t w_t = 0$
+3. $\delta L / \delta k_{t+1}:  - \lambda_t + \beta E_t [\lambda_{t+1} (r_{t+1}+1-\delta)] = 0$
+
+
+
+Solution
+
+- 1 and 2: consumption-leisure optimality condition: 
+  - $u'_c() / u'_n() = w_t$ [after solving for lambda]
+  - wage defines decision between consumption and leisure
+  - substitution and income effect
+- 1 and 3) consumption saving optimality
+  - $u'_c() = \beta E [u'_c (_{t+1})(r_{t+1}+1-\delta)]$ [solving for lambda]
+
+under assumption of no uncertainty E=1
+$$
+\frac{u'_c()}{\beta u_c(_{n+1})} = 1+r_{t+1}+1-\delta
+$$
+
+- intertemporal MRS = intertemproal price
+
+
+
+## Firms
+
+- Continuum of [0,1] firms
+- static entities 
+  - rent factors of production $n_t, k_t$ at given prices
+  - produce goods
+  - sell output
+- infinitely lived
+
+Aggregate Production Function: $y_t = z_t f(k_t,n_t)$
+
+Profit Function (to maximize): $\Pi_t = z_t f()- w_t n_t - r_t k_t$
+
+FOC:
+
+1. $\delta \Pi / \delta n = z_t f'_n() - w_t = 0$
+2. $\delta \Pi / \delta k = z_t f'_k() - r_t = 0$
+
+- downward sloping labour / capital demand
+
+
+
+## Equilibrium
+
+Goods market
+
+- Supply = Demand
+- $z_tf(k_t, n_t) = c_t+k_{t+1}-(1-\delta)k_t$
+
+Labor Market: $n_t^s = n_t^d$
+
+Capital Market: $k_t^s = k_t^d$
+
+
+
+Dynamic Equilibrium: $c_t, n_t, k_{t+1}, w_t, r_t$ 
+
+- Transversality condition 
+  - endpoint needed to solve (next to $k_0$)
+
+
+
+## Discussion
+
+RBC = classical view of economic cycles 
+
+- random fluctuations in rate of technological change
+- individuals rationally alter their decisions 
+
+Business Cycle = natural and efficient response of economy
+
+=> no need for macroecnomic governance
+
+
+
+Weakness:
+
+- Technology = primary source of variation
+- leisure to explain changes in employment (what about forced unemployment)
+- trivializes the cost of fluctuations
+

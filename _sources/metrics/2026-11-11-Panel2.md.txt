@@ -5,6 +5,7 @@
 ## Panel data and FE
 
 Recall
+
 $$
 y_{it} = a_i + X_{it} b+e_{it}
 $$
@@ -17,6 +18,7 @@ economic arguments!
 
 
 Example: City Density and Wages on worker level
+
 $$
 \ln wage_{it} = a_i + \gamma \ln density_{c(i,t)}+ X_{it}b+ \lambda_t + e_{it}
 $$

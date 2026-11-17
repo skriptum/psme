@@ -205,7 +205,7 @@
 <li class="toctree-l2"><a class="reference internal" href="2026-10-29-Endogeneity.html">Endogeneity [2026/10/29]</a></li>
 <li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Panel [2026/11/04]</a></li>
 <li class="toctree-l2"><a class="reference internal" href="2026-11-11-Panel2.html">Panel2 [2026/11/11]</a></li>
-<li class="toctree-l2"><a class="reference internal" href="PROJECT.html">PROJECT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2026-11-17-Time_series.html">Time series [2026/11/17]</a></li>
 <li class="toctree-l2"><a class="reference internal" href="STATA_Sheet.html">STATA Sheet</a></li>
 </ul>
 </li>
@@ -215,6 +215,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../macro/2026-09-30-IS-TR.html">IS TR [2026/09/30]</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../macro/2026-10-07-IS-TR-BOP.html">IS TR BOP [2026/10/07]</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../macro/2026-10-14-Medium-run.html">Medium run [2026/10/14]</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../macro/2026-10-21-AS.html">AS [2026/10/21]</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../macro/2026-11-04-RBC.html">RBC [2026/11/04]</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../micro/README.html">micro</a><input aria-label="Toggle navigation of micro" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
@@ -301,11 +303,14 @@
 <section id="fixed-effects">
 <h2>Fixed Effects<a class="headerlink" href="#fixed-effects" title="Link to this heading">¶</a></h2>
 <p>Control for unobserved unit characteristics in panels</p>
-<p>Example: Beer Tax and Traffic fatalities in US States
-$<span class="math notranslate nohighlight">\(
+<p>Example: Beer Tax and Traffic fatalities in US States</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[
 FatalityRate_{it} = a + b \ BeerTax_{it} + z_i+e_{it}
-\)</span><span class="math notranslate nohighlight">\(
-\)</span>z_i$ = persistent state characteristics (road infrastructure)</p>
+\]</div>
+</div>
+<p><span class="math notranslate nohighlight">\(z_i\)</span> = persistent state characteristics (road infrastructure)</p>
 <p>if <span class="math notranslate nohighlight">\(Cov(BeerTax_{it}, z_i) \ne 0\)</span></p>
 <ul class="simple">
 <li><p>cross sectional OLS biased!</p></li>
@@ -339,19 +344,25 @@ y_{it} - y_{i,t-1} = b (x_{it}- x_{i,t-1})+e_{it}-e_{i,t-1}
 </section>
 <section id="individual-dummy-variables-lsdv">
 <h3>Individual Dummy Variables (LSDV)<a class="headerlink" href="#individual-dummy-variables-lsdv" title="Link to this heading">¶</a></h3>
-<p>Example: Beertax with 3 states (TX, CA, MA)
-$<span class="math notranslate nohighlight">\(
+<p>Example: Beertax with 3 states (TX, CA, MA)</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[
 y_{it} = a + b X_{it} + c_{CA} D_{CA,i} + c_{TX} D_{TX,i}+e_{it}
-\)</span>$</p>
+\]</div>
+</div>
 <ul class="simple">
 <li><p>D = Dummy variables for each state</p></li>
 <li><p>c = coefficients of dummy variables</p></li>
 <li><p>MA = reference state, no dummy</p></li>
 </ul>
-<p>Formal:
-$<span class="math notranslate nohighlight">\(
+<p>Formal:</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[
 y_{it} = \sum_j^N a_j d_{j,i} + X_{it}b+e_{it}
-\)</span>$</p>
+\]</div>
+</div>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(d_{j,i}\)</span> = 1 if j = i aka state FE</p></li>
 <li><p>estimate a together with b</p></li>

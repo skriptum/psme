@@ -3,7 +3,7 @@
   <head><meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Stichwortverzeichnis" href="../genindex.html"><link rel="search" title="Suche" href="../search.html"><link rel="next" title="Metrics Project: IMF and X" href="PROJECT.html"><link rel="prev" title="04.11.2026 Panel" href="2026-11-04-Panel.html">
+<link rel="index" title="Stichwortverzeichnis" href="../genindex.html"><link rel="search" title="Suche" href="../search.html"><link rel="next" title="17.11.2026 Time Series" href="2026-11-17-Time_series.html"><link rel="prev" title="04.11.2026 Panel" href="2026-11-04-Panel.html">
         <link rel="canonical" href="https://psme.martenw.com/metrics/2026-11-11-Panel2.html">
 
     <!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
@@ -205,7 +205,7 @@
 <li class="toctree-l2"><a class="reference internal" href="2026-10-29-Endogeneity.html">Endogeneity [2026/10/29]</a></li>
 <li class="toctree-l2"><a class="reference internal" href="2026-11-04-Panel.html">Panel [2026/11/04]</a></li>
 <li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Panel2 [2026/11/11]</a></li>
-<li class="toctree-l2"><a class="reference internal" href="PROJECT.html">PROJECT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2026-11-17-Time_series.html">Time series [2026/11/17]</a></li>
 <li class="toctree-l2"><a class="reference internal" href="STATA_Sheet.html">STATA Sheet</a></li>
 </ul>
 </li>
@@ -215,6 +215,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../macro/2026-09-30-IS-TR.html">IS TR [2026/09/30]</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../macro/2026-10-07-IS-TR-BOP.html">IS TR BOP [2026/10/07]</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../macro/2026-10-14-Medium-run.html">Medium run [2026/10/14]</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../macro/2026-10-21-AS.html">AS [2026/10/21]</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../macro/2026-11-04-RBC.html">RBC [2026/11/04]</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../micro/README.html">micro</a><input aria-label="Toggle navigation of micro" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
@@ -267,19 +269,25 @@
 <h1>11.11.2026 Panel 2: Applications<a class="headerlink" href="#panel-2-applications" title="Link to this heading">¶</a></h1>
 <section id="panel-data-and-fe">
 <h2>Panel data and FE<a class="headerlink" href="#panel-data-and-fe" title="Link to this heading">¶</a></h2>
-<p>Recall
-$<span class="math notranslate nohighlight">\(
+<p>Recall</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[
 y_{it} = a_i + X_{it} b+e_{it}
-\)</span>$</p>
+\]</div>
+</div>
 <ul class="simple">
 <li><p>FE =&gt; remove a and estimate b from within unit variation</p></li>
 <li><p>does not solve: time varying OVB, reverse causlity …</p></li>
 </ul>
 <p>economic arguments!</p>
-<p>Example: City Density and Wages on worker level
-$<span class="math notranslate nohighlight">\(
+<p>Example: City Density and Wages on worker level</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[
 \ln wage_{it} = a_i + \gamma \ln density_{c(i,t)}+ X_{it}b+ \lambda_t + e_{it}
-\)</span>$</p>
+\]</div>
+</div>
 <ul class="simple">
 <li><p>Worker FE = remove characteristics of workers</p></li>
 <li><p>varation =&gt; comes from Movers</p></li>
@@ -440,12 +448,12 @@ y_{it} = X_{it} b+u_{it} \text{ with } u_{it} = a_i+e_{it}
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="PROJECT.html">
+          <a class="next-page" href="2026-11-17-Time_series.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Metrics Project: IMF and X</div>
+                <div class="title">17.11.2026 Time Series</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
