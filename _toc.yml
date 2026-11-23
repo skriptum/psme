@@ -47,6 +47,8 @@ subtrees:
         title: AS [2026/10/21]
       - file: macro/2026-11-04-RBC.md
         title: RBC [2026/11/04]
+      - file: macro/2026-11-18-RBC_Solution.md
+        title: RBC Solution [2026/11/18]
 
     - file: micro/README
       title: "micro"

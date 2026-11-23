@@ -48,7 +48,10 @@ in economic Literature: the question. of optimal taxation and miliatry spending 
   - protection of other goods due to military 
 
 - deterrence
-- taxation budget
+  - theory of conflict, often connected to @schellingArmsInfluence1966
+- budget tradeoff between civil ends and military
+  - @powellGunsButterAnarchy1993 
+    - two state actors, peace as a optimality
 
 
 
@@ -56,12 +59,18 @@ This paper
 
 - model the decision making process
   - between military spending and HC
-- in a Solow model
+  - in one state, based on perceived risk of war
+    - ex ante risk (how high is the chance of war)
+    - ex post risk (how muc h will be destroyed)
+- in a Solow model like @mankiwContributionEmpiricsEconomic1992
 - answer to the question: why do policymakers invest in the military?
 
 
 
-## Theoretical Framework
+
+
+
+
 
 Basic MRW
 
@@ -462,6 +471,10 @@ The model
 - elaborate reasons for different political opinions on military spending
 
 
+
+
+
+already this relatively simple: mirrors political considerations observed in real world, highly simplified
 
 Always shows: tradeoffs are real. As demonstrated by a second fragment from the speech quoted above: 
 
