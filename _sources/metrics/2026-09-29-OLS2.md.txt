@@ -107,7 +107,7 @@ Interpretations:
 | Linear-Log | $y = \beta log(x)$             | 1 % change in x -> $\beta/100$ change in y    |
 | Log-Log    | $log (y) = ... + \beta log(x)$ | 1% change in x -> $\beta$ % change in y       |
 
-
+ 
 
 Why Log?
 
