@@ -1,0 +1,511 @@
+<!doctype html>
+<html class="no-js" lang="de" data-content_root="../../../../../../../../">
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Stichwortverzeichnis" href="../../../../../../../../genindex.html"><link rel="search" title="Suche" href="../../../../../../../../search.html">
+        <link rel="canonical" href="https://psme.martenw.com/growth/solow_project/.quarto/typst/packages/preview/fontawesome/0.5.0/README.html">
+
+    <!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
+        <title>typst-fontawesome - PSME</title>
+      <link rel="stylesheet" type="text/css" href="../../../../../../../../_static/pygments.css?v=d111a655" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../../../_static/styles/furo.css?v=7bdb33bb" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../../../_static/styles/furo-extensions.css?v=8dab3a3b" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f2f2f2;
+  --color-code-foreground: #1e1e1e;
+  --color-brand-primary: #993358;
+  --color-brand-content: #993358;
+  --font-stack: Garamond, Georgia, serif;
+  --font-stack--monospace: Courier, monospace;
+  --font-stack--headings: Georgia, serif;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../../../../../../../README.html"><div class="brand">PSME</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../../../../../../../README.html">
+  
+  <span class="sidebar-brand-text">PSME</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../../../../../../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Suche" name="q" aria-label="Suche">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Semester 1</span></p>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../../../../../metrics/README.html">metrics</a><input aria-label="Toggle navigation of metrics" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../metrics/2026-09-15-OLS1.html">OLS1 [2026/09/15]</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../metrics/2026-09-29-OLS2.html">OLS2 [2026/09/29]</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../metrics/2026-10-15-Interference.html">Interference [2026/10/15]</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../metrics/2026-10-29-Endogeneity.html">Endogeneity [2026/10/29]</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../metrics/2026-11-04-Panel.html">Panel [2026/11/04]</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../metrics/2026-11-11-Panel2.html">Panel2 [2026/11/11]</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../metrics/2026-11-17-Time_series.html">Time series [2026/11/17]</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../metrics/STATA_Sheet.html">STATA Sheet</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../../../../../macro/README.html">macro</a><input aria-label="Toggle navigation of macro" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../macro/2026-09-16-Intro.html">Intro [2026/09/16]</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../macro/2026-09-23-Policy.html">Policy [2026/09/23]</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../macro/2026-09-30-IS-TR.html">IS TR [2026/09/30]</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../macro/2026-10-07-IS-TR-BOP.html">IS TR BOP [2026/10/07]</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../macro/2026-10-14-Medium-run.html">Medium run [2026/10/14]</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../macro/2026-10-21-AS.html">AS [2026/10/21]</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../macro/2026-11-04-RBC.html">RBC [2026/11/04]</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../macro/2026-11-18-RBC_Solution.html">RBC Solution [2026/11/18]</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../../../../../micro/README.html">micro</a><input aria-label="Toggle navigation of micro" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../micro/2026-09-17-Intro.html">Intro [2026/09/17]</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../../../../README.html">growth</a><input aria-label="Toggle navigation of growth" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../2026-09-18-Intro.html">Intro [2026/09/18]</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="view-this-page">
+  <a class="muted-link" href="../../../../../../../../_sources/growth/solow_project/.quarto/typst/packages/preview/fontawesome/0.5.0/README.md.txt" title="View this page">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">View this page</span>
+  </a>
+</div>
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section class="tex2jax_ignore mathjax_ignore" id="typst-fontawesome">
+<h1>typst-fontawesome<a class="headerlink" href="#typst-fontawesome" title="Link to this heading">¶</a></h1>
+<p>A Typst library for Font Awesome icons through the desktop fonts.</p>
+<p>p.s. The library is based on the Font Awesome 6 desktop fonts (v6.6.0)</p>
+<section id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Link to this heading">¶</a></h2>
+<section id="install-the-fonts">
+<h3>Install the fonts<a class="headerlink" href="#install-the-fonts" title="Link to this heading">¶</a></h3>
+<p>You can download the fonts from the official website: https://fontawesome.com/download</p>
+<p>After downloading the zip file, you can install the fonts depending on your OS.</p>
+<section id="typst-web-app">
+<h4>Typst web app<a class="headerlink" href="#typst-web-app" title="Link to this heading">¶</a></h4>
+<p>You can simply upload the <code class="docutils literal notranslate"><span class="pre">otf</span></code> files to the web app and use them with this package.</p>
+</section>
+<section id="mac">
+<h4>Mac<a class="headerlink" href="#mac" title="Link to this heading">¶</a></h4>
+<p>You can double click the <code class="docutils literal notranslate"><span class="pre">otf</span></code> files to install them.</p>
+</section>
+<section id="windows">
+<h4>Windows<a class="headerlink" href="#windows" title="Link to this heading">¶</a></h4>
+<p>You can right-click the <code class="docutils literal notranslate"><span class="pre">otf</span></code> files and select <code class="docutils literal notranslate"><span class="pre">Install</span></code>.</p>
+</section>
+<section id="some-notes">
+<h4>Some notes<a class="headerlink" href="#some-notes" title="Link to this heading">¶</a></h4>
+<p>This library is tested with the otf files of the Font Awesome Free set. TrueType fonts may not work as expected. (Though I am not sure whether Font Awesome provides TrueType fonts, some issue is reported with TrueType fonts.)</p>
+</section>
+</section>
+<section id="import-the-library">
+<h3>Import the library<a class="headerlink" href="#import-the-library" title="Link to this heading">¶</a></h3>
+<section id="using-the-typst-packages">
+<h4>Using the typst packages<a class="headerlink" href="#using-the-typst-packages" title="Link to this heading">¶</a></h4>
+<p>You can install the library using the typst packages:</p>
+<p><code class="docutils literal notranslate"><span class="pre">#import</span> <span class="pre">&quot;&#64;preview/fontawesome:0.5.0&quot;:</span> <span class="pre">*</span></code></p>
+</section>
+<section id="manually-install">
+<h4>Manually install<a class="headerlink" href="#manually-install" title="Link to this heading">¶</a></h4>
+<p>Copy all files start with <code class="docutils literal notranslate"><span class="pre">lib</span></code> to your project and import the library:</p>
+<p><code class="docutils literal notranslate"><span class="pre">#import</span> <span class="pre">&quot;lib.typ&quot;:</span> <span class="pre">*</span></code></p>
+<p>There are three files:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">lib.typ</span></code>: The main entrypoint of the library.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lib-impl.typ</span></code>: The implementation of <code class="docutils literal notranslate"><span class="pre">fa-icon</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lib-gen.typ</span></code>: The generated icon map and functions.</p></li>
+</ul>
+<p>I recommend renaming these files to avoid conflicts with other libraries.</p>
+</section>
+</section>
+<section id="use-the-icons">
+<h3>Use the icons<a class="headerlink" href="#use-the-icons" title="Link to this heading">¶</a></h3>
+<p>You can use the <code class="docutils literal notranslate"><span class="pre">fa-icon</span></code> function to create an icon with its name:</p>
+<p><code class="docutils literal notranslate"><span class="pre">#fa-icon(&quot;chess-queen&quot;)</span></code></p>
+<p>Or you can use the <code class="docutils literal notranslate"><span class="pre">fa-</span></code> prefix to create an icon with its name:</p>
+<p><code class="docutils literal notranslate"><span class="pre">#fa-chess-queen()</span></code> (This is equivalent to <code class="docutils literal notranslate"><span class="pre">#fa-icon().with(&quot;chess-queen&quot;)</span></code>)</p>
+<p>You can also set <code class="docutils literal notranslate"><span class="pre">solid</span></code> to <code class="docutils literal notranslate"><span class="pre">true</span></code> to use the solid version of the icon:</p>
+<p><code class="docutils literal notranslate"><span class="pre">#fa-icon(&quot;chess-queen&quot;,</span> <span class="pre">solid:</span> <span class="pre">true)</span></code></p>
+<p>Some icons only have the solid version in the Free set, so you need to set <code class="docutils literal notranslate"><span class="pre">solid</span></code> to <code class="docutils literal notranslate"><span class="pre">true</span></code> to use them if you are using the Free set.
+Otherwise, you may not get the expected glyph.</p>
+<section id="full-list-of-icons">
+<h4>Full list of icons<a class="headerlink" href="#full-list-of-icons" title="Link to this heading">¶</a></h4>
+<p>You can find all icons on the <a class="reference external" href="https://fontawesome.com/search">official website</a></p>
+</section>
+<section id="different-sets">
+<h4>Different sets<a class="headerlink" href="#different-sets" title="Link to this heading">¶</a></h4>
+<p>By default, the library supports <code class="docutils literal notranslate"><span class="pre">Free</span></code>, <code class="docutils literal notranslate"><span class="pre">Brands</span></code>, <code class="docutils literal notranslate"><span class="pre">Pro</span></code>, <code class="docutils literal notranslate"><span class="pre">Duotone</span></code> and <code class="docutils literal notranslate"><span class="pre">Sharp</span></code> sets.
+(See <a class="reference internal" href="#enable-pro-sets">Enable Pro sets</a> for enabling Pro sets.)</p>
+<p>But only <code class="docutils literal notranslate"><span class="pre">Free</span></code> and <code class="docutils literal notranslate"><span class="pre">Brands</span></code> are tested by me.
+That is, three font files are used to test:</p>
+<ul class="simple">
+<li><p>Font Awesome 6 Free (Also named as <em>Font Awesome 6 Free Regular</em>)</p></li>
+<li><p>Font Awesome 6 Free Solid</p></li>
+<li><p>Font Awesome 6 Brands</p></li>
+</ul>
+<p>Due to some limitations of typst 0.12.0, the regular and solid versions are treated as different fonts.
+In this library, <code class="docutils literal notranslate"><span class="pre">solid</span></code> is used to switch between the regular and solid versions.</p>
+<p>To use other sets or specify one set, you can pass the <code class="docutils literal notranslate"><span class="pre">font</span></code> parameter to the inner <code class="docutils literal notranslate"><span class="pre">text</span></code> function: <br />
+<code class="docutils literal notranslate"><span class="pre">fa-icon(&quot;github&quot;,</span> <span class="pre">font:</span> <span class="pre">&quot;Font</span> <span class="pre">Awesome</span> <span class="pre">6</span> <span class="pre">Pro</span> <span class="pre">Solid&quot;)</span></code></p>
+<p>If you have Font Awesome Pro, please help me test the library with the Pro set.
+Any feedback is appreciated.</p>
+<section id="enable-pro-sets">
+<h5>Enable Pro sets<a class="headerlink" href="#enable-pro-sets" title="Link to this heading">¶</a></h5>
+<p>Typst 0.12.0 raise a warning when the font is not found.
+To use the Pro set, <code class="docutils literal notranslate"><span class="pre">#fa-use-pro()</span></code> should be called before any <code class="docutils literal notranslate"><span class="pre">fa-*</span></code> functions.</p>
+<div class="highlight-typst notranslate"><div class="highlight"><pre><span></span><span class="nf">#fa-use-pro</span><span class="p">()</span><span class="w">                 </span><span class="c1">// Enable Pro sets</span>
+
+<span class="nf">#fa-icon</span><span class="p">(</span><span class="s2">"chess-queen-piece"</span><span class="p">)</span><span class="w"> </span><span class="c1">// Use icons from Pro sets</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="customization">
+<h4>Customization<a class="headerlink" href="#customization" title="Link to this heading">¶</a></h4>
+<p>The <code class="docutils literal notranslate"><span class="pre">fa-icon</span></code> function passes args to <code class="docutils literal notranslate"><span class="pre">text</span></code>, so you can customize the icon by passing parameters to it:</p>
+<p><code class="docutils literal notranslate"><span class="pre">#fa-icon(&quot;chess-queen&quot;,</span> <span class="pre">fill:</span> <span class="pre">blue)</span></code></p>
+</section>
+<section id="stacking-icons">
+<h4>Stacking icons<a class="headerlink" href="#stacking-icons" title="Link to this heading">¶</a></h4>
+<p>The <code class="docutils literal notranslate"><span class="pre">fa-stack</span></code> function can be used to create stacked icons:</p>
+<p><code class="docutils literal notranslate"><span class="pre">#fa-stack(fa-icon-args:</span> <span class="pre">(solid:</span> <span class="pre">true),</span> <span class="pre">&quot;square&quot;,</span> <span class="pre">(&quot;chess-queen&quot;,</span> <span class="pre">(fill:</span> <span class="pre">white,</span> <span class="pre">size:</span> <span class="pre">5.5pt)))</span></code></p>
+<p>Declaration is <code class="docutils literal notranslate"><span class="pre">fa-stack(box-args:</span> <span class="pre">(:),</span> <span class="pre">grid-args:</span> <span class="pre">(:),</span> <span class="pre">fa-icon-args:</span> <span class="pre">(:),</span> <span class="pre">..icons)</span></code></p>
+<ul class="simple">
+<li><p>The order of the icons is from the bottom to the top.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">fa-icon-args</span></code> is used to set the default args for all icons.</p></li>
+<li><p>You can also control the internal <code class="docutils literal notranslate"><span class="pre">box</span></code> and <code class="docutils literal notranslate"><span class="pre">grid</span></code> by passing the <code class="docutils literal notranslate"><span class="pre">box-args</span></code> and <code class="docutils literal notranslate"><span class="pre">grid-args</span></code> to the <code class="docutils literal notranslate"><span class="pre">fa-stack</span></code> function.</p></li>
+<li><p>Currently, four types of icons are supported. The first three types leverage the <code class="docutils literal notranslate"><span class="pre">fa-icon</span></code> function, and the last type is just a content you want to put in the stack.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">str</span></code>, e.g., <code class="docutils literal notranslate"><span class="pre">&quot;square&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">array</span></code>, e.g., <code class="docutils literal notranslate"><span class="pre">(&quot;chess-queen&quot;,</span> <span class="pre">(fill:</span> <span class="pre">white,</span> <span class="pre">size:</span> <span class="pre">5.5pt))</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">arguments</span></code>, e.g. <code class="docutils literal notranslate"><span class="pre">arguments(&quot;chess-queen&quot;,</span> <span class="pre">solid:</span> <span class="pre">true,</span> <span class="pre">fill:</span> <span class="pre">white)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">content</span></code>, e.g. <code class="docutils literal notranslate"><span class="pre">fa-chess-queen(solid:</span> <span class="pre">true,</span> <span class="pre">fill:</span> <span class="pre">white)</span></code></p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="known-issues">
+<h4>Known Issues<a class="headerlink" href="#known-issues" title="Link to this heading">¶</a></h4>
+<ul>
+<li><p><a class="reference external" href="https://github.com/typst/typst/issues/2578">typst#2578</a> <a class="reference external" href="https://github.com/duskmoon314/typst-fontawesome/issues/2">typst-fontawesome#2</a></p>
+<p>This is a known issue that the ligatures may not work in headings, list items, grid items, and other elements. You can use the Unicode from the <a class="reference external" href="https://fontawesome.com">official website</a> to avoid this issue when using Pro sets.</p>
+<p>For most icons, Unicode is used implicitly. So I assume we usually don’t need to worry about this.</p>
+<p>Any help on this issue is appreciated.</p>
+</li>
+</ul>
+</section>
+</section>
+</section>
+<section id="example">
+<h2>Example<a class="headerlink" href="#example" title="Link to this heading">¶</a></h2>
+<p>See the <a class="reference external" href="https://typst.app/project/rQwGUWt5p33vrsb_uNPR9F"><code class="docutils literal notranslate"><span class="pre">example.typ</span></code></a> file for a complete example.</p>
+</section>
+<section id="contribution">
+<h2>Contribution<a class="headerlink" href="#contribution" title="Link to this heading">¶</a></h2>
+<p>Feel free to open an issue or a pull request if you find any problems or have any suggestions.</p>
+<section id="python-helper">
+<h3>Python helper<a class="headerlink" href="#python-helper" title="Link to this heading">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">helper.py</span></code> script is used to get metadata via the GraphQL API and generate typst code. I aim only to use standard python libraries, so running it on any platform with python installed should be easy.</p>
+</section>
+<section id="repo-structure">
+<h3>Repo structure<a class="headerlink" href="#repo-structure" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">helper.py</span></code>: The helper script to get metadata and generate typst code.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lib.typ</span></code>: The main entrypoint of the library.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lib-impl.typ</span></code>: The implementation of <code class="docutils literal notranslate"><span class="pre">fa-icon</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lib-gen.typ</span></code>: The generated functions of icons.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">example.typ</span></code>: An example file to show how to use the library.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">gallery.typ</span></code>: The generated gallery of icons. It is used in the example file.</p></li>
+</ul>
+</section>
+</section>
+<section id="license">
+<h2>License<a class="headerlink" href="#license" title="Link to this heading">¶</a></h2>
+<p>This library is licensed under the MIT license. Feel free to use it in your project.</p>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          
+          
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">typst-fontawesome</a><ul>
+<li><a class="reference internal" href="#usage">Usage</a><ul>
+<li><a class="reference internal" href="#install-the-fonts">Install the fonts</a><ul>
+<li><a class="reference internal" href="#typst-web-app">Typst web app</a></li>
+<li><a class="reference internal" href="#mac">Mac</a></li>
+<li><a class="reference internal" href="#windows">Windows</a></li>
+<li><a class="reference internal" href="#some-notes">Some notes</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#import-the-library">Import the library</a><ul>
+<li><a class="reference internal" href="#using-the-typst-packages">Using the typst packages</a></li>
+<li><a class="reference internal" href="#manually-install">Manually install</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#use-the-icons">Use the icons</a><ul>
+<li><a class="reference internal" href="#full-list-of-icons">Full list of icons</a></li>
+<li><a class="reference internal" href="#different-sets">Different sets</a><ul>
+<li><a class="reference internal" href="#enable-pro-sets">Enable Pro sets</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#customization">Customization</a></li>
+<li><a class="reference internal" href="#stacking-icons">Stacking icons</a></li>
+<li><a class="reference internal" href="#known-issues">Known Issues</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#example">Example</a></li>
+<li><a class="reference internal" href="#contribution">Contribution</a><ul>
+<li><a class="reference internal" href="#python-helper">Python helper</a></li>
+<li><a class="reference internal" href="#repo-structure">Repo structure</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#license">License</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../../../../../../../../_static/documentation_options.js?v=245627df"></script>
+    <script src="../../../../../../../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../../../../../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../../../../../../../_static/scripts/furo.js?v=46bd48cc"></script>
+    <script src="../../../../../../../../_static/translations.js?v=9bf55d28"></script>
+    </body>
+</html>

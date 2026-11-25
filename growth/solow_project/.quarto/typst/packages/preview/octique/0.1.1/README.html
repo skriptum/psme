@@ -1,0 +1,1332 @@
+<!doctype html>
+<html class="no-js" lang="de" data-content_root="../../../../../../../../">
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Stichwortverzeichnis" href="../../../../../../../../genindex.html"><link rel="search" title="Suche" href="../../../../../../../../search.html">
+        <link rel="canonical" href="https://psme.martenw.com/growth/solow_project/.quarto/typst/packages/preview/octique/0.1.1/README.html">
+
+    <!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
+        <title>typst-octique - PSME</title>
+      <link rel="stylesheet" type="text/css" href="../../../../../../../../_static/pygments.css?v=d111a655" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../../../_static/styles/furo.css?v=7bdb33bb" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../../../_static/styles/furo-extensions.css?v=8dab3a3b" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f2f2f2;
+  --color-code-foreground: #1e1e1e;
+  --color-brand-primary: #993358;
+  --color-brand-content: #993358;
+  --font-stack: Garamond, Georgia, serif;
+  --font-stack--monospace: Courier, monospace;
+  --font-stack--headings: Georgia, serif;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../../../../../../../README.html"><div class="brand">PSME</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../../../../../../../README.html">
+  
+  <span class="sidebar-brand-text">PSME</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../../../../../../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Suche" name="q" aria-label="Suche">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Semester 1</span></p>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../../../../../metrics/README.html">metrics</a><input aria-label="Toggle navigation of metrics" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../metrics/2026-09-15-OLS1.html">OLS1 [2026/09/15]</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../metrics/2026-09-29-OLS2.html">OLS2 [2026/09/29]</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../metrics/2026-10-15-Interference.html">Interference [2026/10/15]</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../metrics/2026-10-29-Endogeneity.html">Endogeneity [2026/10/29]</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../metrics/2026-11-04-Panel.html">Panel [2026/11/04]</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../metrics/2026-11-11-Panel2.html">Panel2 [2026/11/11]</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../metrics/2026-11-17-Time_series.html">Time series [2026/11/17]</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../metrics/STATA_Sheet.html">STATA Sheet</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../../../../../macro/README.html">macro</a><input aria-label="Toggle navigation of macro" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../macro/2026-09-16-Intro.html">Intro [2026/09/16]</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../macro/2026-09-23-Policy.html">Policy [2026/09/23]</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../macro/2026-09-30-IS-TR.html">IS TR [2026/09/30]</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../macro/2026-10-07-IS-TR-BOP.html">IS TR BOP [2026/10/07]</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../macro/2026-10-14-Medium-run.html">Medium run [2026/10/14]</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../macro/2026-10-21-AS.html">AS [2026/10/21]</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../macro/2026-11-04-RBC.html">RBC [2026/11/04]</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../macro/2026-11-18-RBC_Solution.html">RBC Solution [2026/11/18]</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../../../../../micro/README.html">micro</a><input aria-label="Toggle navigation of micro" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../../micro/2026-09-17-Intro.html">Intro [2026/09/17]</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../../../../README.html">growth</a><input aria-label="Toggle navigation of growth" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../2026-09-18-Intro.html">Intro [2026/09/18]</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="view-this-page">
+  <a class="muted-link" href="../../../../../../../../_sources/growth/solow_project/.quarto/typst/packages/preview/octique/0.1.1/README.md.txt" title="View this page">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">View this page</span>
+  </a>
+</div>
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section class="tex2jax_ignore mathjax_ignore" id="typst-octique">
+<h1>typst-octique<a class="headerlink" href="#typst-octique" title="Link to this heading">¶</a></h1>
+<p>GitHub <a class="reference external" href="https://primer.style/foundations/icons/">Octicons</a> for Typst.</p>
+<section id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Link to this heading">¶</a></h2>
+<div class="highlight-typst notranslate"><div class="highlight"><pre><span></span><span class="kn">#import</span><span class="w"> </span><span class="s2">"@preview/octique:0.1.0"</span><span class="p">:</span><span class="w"> </span><span class="o">*</span>
+</pre></div>
+</div>
+</section>
+<section id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Link to this heading">¶</a></h2>
+<div class="highlight-typst notranslate"><div class="highlight"><pre><span></span><span class="c1">// Returns an image for the given name.</span>
+octique(name,<span class="w"> </span>color:<span class="w"> </span>rgb("<span class="mi">#000000</span>"),<span class="w"> </span>width:<span class="w"> </span>1em,<span class="w"> </span>height:<span class="w"> </span>1em)
+
+<span class="c1">// Returns a boxed image for the given name.</span>
+octique-inline(name,<span class="w"> </span>color:<span class="w"> </span>rgb("<span class="mi">#000000</span>"),<span class="w"> </span>width:<span class="w"> </span>1em,<span class="w"> </span>height:<span class="w"> </span>1em,<span class="w"> </span>baseline:<span class="w"> </span>25%)
+
+<span class="c1">// Returns an SVG text for the given name.</span>
+octique-svg(name)
+</pre></div>
+</div>
+</section>
+<section id="list-of-available-icons">
+<h2>List of Available Icons<a class="headerlink" href="#list-of-available-icons" title="Link to this heading">¶</a></h2>
+<p>See also <a class="reference internal" href="#sample/sample.pdf"><span class="xref myst"><code class="docutils literal notranslate"><span class="pre">sample/sample.pdf</span></code></span></a>.</p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Code</p></th>
+<th class="head text-center"><p>Icon</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;accessibility-inset&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="accessibility-inset" src="https://github.com/0x6b/typst-octique/wiki/assets/accessibility-inset.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;accessibility&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="accessibility" src="https://github.com/0x6b/typst-octique/wiki/assets/accessibility.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;alert-fill&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="alert-fill" src="https://github.com/0x6b/typst-octique/wiki/assets/alert-fill.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;alert&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="alert" src="https://github.com/0x6b/typst-octique/wiki/assets/alert.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;apps&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="apps" src="https://github.com/0x6b/typst-octique/wiki/assets/apps.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;archive&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="archive" src="https://github.com/0x6b/typst-octique/wiki/assets/archive.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;arrow-both&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="arrow-both" src="https://github.com/0x6b/typst-octique/wiki/assets/arrow-both.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;arrow-down-left&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="arrow-down-left" src="https://github.com/0x6b/typst-octique/wiki/assets/arrow-down-left.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;arrow-down-right&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="arrow-down-right" src="https://github.com/0x6b/typst-octique/wiki/assets/arrow-down-right.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;arrow-down&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="arrow-down" src="https://github.com/0x6b/typst-octique/wiki/assets/arrow-down.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;arrow-left&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="arrow-left" src="https://github.com/0x6b/typst-octique/wiki/assets/arrow-left.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;arrow-right&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="arrow-right" src="https://github.com/0x6b/typst-octique/wiki/assets/arrow-right.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;arrow-switch&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="arrow-switch" src="https://github.com/0x6b/typst-octique/wiki/assets/arrow-switch.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;arrow-up-left&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="arrow-up-left" src="https://github.com/0x6b/typst-octique/wiki/assets/arrow-up-left.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;arrow-up-right&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="arrow-up-right" src="https://github.com/0x6b/typst-octique/wiki/assets/arrow-up-right.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;arrow-up&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="arrow-up" src="https://github.com/0x6b/typst-octique/wiki/assets/arrow-up.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;beaker&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="beaker" src="https://github.com/0x6b/typst-octique/wiki/assets/beaker.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;bell-fill&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="bell-fill" src="https://github.com/0x6b/typst-octique/wiki/assets/bell-fill.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;bell-slash&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="bell-slash" src="https://github.com/0x6b/typst-octique/wiki/assets/bell-slash.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;bell&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="bell" src="https://github.com/0x6b/typst-octique/wiki/assets/bell.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;blocked&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="blocked" src="https://github.com/0x6b/typst-octique/wiki/assets/blocked.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;bold&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="bold" src="https://github.com/0x6b/typst-octique/wiki/assets/bold.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;book&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="book" src="https://github.com/0x6b/typst-octique/wiki/assets/book.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;bookmark-slash&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="bookmark-slash" src="https://github.com/0x6b/typst-octique/wiki/assets/bookmark-slash.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;bookmark&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="bookmark" src="https://github.com/0x6b/typst-octique/wiki/assets/bookmark.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;briefcase&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="briefcase" src="https://github.com/0x6b/typst-octique/wiki/assets/briefcase.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;broadcast&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="broadcast" src="https://github.com/0x6b/typst-octique/wiki/assets/broadcast.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;browser&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="browser" src="https://github.com/0x6b/typst-octique/wiki/assets/browser.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;bug&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="bug" src="https://github.com/0x6b/typst-octique/wiki/assets/bug.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;cache&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="cache" src="https://github.com/0x6b/typst-octique/wiki/assets/cache.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;calendar&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="calendar" src="https://github.com/0x6b/typst-octique/wiki/assets/calendar.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;check-circle-fill&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="check-circle-fill" src="https://github.com/0x6b/typst-octique/wiki/assets/check-circle-fill.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;check-circle&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="check-circle" src="https://github.com/0x6b/typst-octique/wiki/assets/check-circle.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;check&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="check" src="https://github.com/0x6b/typst-octique/wiki/assets/check.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;checkbox&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="checkbox" src="https://github.com/0x6b/typst-octique/wiki/assets/checkbox.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;checklist&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="checklist" src="https://github.com/0x6b/typst-octique/wiki/assets/checklist.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;chevron-down&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="chevron-down" src="https://github.com/0x6b/typst-octique/wiki/assets/chevron-down.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;chevron-left&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="chevron-left" src="https://github.com/0x6b/typst-octique/wiki/assets/chevron-left.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;chevron-right&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="chevron-right" src="https://github.com/0x6b/typst-octique/wiki/assets/chevron-right.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;chevron-up&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="chevron-up" src="https://github.com/0x6b/typst-octique/wiki/assets/chevron-up.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;circle-slash&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="circle-slash" src="https://github.com/0x6b/typst-octique/wiki/assets/circle-slash.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;circle&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="circle" src="https://github.com/0x6b/typst-octique/wiki/assets/circle.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;clock-fill&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="clock-fill" src="https://github.com/0x6b/typst-octique/wiki/assets/clock-fill.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;clock&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="clock" src="https://github.com/0x6b/typst-octique/wiki/assets/clock.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;cloud-offline&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="cloud-offline" src="https://github.com/0x6b/typst-octique/wiki/assets/cloud-offline.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;cloud&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="cloud" src="https://github.com/0x6b/typst-octique/wiki/assets/cloud.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;code-of-conduct&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="code-of-conduct" src="https://github.com/0x6b/typst-octique/wiki/assets/code-of-conduct.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;code-review&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="code-review" src="https://github.com/0x6b/typst-octique/wiki/assets/code-review.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;code&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="code" src="https://github.com/0x6b/typst-octique/wiki/assets/code.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;code-square&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="code-square" src="https://github.com/0x6b/typst-octique/wiki/assets/code-square.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;codescan-checkmark&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="codescan-checkmark" src="https://github.com/0x6b/typst-octique/wiki/assets/codescan-checkmark.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;codescan&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="codescan" src="https://github.com/0x6b/typst-octique/wiki/assets/codescan.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;codespaces&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="codespaces" src="https://github.com/0x6b/typst-octique/wiki/assets/codespaces.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;columns&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="columns" src="https://github.com/0x6b/typst-octique/wiki/assets/columns.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;command-palette&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="command-palette" src="https://github.com/0x6b/typst-octique/wiki/assets/command-palette.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;comment-discussion&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="comment-discussion" src="https://github.com/0x6b/typst-octique/wiki/assets/comment-discussion.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;comment&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="comment" src="https://github.com/0x6b/typst-octique/wiki/assets/comment.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;container&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="container" src="https://github.com/0x6b/typst-octique/wiki/assets/container.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;copilot-error&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="copilot-error" src="https://github.com/0x6b/typst-octique/wiki/assets/copilot-error.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;copilot&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="copilot" src="https://github.com/0x6b/typst-octique/wiki/assets/copilot.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;copilot-warning&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="copilot-warning" src="https://github.com/0x6b/typst-octique/wiki/assets/copilot-warning.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;copy&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="copy" src="https://github.com/0x6b/typst-octique/wiki/assets/copy.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;cpu&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="cpu" src="https://github.com/0x6b/typst-octique/wiki/assets/cpu.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;credit-card&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="credit-card" src="https://github.com/0x6b/typst-octique/wiki/assets/credit-card.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;cross-reference&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="cross-reference" src="https://github.com/0x6b/typst-octique/wiki/assets/cross-reference.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;dash&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="dash" src="https://github.com/0x6b/typst-octique/wiki/assets/dash.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;database&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="database" src="https://github.com/0x6b/typst-octique/wiki/assets/database.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;dependabot&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="dependabot" src="https://github.com/0x6b/typst-octique/wiki/assets/dependabot.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;desktop-download&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="desktop-download" src="https://github.com/0x6b/typst-octique/wiki/assets/desktop-download.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;device-camera&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="device-camera" src="https://github.com/0x6b/typst-octique/wiki/assets/device-camera.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;device-camera-video&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="device-camera-video" src="https://github.com/0x6b/typst-octique/wiki/assets/device-camera-video.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;device-desktop&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="device-desktop" src="https://github.com/0x6b/typst-octique/wiki/assets/device-desktop.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;device-mobile&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="device-mobile" src="https://github.com/0x6b/typst-octique/wiki/assets/device-mobile.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;devices&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="devices" src="https://github.com/0x6b/typst-octique/wiki/assets/devices.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;diamond&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="diamond" src="https://github.com/0x6b/typst-octique/wiki/assets/diamond.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;diff-added&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="diff-added" src="https://github.com/0x6b/typst-octique/wiki/assets/diff-added.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;diff-ignored&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="diff-ignored" src="https://github.com/0x6b/typst-octique/wiki/assets/diff-ignored.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;diff-modified&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="diff-modified" src="https://github.com/0x6b/typst-octique/wiki/assets/diff-modified.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;diff-removed&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="diff-removed" src="https://github.com/0x6b/typst-octique/wiki/assets/diff-removed.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;diff-renamed&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="diff-renamed" src="https://github.com/0x6b/typst-octique/wiki/assets/diff-renamed.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;diff&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="diff" src="https://github.com/0x6b/typst-octique/wiki/assets/diff.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;discussion-closed&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="discussion-closed" src="https://github.com/0x6b/typst-octique/wiki/assets/discussion-closed.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;discussion-duplicate&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="discussion-duplicate" src="https://github.com/0x6b/typst-octique/wiki/assets/discussion-duplicate.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;discussion-outdated&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="discussion-outdated" src="https://github.com/0x6b/typst-octique/wiki/assets/discussion-outdated.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;dot-fill&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="dot-fill" src="https://github.com/0x6b/typst-octique/wiki/assets/dot-fill.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;dot&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="dot" src="https://github.com/0x6b/typst-octique/wiki/assets/dot.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;download&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="download" src="https://github.com/0x6b/typst-octique/wiki/assets/download.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;duplicate&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="duplicate" src="https://github.com/0x6b/typst-octique/wiki/assets/duplicate.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;ellipsis&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="ellipsis" src="https://github.com/0x6b/typst-octique/wiki/assets/ellipsis.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;eye-closed&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="eye-closed" src="https://github.com/0x6b/typst-octique/wiki/assets/eye-closed.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;eye&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="eye" src="https://github.com/0x6b/typst-octique/wiki/assets/eye.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;feed-discussion&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="feed-discussion" src="https://github.com/0x6b/typst-octique/wiki/assets/feed-discussion.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;feed-forked&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="feed-forked" src="https://github.com/0x6b/typst-octique/wiki/assets/feed-forked.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;feed-heart&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="feed-heart" src="https://github.com/0x6b/typst-octique/wiki/assets/feed-heart.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;feed-issue-closed&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="feed-issue-closed" src="https://github.com/0x6b/typst-octique/wiki/assets/feed-issue-closed.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;feed-issue-draft&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="feed-issue-draft" src="https://github.com/0x6b/typst-octique/wiki/assets/feed-issue-draft.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;feed-issue-open&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="feed-issue-open" src="https://github.com/0x6b/typst-octique/wiki/assets/feed-issue-open.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;feed-issue-reopen&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="feed-issue-reopen" src="https://github.com/0x6b/typst-octique/wiki/assets/feed-issue-reopen.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;feed-merged&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="feed-merged" src="https://github.com/0x6b/typst-octique/wiki/assets/feed-merged.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;feed-person&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="feed-person" src="https://github.com/0x6b/typst-octique/wiki/assets/feed-person.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;feed-plus&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="feed-plus" src="https://github.com/0x6b/typst-octique/wiki/assets/feed-plus.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;feed-public&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="feed-public" src="https://github.com/0x6b/typst-octique/wiki/assets/feed-public.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;feed-pull-request-closed&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="feed-pull-request-closed" src="https://github.com/0x6b/typst-octique/wiki/assets/feed-pull-request-closed.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;feed-pull-request-draft&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="feed-pull-request-draft" src="https://github.com/0x6b/typst-octique/wiki/assets/feed-pull-request-draft.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;feed-pull-request-open&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="feed-pull-request-open" src="https://github.com/0x6b/typst-octique/wiki/assets/feed-pull-request-open.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;feed-repo&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="feed-repo" src="https://github.com/0x6b/typst-octique/wiki/assets/feed-repo.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;feed-rocket&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="feed-rocket" src="https://github.com/0x6b/typst-octique/wiki/assets/feed-rocket.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;feed-star&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="feed-star" src="https://github.com/0x6b/typst-octique/wiki/assets/feed-star.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;feed-tag&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="feed-tag" src="https://github.com/0x6b/typst-octique/wiki/assets/feed-tag.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;feed-trophy&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="feed-trophy" src="https://github.com/0x6b/typst-octique/wiki/assets/feed-trophy.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;file-added&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="file-added" src="https://github.com/0x6b/typst-octique/wiki/assets/file-added.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;file-badge&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="file-badge" src="https://github.com/0x6b/typst-octique/wiki/assets/file-badge.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;file-binary&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="file-binary" src="https://github.com/0x6b/typst-octique/wiki/assets/file-binary.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;file-code&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="file-code" src="https://github.com/0x6b/typst-octique/wiki/assets/file-code.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;file-diff&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="file-diff" src="https://github.com/0x6b/typst-octique/wiki/assets/file-diff.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;file-directory-fill&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="file-directory-fill" src="https://github.com/0x6b/typst-octique/wiki/assets/file-directory-fill.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;file-directory-open-fill&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="file-directory-open-fill" src="https://github.com/0x6b/typst-octique/wiki/assets/file-directory-open-fill.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;file-directory&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="file-directory" src="https://github.com/0x6b/typst-octique/wiki/assets/file-directory.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;file-directory-symlink&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="file-directory-symlink" src="https://github.com/0x6b/typst-octique/wiki/assets/file-directory-symlink.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;file-moved&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="file-moved" src="https://github.com/0x6b/typst-octique/wiki/assets/file-moved.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;file-removed&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="file-removed" src="https://github.com/0x6b/typst-octique/wiki/assets/file-removed.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;file&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="file" src="https://github.com/0x6b/typst-octique/wiki/assets/file.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;file-submodule&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="file-submodule" src="https://github.com/0x6b/typst-octique/wiki/assets/file-submodule.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;file-symlink-file&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="file-symlink-file" src="https://github.com/0x6b/typst-octique/wiki/assets/file-symlink-file.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;file-zip&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="file-zip" src="https://github.com/0x6b/typst-octique/wiki/assets/file-zip.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;filter&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="filter" src="https://github.com/0x6b/typst-octique/wiki/assets/filter.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;fiscal-host&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="fiscal-host" src="https://github.com/0x6b/typst-octique/wiki/assets/fiscal-host.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;flame&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="flame" src="https://github.com/0x6b/typst-octique/wiki/assets/flame.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;fold-down&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="fold-down" src="https://github.com/0x6b/typst-octique/wiki/assets/fold-down.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;fold&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="fold" src="https://github.com/0x6b/typst-octique/wiki/assets/fold.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;fold-up&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="fold-up" src="https://github.com/0x6b/typst-octique/wiki/assets/fold-up.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;gear&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="gear" src="https://github.com/0x6b/typst-octique/wiki/assets/gear.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;gift&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="gift" src="https://github.com/0x6b/typst-octique/wiki/assets/gift.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;git-branch&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="git-branch" src="https://github.com/0x6b/typst-octique/wiki/assets/git-branch.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;git-commit&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="git-commit" src="https://github.com/0x6b/typst-octique/wiki/assets/git-commit.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;git-compare&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="git-compare" src="https://github.com/0x6b/typst-octique/wiki/assets/git-compare.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;git-merge-queue&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="git-merge-queue" src="https://github.com/0x6b/typst-octique/wiki/assets/git-merge-queue.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;git-merge&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="git-merge" src="https://github.com/0x6b/typst-octique/wiki/assets/git-merge.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;git-pull-request-closed&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="git-pull-request-closed" src="https://github.com/0x6b/typst-octique/wiki/assets/git-pull-request-closed.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;git-pull-request-draft&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="git-pull-request-draft" src="https://github.com/0x6b/typst-octique/wiki/assets/git-pull-request-draft.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;git-pull-request&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="git-pull-request" src="https://github.com/0x6b/typst-octique/wiki/assets/git-pull-request.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;globe&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="globe" src="https://github.com/0x6b/typst-octique/wiki/assets/globe.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;goal&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="goal" src="https://github.com/0x6b/typst-octique/wiki/assets/goal.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;grabber&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="grabber" src="https://github.com/0x6b/typst-octique/wiki/assets/grabber.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;graph&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="graph" src="https://github.com/0x6b/typst-octique/wiki/assets/graph.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;hash&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="hash" src="https://github.com/0x6b/typst-octique/wiki/assets/hash.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;heading&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="heading" src="https://github.com/0x6b/typst-octique/wiki/assets/heading.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;heart-fill&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="heart-fill" src="https://github.com/0x6b/typst-octique/wiki/assets/heart-fill.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;heart&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="heart" src="https://github.com/0x6b/typst-octique/wiki/assets/heart.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;history&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="history" src="https://github.com/0x6b/typst-octique/wiki/assets/history.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;home&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="home" src="https://github.com/0x6b/typst-octique/wiki/assets/home.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;horizontal-rule&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="horizontal-rule" src="https://github.com/0x6b/typst-octique/wiki/assets/horizontal-rule.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;hourglass&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="hourglass" src="https://github.com/0x6b/typst-octique/wiki/assets/hourglass.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;hubot&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="hubot" src="https://github.com/0x6b/typst-octique/wiki/assets/hubot.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;id-badge&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="id-badge" src="https://github.com/0x6b/typst-octique/wiki/assets/id-badge.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;image&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="image" src="https://github.com/0x6b/typst-octique/wiki/assets/image.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;inbox&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="inbox" src="https://github.com/0x6b/typst-octique/wiki/assets/inbox.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;infinity&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="infinity" src="https://github.com/0x6b/typst-octique/wiki/assets/infinity.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;info&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="info" src="https://github.com/0x6b/typst-octique/wiki/assets/info.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;issue-closed&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="issue-closed" src="https://github.com/0x6b/typst-octique/wiki/assets/issue-closed.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;issue-draft&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="issue-draft" src="https://github.com/0x6b/typst-octique/wiki/assets/issue-draft.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;issue-opened&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="issue-opened" src="https://github.com/0x6b/typst-octique/wiki/assets/issue-opened.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;issue-reopened&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="issue-reopened" src="https://github.com/0x6b/typst-octique/wiki/assets/issue-reopened.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;issue-tracked-by&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="issue-tracked-by" src="https://github.com/0x6b/typst-octique/wiki/assets/issue-tracked-by.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;issue-tracks&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="issue-tracks" src="https://github.com/0x6b/typst-octique/wiki/assets/issue-tracks.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;italic&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="italic" src="https://github.com/0x6b/typst-octique/wiki/assets/italic.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;iterations&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="iterations" src="https://github.com/0x6b/typst-octique/wiki/assets/iterations.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;kebab-horizontal&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="kebab-horizontal" src="https://github.com/0x6b/typst-octique/wiki/assets/kebab-horizontal.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;key-asterisk&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="key-asterisk" src="https://github.com/0x6b/typst-octique/wiki/assets/key-asterisk.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;key&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="key" src="https://github.com/0x6b/typst-octique/wiki/assets/key.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;law&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="law" src="https://github.com/0x6b/typst-octique/wiki/assets/law.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;light-bulb&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="light-bulb" src="https://github.com/0x6b/typst-octique/wiki/assets/light-bulb.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;link-external&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="link-external" src="https://github.com/0x6b/typst-octique/wiki/assets/link-external.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;link&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="link" src="https://github.com/0x6b/typst-octique/wiki/assets/link.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;list-ordered&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="list-ordered" src="https://github.com/0x6b/typst-octique/wiki/assets/list-ordered.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;list-unordered&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="list-unordered" src="https://github.com/0x6b/typst-octique/wiki/assets/list-unordered.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;location&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="location" src="https://github.com/0x6b/typst-octique/wiki/assets/location.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;lock&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="lock" src="https://github.com/0x6b/typst-octique/wiki/assets/lock.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;log&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="log" src="https://github.com/0x6b/typst-octique/wiki/assets/log.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;logo-gist&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="logo-gist" src="https://github.com/0x6b/typst-octique/wiki/assets/logo-gist.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;logo-github&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="logo-github" src="https://github.com/0x6b/typst-octique/wiki/assets/logo-github.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;mail&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="mail" src="https://github.com/0x6b/typst-octique/wiki/assets/mail.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;mark-github&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="mark-github" src="https://github.com/0x6b/typst-octique/wiki/assets/mark-github.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;markdown&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="markdown" src="https://github.com/0x6b/typst-octique/wiki/assets/markdown.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;megaphone&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="megaphone" src="https://github.com/0x6b/typst-octique/wiki/assets/megaphone.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;mention&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="mention" src="https://github.com/0x6b/typst-octique/wiki/assets/mention.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;meter&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="meter" src="https://github.com/0x6b/typst-octique/wiki/assets/meter.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;milestone&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="milestone" src="https://github.com/0x6b/typst-octique/wiki/assets/milestone.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;mirror&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="mirror" src="https://github.com/0x6b/typst-octique/wiki/assets/mirror.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;moon&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="moon" src="https://github.com/0x6b/typst-octique/wiki/assets/moon.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;mortar-board&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="mortar-board" src="https://github.com/0x6b/typst-octique/wiki/assets/mortar-board.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;move-to-bottom&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="move-to-bottom" src="https://github.com/0x6b/typst-octique/wiki/assets/move-to-bottom.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;move-to-end&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="move-to-end" src="https://github.com/0x6b/typst-octique/wiki/assets/move-to-end.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;move-to-start&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="move-to-start" src="https://github.com/0x6b/typst-octique/wiki/assets/move-to-start.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;move-to-top&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="move-to-top" src="https://github.com/0x6b/typst-octique/wiki/assets/move-to-top.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;multi-select&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="multi-select" src="https://github.com/0x6b/typst-octique/wiki/assets/multi-select.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;mute&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="mute" src="https://github.com/0x6b/typst-octique/wiki/assets/mute.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;no-entry&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="no-entry" src="https://github.com/0x6b/typst-octique/wiki/assets/no-entry.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;north-star&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="north-star" src="https://github.com/0x6b/typst-octique/wiki/assets/north-star.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;note&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="note" src="https://github.com/0x6b/typst-octique/wiki/assets/note.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;number&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="number" src="https://github.com/0x6b/typst-octique/wiki/assets/number.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;organization&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="organization" src="https://github.com/0x6b/typst-octique/wiki/assets/organization.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;package-dependencies&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="package-dependencies" src="https://github.com/0x6b/typst-octique/wiki/assets/package-dependencies.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;package-dependents&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="package-dependents" src="https://github.com/0x6b/typst-octique/wiki/assets/package-dependents.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;package&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="package" src="https://github.com/0x6b/typst-octique/wiki/assets/package.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;paintbrush&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="paintbrush" src="https://github.com/0x6b/typst-octique/wiki/assets/paintbrush.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;paper-airplane&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="paper-airplane" src="https://github.com/0x6b/typst-octique/wiki/assets/paper-airplane.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;paperclip&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="paperclip" src="https://github.com/0x6b/typst-octique/wiki/assets/paperclip.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;passkey-fill&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="passkey-fill" src="https://github.com/0x6b/typst-octique/wiki/assets/passkey-fill.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;paste&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="paste" src="https://github.com/0x6b/typst-octique/wiki/assets/paste.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;pencil&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="pencil" src="https://github.com/0x6b/typst-octique/wiki/assets/pencil.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;people&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="people" src="https://github.com/0x6b/typst-octique/wiki/assets/people.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;person-add&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="person-add" src="https://github.com/0x6b/typst-octique/wiki/assets/person-add.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;person-fill&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="person-fill" src="https://github.com/0x6b/typst-octique/wiki/assets/person-fill.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;person&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="person" src="https://github.com/0x6b/typst-octique/wiki/assets/person.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;pin-slash&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="pin-slash" src="https://github.com/0x6b/typst-octique/wiki/assets/pin-slash.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;pin&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="pin" src="https://github.com/0x6b/typst-octique/wiki/assets/pin.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;pivot-column&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="pivot-column" src="https://github.com/0x6b/typst-octique/wiki/assets/pivot-column.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;play&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="play" src="https://github.com/0x6b/typst-octique/wiki/assets/play.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;plug&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="plug" src="https://github.com/0x6b/typst-octique/wiki/assets/plug.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;plus-circle&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="plus-circle" src="https://github.com/0x6b/typst-octique/wiki/assets/plus-circle.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;plus&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="plus" src="https://github.com/0x6b/typst-octique/wiki/assets/plus.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;project-roadmap&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="project-roadmap" src="https://github.com/0x6b/typst-octique/wiki/assets/project-roadmap.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;project&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="project" src="https://github.com/0x6b/typst-octique/wiki/assets/project.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;project-symlink&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="project-symlink" src="https://github.com/0x6b/typst-octique/wiki/assets/project-symlink.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;project-template&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="project-template" src="https://github.com/0x6b/typst-octique/wiki/assets/project-template.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;pulse&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="pulse" src="https://github.com/0x6b/typst-octique/wiki/assets/pulse.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;question&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="question" src="https://github.com/0x6b/typst-octique/wiki/assets/question.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;quote&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="quote" src="https://github.com/0x6b/typst-octique/wiki/assets/quote.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;read&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="read" src="https://github.com/0x6b/typst-octique/wiki/assets/read.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;redo&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="redo" src="https://github.com/0x6b/typst-octique/wiki/assets/redo.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;rel-file-path&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="rel-file-path" src="https://github.com/0x6b/typst-octique/wiki/assets/rel-file-path.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;reply&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="reply" src="https://github.com/0x6b/typst-octique/wiki/assets/reply.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;repo-clone&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="repo-clone" src="https://github.com/0x6b/typst-octique/wiki/assets/repo-clone.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;repo-deleted&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="repo-deleted" src="https://github.com/0x6b/typst-octique/wiki/assets/repo-deleted.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;repo-forked&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="repo-forked" src="https://github.com/0x6b/typst-octique/wiki/assets/repo-forked.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;repo-locked&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="repo-locked" src="https://github.com/0x6b/typst-octique/wiki/assets/repo-locked.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;repo-pull&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="repo-pull" src="https://github.com/0x6b/typst-octique/wiki/assets/repo-pull.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;repo-push&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="repo-push" src="https://github.com/0x6b/typst-octique/wiki/assets/repo-push.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;repo&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="repo" src="https://github.com/0x6b/typst-octique/wiki/assets/repo.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;repo-template&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="repo-template" src="https://github.com/0x6b/typst-octique/wiki/assets/repo-template.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;report&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="report" src="https://github.com/0x6b/typst-octique/wiki/assets/report.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;rocket&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="rocket" src="https://github.com/0x6b/typst-octique/wiki/assets/rocket.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;rows&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="rows" src="https://github.com/0x6b/typst-octique/wiki/assets/rows.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;rss&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="rss" src="https://github.com/0x6b/typst-octique/wiki/assets/rss.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;ruby&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="ruby" src="https://github.com/0x6b/typst-octique/wiki/assets/ruby.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;screen-full&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="screen-full" src="https://github.com/0x6b/typst-octique/wiki/assets/screen-full.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;screen-normal&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="screen-normal" src="https://github.com/0x6b/typst-octique/wiki/assets/screen-normal.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;search&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="search" src="https://github.com/0x6b/typst-octique/wiki/assets/search.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;server&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="server" src="https://github.com/0x6b/typst-octique/wiki/assets/server.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;share-android&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="share-android" src="https://github.com/0x6b/typst-octique/wiki/assets/share-android.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;share&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="share" src="https://github.com/0x6b/typst-octique/wiki/assets/share.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;shield-check&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="shield-check" src="https://github.com/0x6b/typst-octique/wiki/assets/shield-check.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;shield-lock&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="shield-lock" src="https://github.com/0x6b/typst-octique/wiki/assets/shield-lock.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;shield-slash&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="shield-slash" src="https://github.com/0x6b/typst-octique/wiki/assets/shield-slash.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;shield&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="shield" src="https://github.com/0x6b/typst-octique/wiki/assets/shield.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;shield-x&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="shield-x" src="https://github.com/0x6b/typst-octique/wiki/assets/shield-x.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;sidebar-collapse&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="sidebar-collapse" src="https://github.com/0x6b/typst-octique/wiki/assets/sidebar-collapse.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;sidebar-expand&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="sidebar-expand" src="https://github.com/0x6b/typst-octique/wiki/assets/sidebar-expand.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;sign-in&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="sign-in" src="https://github.com/0x6b/typst-octique/wiki/assets/sign-in.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;sign-out&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="sign-out" src="https://github.com/0x6b/typst-octique/wiki/assets/sign-out.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;single-select&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="single-select" src="https://github.com/0x6b/typst-octique/wiki/assets/single-select.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;skip-fill&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="skip-fill" src="https://github.com/0x6b/typst-octique/wiki/assets/skip-fill.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;skip&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="skip" src="https://github.com/0x6b/typst-octique/wiki/assets/skip.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;sliders&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="sliders" src="https://github.com/0x6b/typst-octique/wiki/assets/sliders.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;smiley&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="smiley" src="https://github.com/0x6b/typst-octique/wiki/assets/smiley.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;sort-asc&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="sort-asc" src="https://github.com/0x6b/typst-octique/wiki/assets/sort-asc.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;sort-desc&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="sort-desc" src="https://github.com/0x6b/typst-octique/wiki/assets/sort-desc.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;sparkle-fill&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="sparkle-fill" src="https://github.com/0x6b/typst-octique/wiki/assets/sparkle-fill.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;sponsor-tiers&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="sponsor-tiers" src="https://github.com/0x6b/typst-octique/wiki/assets/sponsor-tiers.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;square-fill&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="square-fill" src="https://github.com/0x6b/typst-octique/wiki/assets/square-fill.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;square&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="square" src="https://github.com/0x6b/typst-octique/wiki/assets/square.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;squirrel&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="squirrel" src="https://github.com/0x6b/typst-octique/wiki/assets/squirrel.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;stack&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="stack" src="https://github.com/0x6b/typst-octique/wiki/assets/stack.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;star-fill&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="star-fill" src="https://github.com/0x6b/typst-octique/wiki/assets/star-fill.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;star&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="star" src="https://github.com/0x6b/typst-octique/wiki/assets/star.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;stop&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="stop" src="https://github.com/0x6b/typst-octique/wiki/assets/stop.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;stopwatch&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="stopwatch" src="https://github.com/0x6b/typst-octique/wiki/assets/stopwatch.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;strikethrough&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="strikethrough" src="https://github.com/0x6b/typst-octique/wiki/assets/strikethrough.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;sun&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="sun" src="https://github.com/0x6b/typst-octique/wiki/assets/sun.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;sync&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="sync" src="https://github.com/0x6b/typst-octique/wiki/assets/sync.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;tab-external&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="tab-external" src="https://github.com/0x6b/typst-octique/wiki/assets/tab-external.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;table&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="table" src="https://github.com/0x6b/typst-octique/wiki/assets/table.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;tag&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="tag" src="https://github.com/0x6b/typst-octique/wiki/assets/tag.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;tasklist&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="tasklist" src="https://github.com/0x6b/typst-octique/wiki/assets/tasklist.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;telescope-fill&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="telescope-fill" src="https://github.com/0x6b/typst-octique/wiki/assets/telescope-fill.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;telescope&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="telescope" src="https://github.com/0x6b/typst-octique/wiki/assets/telescope.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;terminal&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="terminal" src="https://github.com/0x6b/typst-octique/wiki/assets/terminal.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;three-bars&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="three-bars" src="https://github.com/0x6b/typst-octique/wiki/assets/three-bars.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;thumbsdown&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="thumbsdown" src="https://github.com/0x6b/typst-octique/wiki/assets/thumbsdown.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;thumbsup&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="thumbsup" src="https://github.com/0x6b/typst-octique/wiki/assets/thumbsup.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;tools&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="tools" src="https://github.com/0x6b/typst-octique/wiki/assets/tools.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;tracked-by-closed-completed&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="tracked-by-closed-completed" src="https://github.com/0x6b/typst-octique/wiki/assets/tracked-by-closed-completed.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;tracked-by-closed-not-planned&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="tracked-by-closed-not-planned" src="https://github.com/0x6b/typst-octique/wiki/assets/tracked-by-closed-not-planned.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;trash&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="trash" src="https://github.com/0x6b/typst-octique/wiki/assets/trash.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;triangle-down&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="triangle-down" src="https://github.com/0x6b/typst-octique/wiki/assets/triangle-down.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;triangle-left&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="triangle-left" src="https://github.com/0x6b/typst-octique/wiki/assets/triangle-left.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;triangle-right&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="triangle-right" src="https://github.com/0x6b/typst-octique/wiki/assets/triangle-right.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;triangle-up&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="triangle-up" src="https://github.com/0x6b/typst-octique/wiki/assets/triangle-up.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;trophy&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="trophy" src="https://github.com/0x6b/typst-octique/wiki/assets/trophy.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;typography&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="typography" src="https://github.com/0x6b/typst-octique/wiki/assets/typography.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;undo&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="undo" src="https://github.com/0x6b/typst-octique/wiki/assets/undo.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;unfold&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="unfold" src="https://github.com/0x6b/typst-octique/wiki/assets/unfold.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;unlink&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="unlink" src="https://github.com/0x6b/typst-octique/wiki/assets/unlink.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;unlock&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="unlock" src="https://github.com/0x6b/typst-octique/wiki/assets/unlock.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;unmute&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="unmute" src="https://github.com/0x6b/typst-octique/wiki/assets/unmute.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;unread&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="unread" src="https://github.com/0x6b/typst-octique/wiki/assets/unread.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;unverified&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="unverified" src="https://github.com/0x6b/typst-octique/wiki/assets/unverified.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;upload&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="upload" src="https://github.com/0x6b/typst-octique/wiki/assets/upload.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;verified&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="verified" src="https://github.com/0x6b/typst-octique/wiki/assets/verified.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;versions&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="versions" src="https://github.com/0x6b/typst-octique/wiki/assets/versions.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;video&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="video" src="https://github.com/0x6b/typst-octique/wiki/assets/video.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;webhook&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="webhook" src="https://github.com/0x6b/typst-octique/wiki/assets/webhook.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;workflow&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="workflow" src="https://github.com/0x6b/typst-octique/wiki/assets/workflow.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;x-circle-fill&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="x-circle-fill" src="https://github.com/0x6b/typst-octique/wiki/assets/x-circle-fill.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;x-circle&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="x-circle" src="https://github.com/0x6b/typst-octique/wiki/assets/x-circle.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;x&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="x" src="https://github.com/0x6b/typst-octique/wiki/assets/x.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;zap&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="zap" src="https://github.com/0x6b/typst-octique/wiki/assets/zap.svg" /></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;zoom-in&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="zoom-in" src="https://github.com/0x6b/typst-octique/wiki/assets/zoom-in.svg" /></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">#octique(&quot;zoom-out&quot;)</span></code></p></td>
+<td class="text-center"><p><img alt="zoom-out" src="https://github.com/0x6b/typst-octique/wiki/assets/zoom-out.svg" /></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="license">
+<h2>License<a class="headerlink" href="#license" title="Link to this heading">¶</a></h2>
+<p>MIT. See <a class="reference download internal" download="" href="../../../../../../../../_downloads/26b07122a7425fb88272d3ced4d22db4/LICENSE"><span class="xref download myst">LICENSE</span></a> for detail.</p>
+<p>Octicons are (c) GitHub, Inc. When using the GitHub logos, you should follow the <a class="reference external" href="https://github.com/logos">GitHub logo guidelines</a>.</p>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          
+          
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">typst-octique</a><ul>
+<li><a class="reference internal" href="#installation">Installation</a></li>
+<li><a class="reference internal" href="#usage">Usage</a></li>
+<li><a class="reference internal" href="#list-of-available-icons">List of Available Icons</a></li>
+<li><a class="reference internal" href="#license">License</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../../../../../../../../_static/documentation_options.js?v=245627df"></script>
+    <script src="../../../../../../../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../../../../../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../../../../../../../_static/scripts/furo.js?v=46bd48cc"></script>
+    <script src="../../../../../../../../_static/translations.js?v=9bf55d28"></script>
+    </body>
+</html>
