@@ -87,7 +87,7 @@ $$
 which simplifies to
 
 $$
-y^* = \bigg(\frac{[s(1-t)]^\alpha [t-m]^\beta}{ D(m)^{-(\alpha+\beta)}} \bigg)^{1/1-\alpha-\beta}
+y^* = \bigg(\frac{[s(1-t)]^\alpha [t-m]^\beta}{ D(m)^{(\alpha+\beta)}} \bigg)^{1/1-\alpha-\beta}
 $$
 
 As $c=(1-t)(1-s)y^*$, maximizing $y$ maximizes $c$. I first define the function that includes all the terms that depend on m; other parts are strictly positive (as $\alpha+\beta <1$) and constant and therefore not relevant to determine the maximum.
